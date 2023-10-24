@@ -23,3 +23,11 @@ class A000040(PropertyDefined):
                 if number % d == 0 or number % (d + 2) == 0:
                     return False
             return True
+
+
+class PrimeNumbers(A000040):
+    pass
+
+
+class PositivePrimeNumbers(A000040):
+    pass
