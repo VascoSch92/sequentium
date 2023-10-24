@@ -3,7 +3,8 @@ from math import isqrt
 from sequencepy.base.sequence import PropertyDefined
 
 
-class PrimeNumbers(PropertyDefined):
+class A000040(PropertyDefined):
+    """ The prime numbers (https://oeis.org/A000040) """
 
     def __init__(self):
         super().__init__()
