@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Tuple
 
+from sequencepy.base.validations import _validate_positive_integer, _validate_as_list_input
+
 
 class Sequence(ABC):
 
@@ -53,6 +55,7 @@ class FiniteSequence(Sequence):
             yield element
 
     def as_list(self, end: int, start: int = 0, step: int = 1) -> List[int]:
+        _validate_as_list_input(start=start, end=end, step=step)
         return self.sequence[start:end:step]
 
     def _at(self, index: int) -> int:
@@ -69,6 +72,7 @@ class InfiniteSequence(Sequence):
         raise ValueError
 
     def as_list(self, end: int, start: int = 0, step: int = 1) -> List[int]:
+        _validate_as_list_input(start=start, end=end, step=step)
         return list(islice(self, start, end, step))
 
     def _at(self, index: int) -> int:
@@ -89,6 +93,7 @@ class Explicit(InfiniteSequence):
 
     def __init__(self, start_index: int = 0):
         super().__init__()
+        _validate_positive_integer(integer=start_index)
         self.start_index = start_index
 
     def as_generator(self) -> Generator:
