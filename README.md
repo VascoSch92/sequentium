@@ -8,6 +8,8 @@
 - add changelog
 - labels
 - periodic and eventually periodic sequence
+- profiler 
+- see if @cache helps for recursive functions
 
 ## Sequence to add
 
