@@ -7,6 +7,7 @@
 - errors made for the package (InfiniteSequenceError, ...)
 - add changelog
 - labels
+- periodic and eventually periodic sequence
 
 ## Sequence to add
 
