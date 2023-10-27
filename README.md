@@ -5,6 +5,8 @@
 - ruff
 - pyproject.toml
 - errors made for the package (InfiniteSequenceError, ...)
+- add changelog
+- labels
 
 ## Sequence to add
 
