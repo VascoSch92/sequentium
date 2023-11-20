@@ -1,10 +1,10 @@
 from typing import Tuple
 
 from sequence.core.infinite_type import Recursive, MonotonicIncreasing
-from sequence.core.validations import validate_integer_tuple
+from sequence.core.utils.validations import validate_integer_tuple
 
 
-class A000045(Recursive, MonotonicIncreasing):
+class A000045(MonotonicIncreasing, Recursive):
     """ Fibonacci numbers (https://oeis.org/A000045) """
 
     def __init__(self, start_terms: Tuple[int, int] = None):
@@ -24,7 +24,7 @@ class FibonacciNumbers(A000045):
     pass
 
 
-class A000073(Recursive, MonotonicIncreasing):
+class A000073(MonotonicIncreasing, Recursive):
     """ Tribonacci numbers (https://oeis.org/A000073) """
 
     def __init__(self, start_terms: Tuple[int, int, int] = None):

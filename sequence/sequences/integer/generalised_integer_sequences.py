@@ -1,7 +1,7 @@
-from sequence.core.core import Explicit, MonotonlyIncreasing
+from sequence.core.infinite_type import Explicit, MonotonicIncreasing
 
 
-class GeneralisedNexusNumbers(Explicit, MonotonlyIncreasing):
+class GeneralisedNexusNumbers(MonotonicIncreasing, Explicit):
 
     def __init__(self, dimension: int = None):
         super().__init__()
