@@ -3,13 +3,14 @@ from typing import List, Type
 import pytest
 
 from sequence.core.core import Sequence
+from sequence.core.utils.errors import InfiniteSequenceError
 
 
 class SequenceTestSuite:
-    sequence: Type[Sequence] = NotImplementedError
+    sequence: Type[Sequence] = None
     is_finite: bool = False
-    ground_truth: List[int] = NotImplementedError
-    ground_truth_length: int = NotImplementedError
+    ground_truth: List[int] = None
+    ground_truth_length: int = None
 
     def test_is_finite(self):
         if self.sequence.is_finite != self.is_finite:
@@ -19,7 +20,7 @@ class SequenceTestSuite:
         if self.sequence.is_finite:
             assert len(self.sequence) == self.ground_truth_length
         else:
-            with pytest.raises(ValueError):
+            with pytest.raises(InfiniteSequenceError):
                 len(self.sequence)
 
     def test_getitem(self):
