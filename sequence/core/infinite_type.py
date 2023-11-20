@@ -1,11 +1,11 @@
 from abc import abstractmethod
 from typing import Generator, Any, Tuple
 
-from sequence.core.core import InfiniteSequence
-from sequence.core.validations import validate_positive_integer
+from sequence.core.core import InfiniteType
+from sequence.core.utils.validations import validate_positive_integer
 
 
-class Explicit(InfiniteSequence):
+class Explicit(InfiniteType):
 
     def __init__(self, start_index: int = 0):
         super().__init__()
@@ -23,7 +23,7 @@ class Explicit(InfiniteSequence):
         raise NotImplementedError
 
 
-class Recursive(InfiniteSequence):
+class Recursive(InfiniteType):
 
     def __init__(self, start_terms: Tuple[Any, ...] = None):
         super().__init__()
@@ -40,7 +40,8 @@ class Recursive(InfiniteSequence):
         raise NotImplementedError
 
 
-class PropertyDefined(InfiniteSequence):
+
+class PropertyDefined(InfiniteType):
 
     def __contains__(self, item: Any) -> bool:
         return self.property(number=item)
