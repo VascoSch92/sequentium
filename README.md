@@ -10,7 +10,8 @@
 - periodic and eventually periodic sequence
 - profiler 
 - see if @cache helps for recursive functions
-
+- implement command line
+  
 ## Sequence to add
 
 - https://en.wikipedia.org/wiki/Thue–Morse_sequence
