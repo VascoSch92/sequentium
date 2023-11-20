@@ -1,7 +1,8 @@
-from sequencepy.base.errors import NegativeNumberError
+from sequence.core.errors import NegativeNumberError
+from typing import Tuple
 
 
-def _validate_positive_integer(integer: int) -> None:
+def validate_positive_integer(integer: int) -> None:
     """ The method validates that an object is a positive integer """
     if isinstance(integer, int) is False:
         raise ValueError(f'Expected an int type, but got {type(integer).__name__} type!')
@@ -9,11 +10,20 @@ def _validate_positive_integer(integer: int) -> None:
         raise NegativeNumberError(f'Expected a non-negative integer but got {integer}!')
 
 
+def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
+    if isinstance(tuple, Tuple) is False:
+        raise ValueError(f'Expected a tuple type, but got {type(tuple).__name__} type!')
+    if len(tuple)!= length:
+        raise ValueError(f'They are needed exactly {length} terms. Got {len(tuple)}')
+    for number in tuple:
+        validate_positive_integer(integer=number)
+
+
 def _validate_as_list_input(start: int, end: int, step: int) -> None:
     """ The method validates the input of the as_list method """
-    _validate_positive_integer(integer=start)
-    _validate_positive_integer(integer=end)
-    _validate_positive_integer(integer=step)
+    validate_positive_integer(integer=start)
+    validate_positive_integer(integer=end)
+    validate_positive_integer(integer=step)
 
     if end < start:
         raise ValueError(f'Variable end (={end}) must be greater than variable start (={start}!')

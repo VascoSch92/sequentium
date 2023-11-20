@@ -1,5 +1,5 @@
-from sequencepy.base.sequence import Explicit
-from sequencepy.sequences.generalised_sequences import GeneralisedNexusNumbers
+from sequence.core.infinite_type import Explicit
+from sequence.sequences.generalised_sequences import GeneralisedNexusNumbers
 
 
 class A000326(Explicit):

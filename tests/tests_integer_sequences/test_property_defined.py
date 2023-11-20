@@ -1,5 +1,5 @@
 from tests.sequence_test_suite import SequenceTestSuite
-from sequencepy.sequences.integer.property_defined import *
+from sequence.sequences.integer.property_defined import *
 
 
 class TestA000040(SequenceTestSuite):

@@ -1,4 +1,4 @@
-from sequencepy.sequences.integer.finite import *
+from sequence.sequences.integer.finite import *
 from tests.sequence_test_suite import FiniteSequenceTestSuite
 
 

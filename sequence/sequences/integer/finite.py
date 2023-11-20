@@ -1,4 +1,4 @@
-from sequencepy.base.sequence import FiniteSequence
+from sequence.core.core import FiniteSequence
 
 
 class A001228(FiniteSequence):

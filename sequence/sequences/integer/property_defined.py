@@ -1,6 +1,6 @@
 from math import isqrt
 
-from sequencepy.base.sequence import PropertyDefined
+from sequence.core.infinite_type import PropertyDefined
 
 
 class A000040(PropertyDefined):

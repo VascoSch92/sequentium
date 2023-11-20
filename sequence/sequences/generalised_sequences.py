@@ -1,4 +1,4 @@
-from sequencepy.base.sequence import Explicit, MonotonlyIncreasing
+from sequence.core.core import Explicit, MonotonlyIncreasing
 
 
 class GeneralisedNexusNumbers(Explicit, MonotonlyIncreasing):

@@ -2,7 +2,7 @@ from typing import List, Type
 
 import pytest
 
-from sequencepy.base.sequence import Sequence
+from sequence.core.core import Sequence
 
 
 class SequenceTestSuite:
