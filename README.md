@@ -1,4 +1,4 @@
-# sequencepy_project
+# Sequentium
 
 ## TODO
 
@@ -7,10 +7,11 @@
 - errors made for the package (InfiniteSequenceError, ...)
 - add changelog
 - labels
+- write documentation for each class
 - periodic and eventually periodic sequence
-- profiler 
-- see if @cache helps for recursive functions
+- profiler
 - implement command line
+- we could create a yaml file to simplify import and not creating multiple class to give different names to the same sequence
   
 ## Sequence to add
 
