@@ -1,4 +1,4 @@
-from sequence.core.errors import NegativeNumberError
+from sequence.core.utils.errors import NegativeNumberError
 from typing import Tuple
 
 
@@ -19,13 +19,9 @@ def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
         validate_positive_integer(integer=number)
 
 
-def _validate_as_list_input(start: int, end: int, step: int) -> None:
+def validate_as_list_input(start: int, stop: int, step: int) -> None:
     """ The method validates the input of the as_list method """
     validate_positive_integer(integer=start)
-    validate_positive_integer(integer=end)
+    validate_positive_integer(integer=stop)
     validate_positive_integer(integer=step)
 
-    if end < start:
-        raise ValueError(f'Variable end (={end}) must be greater than variable start (={start}!')
-    if step > end - start:
-        raise ValueError(f'Variable step (={step}) is too big.')
