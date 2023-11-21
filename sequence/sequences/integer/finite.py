@@ -1,7 +1,7 @@
-from sequence.core.core import FiniteType
+from sequence.core.finite_type import Finite
 
 
-class A001228(FiniteType):
+class A001228(Finite):
     """ Orders of sporadic simple groups (https://oeis.org/A001228) """
 
     def __init__(self):
@@ -15,7 +15,7 @@ class A001228(FiniteType):
         ]
 
 
-class A003173(FiniteType):
+class A003173(Finite):
     """ Heegner numbers: imaginary quadratic fields with unique factorization (https://oeis.org/A003173) """
 
     def __init__(self):
