@@ -9,11 +9,16 @@ from sequence.core.utils.errors import InfiniteSequenceError
 class SequenceTestSuite:
     sequence: Type[Sequence] = None
     is_finite: bool = False
+    is_periodic: bool = False
     ground_truth: List[int] = None
     ground_truth_length: int = None
 
     def test_is_finite(self):
         if self.sequence.is_finite != self.is_finite:
+            raise ValueError
+
+    def test_is_periodic(self):
+        if self.sequence.is_periodic != self.is_periodic:
             raise ValueError
 
     def test_len(self):
@@ -41,9 +46,22 @@ class SequenceTestSuite:
     def test_as_list(self):
         for j in range(self.ground_truth_length - 1):
             for i in range(j, self.ground_truth_length):
-                if self.sequence.as_list(start=j, end=i) != self.ground_truth[j:i]:
+                if self.sequence.as_list(start=j, stop=i) != self.ground_truth[j:i]:
                     raise Exception
 
 
 class FiniteSequenceTestSuite(SequenceTestSuite):
     is_finite = True
+
+
+class PeriodicSequenceTestSuite(SequenceTestSuite):
+    is_periodic = True
+    period_length: int
+
+    def test_is_periodic(self):
+        if self.sequence.is_periodic != self.is_periodic:
+            raise ValueError
+
+    def test_period(self):
+        if self.period_length != self.sequence.period:
+            raise ValueError(f'Expected period: {self.period_length}, but got {self.sequence.period}!')
