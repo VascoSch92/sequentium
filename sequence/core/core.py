@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Any
 
-from sequence.core.utils.validations import validate_positive_integer, validate_as_list_input
 from sequence.core.utils.errors import InfiniteSequenceError
+from sequence.core.utils.validations import validate_positive_integer, validate_as_list_input
 
 
 class Sequence(ABC):
@@ -69,4 +69,3 @@ class InfiniteType(Sequence, ABC):
     def _at(self, index: int) -> int:
         validate_positive_integer(integer=index)
         return next(islice(self, index, index + 1))
-
