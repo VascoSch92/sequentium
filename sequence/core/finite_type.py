@@ -1,6 +1,7 @@
-from typing import List, Any
+from typing import List, Any, Generator
 
 from sequence.core.core import FiniteType
+from sequence.core.utils.errors import InfiniteSequenceError
 from sequence.core.utils.validations import validate_as_list_input
 
 
