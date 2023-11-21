@@ -64,7 +64,7 @@ class InfiniteType(Sequence, ABC):
 
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
         validate_as_list_input(start=start, stop=stop, step=step)
-        return list(islice(self, __start=start, __stop=stop, __step=step))
+        return list(islice(self, start, stop, step))
 
     def _at(self, index: int) -> int:
         validate_positive_integer(integer=index)
