@@ -16,6 +16,10 @@ class Finite(FiniteType):
     def is_finite(self) -> bool:
         return True
 
+    def as_generator(self) -> Generator:
+        for element in self.sequence:
+            yield element
+
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
         validate_as_list_input(start=start, stop=stop, step=step)
         return self.sequence[start:stop:step]
