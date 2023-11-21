@@ -30,6 +30,13 @@ class Finite(FiniteType):
 
 class Periodic(FiniteType):
 
+    def __init__(self):
+        super().__init__()
+        self._period: int = None
+
+    def __len__(self) -> int:
+        raise InfiniteSequenceError
+
     @property
     def is_finite(self) -> bool:
         return False
@@ -40,11 +47,17 @@ class Periodic(FiniteType):
 
     @property
     def period(self) -> int:
-        raise NotImplementedError
+        return self._period
+
+    def as_generator(self) -> Generator:
+        index = 0
+        while True:
+            yield self.sequence[index]
+            index = (index + 1) % self._period
 
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        raise NotImplementedError
+        return [0, 0]
 
     def _at(self, index: int) -> Any:
-        raise NotImplementedError
+        return self.sequence[index % self._period]
 
