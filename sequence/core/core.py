@@ -28,14 +28,14 @@ class Sequence(ABC):
 
     @property
     def period(self) -> int:
-        return 0
+        raise Exception('The sequence is not periodic')
 
     @abstractmethod
     def as_generator(self) -> Generator:
         raise NotImplementedError
 
     @abstractmethod
-    def as_list(self, end: int, start: int = 0, step: int = 1) -> List[int]:
+    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
         raise NotImplementedError
 
     @abstractmethod
