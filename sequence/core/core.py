@@ -52,10 +52,6 @@ class FiniteType(Sequence, ABC):
     def __contains__(self, item: int) -> bool:
         return item in self.sequence
 
-    def as_generator(self) -> Generator:
-        for element in self.sequence:
-            yield element
-
 
 class InfiniteType(Sequence, ABC):
 
