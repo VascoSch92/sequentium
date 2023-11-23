@@ -11,9 +11,10 @@ def validate_positive_integer(integer: int) -> None:
 
 
 def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
+    """ The method validates that an object is a tuple of integers """
     if isinstance(tuple, Tuple) is False:
         raise ValueError(f'Expected a tuple type, but got {type(tuple).__name__} type!')
-    if len(tuple)!= length:
+    if len(tuple) != length:
         raise ValueError(f'They are needed exactly {length} terms. Got {len(tuple)}')
     for number in tuple:
         validate_positive_integer(integer=number)
