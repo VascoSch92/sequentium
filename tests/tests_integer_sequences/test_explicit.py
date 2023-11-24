@@ -2,6 +2,12 @@ from sequence.sequences.integer.explicit import *
 from tests.sequence_test_suite import SequenceTestSuite
 
 
+class TestA000027(SequenceTestSuite):
+    sequence = A000027() # Natural numbers
+    ground_truth = list(range(100))
+    ground_truth_length = len(ground_truth)
+
+
 class TestA000326(SequenceTestSuite):
     sequence = A000326()  # Pentagonal numbers
     ground_truth = [
