@@ -7,12 +7,12 @@ class LucasSequenceU(MonotonicIncreasing, Recursive):
     """ Lucas sequence U_n (https://en.wikipedia.org/wiki/Lucas_sequence) """
 
     def __init__(self, p: int, q: int):
-        super().__init__()
-        validate_positive_integer(integer=p)
-        validate_positive_integer(integer=q)
+        super().__init__(start_terms=(0, 1))
+        validate_integer(integer=p)
+        validate_integer(integer=q)
+        validate_integer_tuple(tuple=self.start_terms, length=2)
 
         self.p, self.q = p, q
-        self.start_terms = (0, 1)
 
     def formula(self, terms: Tuple[int, int]) -> Tuple[int, int]:
         return terms[1], self.p * terms[0] - self.q * terms[1]
