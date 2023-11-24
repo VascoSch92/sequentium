@@ -2,6 +2,12 @@ from sequence.core.utils.errors import NegativeNumberError
 from typing import Tuple
 
 
+def validate_integer(integer: int) -> None:
+    """ The method validates that an object is an integer """
+    if isinstance(integer, int) is False:
+        raise ValueError(f'Expected an int type, but got {type(integer).__name__} type!')
+
+
 def validate_positive_integer(integer: int) -> None:
     """ The method validates that an object is a positive integer """
     if isinstance(integer, int) is False:
