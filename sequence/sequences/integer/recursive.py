@@ -3,8 +3,24 @@ from typing import Tuple
 from sequence.core.infinite_type import Recursive, MonotonicIncreasing
 from sequence.core.utils.validations import validate_integer_tuple
 
+class A000032(LucasSequenceV):
+    """ Lucas numbers (https://oeis.org/A000032) """
 
-class A000045(MonotonicIncreasing, Recursive):
+    def __init__(self):
+        super().__init__(p=1, q=-1)
+
+    def __contains__(self, item: Any) -> bool:
+        if item == 1:
+            return True
+
+        for element in self.as_generator():
+            if element == item:
+                return True
+            if element > item:
+                return False
+
+
+class A000045(LucasSequenceU):
     """ Fibonacci numbers (https://oeis.org/A000045) """
 
     def __init__(self, start_terms: Tuple[int, int] = None):
