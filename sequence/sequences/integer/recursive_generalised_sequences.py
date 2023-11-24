@@ -19,8 +19,9 @@ class LucasSequenceU(MonotonicIncreasing, Recursive):
 
 
 class LucasSequenceV(LucasSequenceU):
-    """ Lucase sequence V_n (https://en.wikipedia.org/wiki/Lucas_sequence) """
+    """ Lucas sequence V_n (https://en.wikipedia.org/wiki/Lucas_sequence) """
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, p: int, q:  int):
+        super().__init__(p=p, q=q)
 
+        self.start_terms = (2, self.p)
