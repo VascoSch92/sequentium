@@ -2,6 +2,16 @@ from sequence.core.infinite_type import Explicit
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 
 
+class A000027(Explicit):
+    """ The natural numbers (https://oeis.org/A000027) """
+
+    def __contains__(self, item):
+        return True
+
+    def formula(self, index: int) -> int:
+        return index
+
+
 class A000326(Explicit):
     """ Pentagonal numbers (https://oeis.org/A000326) """
 
