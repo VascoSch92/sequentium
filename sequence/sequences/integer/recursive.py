@@ -1,7 +1,9 @@
-from typing import Tuple
+from typing import Tuple, Any
 
 from sequence.core.infinite_type import Recursive, MonotonicIncreasing
 from sequence.core.utils.validations import validate_integer_tuple
+from sequence.sequences.integer.recursive_generalised_sequences import LucasSequenceU, LucasSequenceV
+
 
 class A000032(LucasSequenceV):
     """ Lucas numbers (https://oeis.org/A000032) """
