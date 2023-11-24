@@ -47,7 +47,9 @@ class SequenceTestSuite:
         for j in range(self.ground_truth_length - 1):
             for i in range(j, self.ground_truth_length):
                 if self.sequence.as_list(start=j, stop=i) != self.ground_truth[j:i]:
-                    raise Exception
+                    raise Exception(
+                        f'Expected: {self.ground_truth[j:i]}. Got {self.sequence.as_list(start=j, stop=i)}!'
+                    )
 
 
 class FiniteSequenceTestSuite(SequenceTestSuite):
