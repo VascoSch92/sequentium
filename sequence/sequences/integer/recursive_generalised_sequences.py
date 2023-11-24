@@ -1,6 +1,7 @@
-from sequence.core.infinite_type import Recursive, MonotonicIncreasing
-from sequence.core.utils.validations import validate_integer_tuple, validate_positive_integer
 from typing import Tuple
+
+from sequence.core.infinite_type import Recursive, MonotonicIncreasing
+from sequence.core.utils.validations import validate_integer, validate_integer_tuple
 
 
 class LucasSequenceU(MonotonicIncreasing, Recursive):
