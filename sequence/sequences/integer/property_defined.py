@@ -1,23 +1,12 @@
-from typing import Any
-
-from sequence.core.infinite_type import Explicit
+from sequence.sequences.integer.explicit import A000027
 from sequence.sequences.integer.property_defined_generalised_sequences import TypesOfPrimes
-
-
-class IntegerSequance(Explicit):
-
-    def __contains__(self, item):
-        return True
-
-    def formula(self, index: int) -> Any:
-        return index
 
 
 class A000040(TypesOfPrimes):
     """ The prime numbers (https://oeis.org/A000040) """
 
     def __init__(self):
-        super().__init__(base_sequence=IntegerSequance)
+        super().__init__(base_sequence=A000027)
 
 
 class PrimeNumbers(A000040):
