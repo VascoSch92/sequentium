@@ -23,17 +23,9 @@ class A000032(LucasSequenceV):
 class A000045(LucasSequenceU):
     """ Fibonacci numbers (https://oeis.org/A000045) """
 
-    def __init__(self, start_terms: Tuple[int, int] = None):
-        super().__init__()
+    def __init__(self):
+        super().__init__(p=1, q=-1)
 
-        if start_terms is None:
-            self.start_terms = (0, 1)
-        else:
-            validate_integer_tuple(tuple=start_terms, length=2)
-            self.start_terms = start_terms
-
-    def formula(self, terms: Tuple[int, int]) -> Tuple[int, int]:
-        return terms[1], terms[0] + terms[1]
 
 
 class FibonacciNumbers(A000045):
