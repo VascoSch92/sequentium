@@ -22,6 +22,13 @@ class Explicit(InfiniteType):
     def formula(self, index: int) -> Any:
         raise NotImplementedError
 
+    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
+        validate_as_list_input(start=start, stop=stop, step=step)
+        return [self.formula(index=index) for index in range(start, stop, step)]
+
+    def _at(self, index: int) -> int:
+        validate_positive_integer(integer=index)
+        return self.formula(index=index)
 
 class Recursive(InfiniteType):
 
