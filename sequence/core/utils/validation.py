@@ -1,4 +1,4 @@
-from sequence.core.utils.errors import NegativeNumberError
+from sequence.core.utils.excpetions import NegativeNumberError
 from typing import Tuple
 
 
