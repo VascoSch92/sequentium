@@ -5,7 +5,7 @@ from sequence.core.core import InfiniteType
 from sequence.core.utils.validations import validate_positive_integer
 
 
-class Explicit(InfiniteType):
+class Explicit(InfiniteType, ABC):
 
     def __init__(self, start_index: int = 0):
         super().__init__()
@@ -30,7 +30,8 @@ class Explicit(InfiniteType):
         validate_positive_integer(integer=index)
         return self.formula(index=index)
 
-class Recursive(InfiniteType):
+
+class Recursive(InfiniteType, ABC):
 
     def __init__(self, start_terms: Tuple[Any, ...] = None):
         super().__init__()
@@ -47,8 +48,7 @@ class Recursive(InfiniteType):
         raise NotImplementedError
 
 
-
-class PropertyDefined(InfiniteType):
+class PropertyDefined(InfiniteType, ABC):
 
     def __contains__(self, item: Any) -> bool:
         return self.property(number=item)
