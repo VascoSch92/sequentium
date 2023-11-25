@@ -1,3 +1,4 @@
+from abc import ABC
 from typing import List, Any, Generator
 
 from sequence.core.core import FiniteType
@@ -5,7 +6,7 @@ from sequence.core.utils.excpetions import InfiniteSequenceError
 from sequence.core.utils.validation import validate_as_list_input
 
 
-class Finite(FiniteType):
+class Finite(FiniteType, ABC):
 
     def __init__(self):
         super().__init__()
@@ -29,7 +30,7 @@ class Finite(FiniteType):
         return self.sequence[index]
 
 
-class Periodic(FiniteType):
+class Periodic(FiniteType, ABC):
 
     def __init__(self):
         super().__init__()
