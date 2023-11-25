@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Any
 
-from sequence.core.utils.errors import InfiniteSequenceError
-from sequence.core.utils.validations import validate_positive_integer, validate_as_list_input
+from sequence.core.utils.excpetions import InfiniteSequenceError, NotPeriodicSequenceError
+from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
 
 
 class Sequence(ABC):
@@ -28,7 +28,7 @@ class Sequence(ABC):
 
     @property
     def period(self) -> int:
-        raise Exception('The sequence is not periodic')
+        raise NotPeriodicSequenceError
 
     @abstractmethod
     def as_generator(self) -> Generator:
