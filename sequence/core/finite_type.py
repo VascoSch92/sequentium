@@ -1,8 +1,8 @@
 from typing import List, Any, Generator
 
 from sequence.core.core import FiniteType
-from sequence.core.utils.errors import InfiniteSequenceError
-from sequence.core.utils.validations import validate_as_list_input
+from sequence.core.utils.excpetions import InfiniteSequenceError
+from sequence.core.utils.validation import validate_as_list_input
 
 
 class Finite(FiniteType):
@@ -57,7 +57,7 @@ class Periodic(FiniteType):
             index = (index + 1) % self._period
 
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        return [0, 0]
+        return NotImplementedError
 
     def _at(self, index: int) -> Any:
         return self.sequence[index % self._period]
