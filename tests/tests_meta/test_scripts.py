@@ -25,17 +25,22 @@ def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
     regex = re.compile(pattern)
     return [item for item in input_list if regex.match(item)]
 
-# TODO: extend to test scripts
+
 @pytest.mark.parametrize(
     'script_path, pattern',
     [('sequence/sequences/integer/explicit.py', r'^A\d{6}$'),
      ('sequence/sequences/integer/explicit_generalised_sequences.py', None),
      ('sequence/sequences/integer/finite.py', r'^A\d{6}$'),
      ('sequence/sequences/integer/periodic.py', r'^A\d{6}$'),
+     ('tests/tests_integer_sequences/test_periodic.py', None),
      ('sequence/sequences/integer/property_defined.py', r'^A\d{6}$'),
      ('sequence/sequences/integer/property_defined_generalised_sequences.py', None),
      ('sequence/sequences/integer/recursive.py', r'^A\d{6}$'),
-     ('sequence/sequences/integer/recursive_generalised_sequences.py', None)]
+     ('sequence/sequences/integer/recursive_generalised_sequences.py', None),
+     ('tests/tests_integer_sequences/test_explicit.py', None),
+     ('tests/tests_integer_sequences/test_finite.py', None),
+     ('tests/tests_integer_sequences/test_periodic.py', None),
+     ('tests/tests_integer_sequences/test_recursive.py', None)]
 )
 def test_order_script(script_path, pattern):
     """ The test checks if the script give at script_path is sorted alphabetically after filtered by pattern. """
@@ -50,7 +55,8 @@ def test_order_script(script_path, pattern):
      ('sequence/sequences/integer/periodic.py', r'^A\d{6}$', 'tests/tests_integer_sequences/test_periodic.py'),
      ('sequence/sequences/integer/recursive.py', r'^A\d{6}$', 'tests/tests_integer_sequences/test_recursive.py')]
 )
-def test_tests_every_sequence(script_path, pattern, test_script_path):
+def test_every_sequence_is_tested(script_path, pattern, test_script_path):
+    """ The test checks if for every sequence defined there is a test. """
     sequence_names = get_classes_from_script(script_path=script_path, pattern=pattern)
     test_names = get_classes_from_script(script_path=test_script_path)
     sequences_tested = [test.replace('Test', '') for test in test_names]
