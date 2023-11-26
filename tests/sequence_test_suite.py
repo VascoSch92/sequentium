@@ -3,7 +3,7 @@ from typing import List, Type
 import pytest
 
 from sequence.core.core import Sequence
-from sequence.core.utils.excpetions import InfiniteSequenceError
+from sequence.core.utils.exceptions import InfiniteSequenceError
 
 
 class SequenceTestSuite:
