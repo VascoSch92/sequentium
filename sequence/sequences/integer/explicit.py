@@ -12,6 +12,10 @@ class A000027(Explicit):
         return index
 
 
+PositiveIntegers = A000027
+NaturalNumbers = A000027
+
+
 class A000326(Explicit):
     """ Pentagonal numbers (https://oeis.org/A000326) """
 
@@ -26,8 +30,7 @@ class A000326(Explicit):
         return index * (3 * index - 1) // 2
 
 
-class PentagonalNumbers(A000326):
-    pass
+PentagonalNumbers = A000326
 
 
 class A003215(GeneralisedNexusNumbers):
@@ -45,15 +48,11 @@ class A003215(GeneralisedNexusNumbers):
             return n == int(n)
 
 
-class HexNumbers(A003215):
-    pass
+HexNumbers = A003215
+CenteredHexagonalNumbers = A003215
 
 
-class CenteredHexagonalNumbers(A003215):
-    pass
-
-
-class A005408(GeneralisedNexusNumbers):
+class A005408(Explicit):
     """ The odd numbers (https://oeis.org/A005408). """
 
     def __init__(self):
@@ -63,6 +62,8 @@ class A005408(GeneralisedNexusNumbers):
     def __contains__(self, item: int) -> bool:
         return item % 2 == 1
 
+    def formula(self, index: int) -> int:
+        return 2*index + 1
 
-class OddNumbers(A005408):
-    pass
+
+OddNumebrs = A005408

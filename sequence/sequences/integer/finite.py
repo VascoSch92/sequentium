@@ -23,5 +23,4 @@ class A003173(Finite):
         self.sequence = [1, 2, 3, 7, 11, 19, 43, 67, 163]
 
 
-class HeegnerNumbers(A003173):
-    pass
+HeegnerNumbers = A003173

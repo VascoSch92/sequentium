@@ -9,9 +9,5 @@ class A000040(TypesOfPrimes):
         super().__init__(base_sequence=A000027)
 
 
-class PrimeNumbers(A000040):
-    pass
-
-
-class PositivePrimeNumbers(A000040):
-    pass
+PrimeNumbers = A000040
+PositivePrimeNumbers = A000040
