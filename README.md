@@ -4,15 +4,13 @@
 
 - ruff
 - pyproject.toml
-- errors made for the package (InfiniteSequenceError, ...)
 - add changelog
 - labels
 - write documentation for each class
-- periodic and eventually periodic sequence
 - profiler
 - implement command line
-- we could create a yaml file to simplify import and not creating multiple class to give different names to the same sequence
-  
+
+
 ## Sequence to add
 
 - https://en.wikipedia.org/wiki/Thue–Morse_sequence
