@@ -2,7 +2,7 @@ from sequence.sequences.integer.finite import *
 from tests.sequence_test_suite import FiniteSequenceTestSuite
 
 
-class TestA000326(FiniteSequenceTestSuite):
+class TestA001228(FiniteSequenceTestSuite):
     sequence = A001228()  # Orders of sporadic simple groups
     ground_truth = [
         7920, 95040, 175560, 443520, 604800, 10200960, 44352000, 50232960, 244823040, 898128000, 4030387200,
