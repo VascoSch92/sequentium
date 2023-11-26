@@ -2,7 +2,7 @@ from abc import ABC
 from typing import List, Any, Generator
 
 from sequence.core.core import FiniteType
-from sequence.core.utils.excpetions import InfiniteSequenceError
+from sequence.core.utils.exceptions import InfiniteSequenceError
 from sequence.core.utils.validation import validate_as_list_input
 
 

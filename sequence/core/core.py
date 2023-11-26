@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Any
 
-from sequence.core.utils.excpetions import InfiniteSequenceError, NotPeriodicSequenceError
+from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
 
 
