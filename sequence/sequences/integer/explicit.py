@@ -34,7 +34,7 @@ PentagonalNumbers = A000326
 
 
 class A003215(GeneralisedNexusNumbers):
-    """ Hex (or centered hexagonal) numbers (https://oeis.org/A003215). """
+    """ Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
 
     def __init__(self):
         super().__init__()
