@@ -6,6 +6,7 @@ from sequence.core.utils.validation import validate_positive_integer, validate_a
 
 
 class Explicit(InfiniteType, ABC):
+    """Abstract base class for representing explicit infinite sequences."""
 
     def __init__(self, start_index: int = 0):
         super().__init__()
@@ -20,6 +21,7 @@ class Explicit(InfiniteType, ABC):
 
     @abstractmethod
     def formula(self, index: int) -> Any:
+        """Abstract method to define the formula for generating elements in the sequence."""
         raise NotImplementedError
 
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
@@ -32,6 +34,7 @@ class Explicit(InfiniteType, ABC):
 
 
 class Recursive(InfiniteType, ABC):
+    """Abstract base class for representing recursive infinite sequences."""
 
     def __init__(self, start_terms: Tuple[Any, ...] = None):
         super().__init__()
@@ -49,6 +52,7 @@ class Recursive(InfiniteType, ABC):
 
 
 class PropertyDefined(InfiniteType, ABC):
+    """Abstract base class for representing infinite sequences defined by a property."""
 
     def __contains__(self, item: Any) -> bool:
         return self.property(number=item)
@@ -62,10 +66,12 @@ class PropertyDefined(InfiniteType, ABC):
 
     @abstractmethod
     def property(self, number: Any) -> bool:
+        """Abstract method to define the property for elements in the sequence."""
         raise NotImplementedError
 
 
 class MonotonicIncreasing:
+    """Mixin class for monotonic increasing sequences."""
 
     def __contains__(self, item: Any) -> bool:
         for element in self.as_generator():
