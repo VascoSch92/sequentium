@@ -13,6 +13,10 @@ class Sequence(ABC):
     def __contains__(self, item):
         raise NotImplementedError
 
+    @abstractmethod
+    def __str__(self):
+        raise NotImplementedError
+
     def __iter__(self):
         return self.as_generator()
 
