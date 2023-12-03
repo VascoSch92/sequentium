@@ -27,5 +27,11 @@ class TestA003215(SequenceTestSuite):
 
 class TestA005408(SequenceTestSuite):
     sequence = A005408()  # Odd numbers
-    ground_truth = [2 * k + 1 for k in range(50)]
+    ground_truth = [2 * index + 1 for index in range(50)]
+    ground_truth_length = len(ground_truth)
+
+
+class TestA033999(SequenceTestSuite):
+    sequence = A033999()  # Sequence of powers of -1
+    ground_truth = [(-1)**index for index in range(50)]
     ground_truth_length = len(ground_truth)
