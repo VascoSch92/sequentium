@@ -56,6 +56,7 @@ def test_markdown():
         'sequence/sequences/integer/recursive.py',
         'sequence/sequences/integer/finite.py',
         'sequence/sequences/integer/periodic.py',
+        'sequence/sequences/integer/property_defined.py',
     ]
     sequence_scripts = set().union(
         *[get_sequences_defined_in_script(script_path) for script_path in sequence_script_paths]
