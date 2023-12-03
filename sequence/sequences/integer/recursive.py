@@ -11,6 +11,9 @@ class A000032(LucasSequenceV):
     def __init__(self):
         super().__init__(p=1, q=-1)
 
+    def __str__(self):
+        return 'the Lucas numbers'
+
     def __contains__(self, item: Any) -> bool:
         if item == 1:
             return True
@@ -25,17 +28,20 @@ LucasNumbers = A000032
 
 
 class A000045(LucasSequenceU):
-    """ Fibonacci numbers (https://oeis.org/A000045). """
+    """Fibonacci numbers (https://oeis.org/A000045)."""
 
     def __init__(self):
         super().__init__(p=1, q=-1)
+
+    def __str__(self):
+        return 'the Fibonacci numbers'
 
 
 FibonacciNumbers = A000045
 
 
 class A000073(MonotonicIncreasing, Recursive):
-    """ Tribonacci numbers (https://oeis.org/A000073). """
+    """Tribonacci numbers (https://oeis.org/A000073)."""
 
     def __init__(self, start_terms: Tuple[int, int, int] = None):
         super().__init__()
@@ -45,6 +51,9 @@ class A000073(MonotonicIncreasing, Recursive):
         else:
             validate_integer_tuple(tuple=start_terms, length=3)
             self.start_terms = start_terms
+
+    def __str__(self):
+        return 'the Tribonacci numbers'
 
     def formula(self, terms: Tuple[int, int, int]) -> Tuple[int, int, int]:
         return terms[1], terms[2], sum(terms)

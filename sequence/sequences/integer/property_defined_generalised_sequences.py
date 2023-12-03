@@ -1,3 +1,4 @@
+from abc import ABC
 from typing import Generator
 
 from sequence.core.core import InfiniteType
@@ -5,7 +6,7 @@ from sequence.core.infinite_type import PropertyDefined
 from sequence.core.utils.functions import is_prime
 
 
-class TypesOfPrimes(PropertyDefined):
+class TypesOfPrimes(PropertyDefined, ABC):
     """
     Class representing a sequence of prime numbers based on a given property.
 

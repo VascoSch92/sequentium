@@ -10,6 +10,9 @@ class A000040(TypesOfPrimes):
     def __init__(self):
         super().__init__(base_sequence=A000027)
 
+    def __str__(self):
+        return 'the prime numbers'
+
 
 PrimeNumbers = A000040
 PositivePrimeNumbers = A000040
@@ -26,6 +29,11 @@ class A002808(PropertyDefined):
             return False
         return is_prime(number=number) is False
 
+    def __str__(self):
+        return 'the composite numbers'
+
 
 CompositeNumbers = A002808
 PositiveCompositeNumbers = A002808
+
+
