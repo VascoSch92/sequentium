@@ -1,29 +1,10 @@
-import ast
-import re
-from pathlib import Path
-from typing import Union, List
-
 import pytest
 
-
-def get_classes_from_script(script_path: Union[str, Path], pattern: Union[str, None] = None) -> List[str]:
-    """
-    The method returns a list of all classes respecting the given pattern in the Python script provided at
-    the location script_path.
-    """
-    with open(script_path, 'r') as f:
-        tree = ast.parse(f.read())
-        class_names = [node.name for node in tree.body if isinstance(node, ast.ClassDef)]
-        if pattern:
-            return filter_list_by_pattern(input_list=class_names, pattern=pattern)
-        else:
-            return class_names
-
-
-def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
-    """ The method filter a list of string by a given pattern. """
-    regex = re.compile(pattern)
-    return [item for item in input_list if regex.match(item)]
+from tests.tests_meta.utils import (
+    get_classes_from_script,
+    get_sequence_class_names_from_markdown,
+    get_sequences_defined_in_script,
+)
 
 
 @pytest.mark.parametrize(
@@ -64,3 +45,31 @@ def test_every_sequence_is_tested(script_path, pattern, test_script_path):
     sequences_not_tested = set(sequence_names).difference(set(sequences_tested))
     if sequences_not_tested:
         raise Exception(f'There are no tests for the following sequence/s: {sequences_not_tested}')
+
+
+def test_markdown():
+    """ The test checks if every defined sequence is also reported in the SEQUENCE_LIST.md, and vice-versa."""
+    sequence_markdown = get_sequence_class_names_from_markdown()
+
+    sequence_script_paths = [
+        'sequence/sequences/integer/explicit.py',
+        'sequence/sequences/integer/recursive.py',
+        'sequence/sequences/integer/finite.py',
+        'sequence/sequences/integer/periodic.py',
+    ]
+    sequence_scripts = set().union(
+        *[get_sequences_defined_in_script(script_path) for script_path in sequence_script_paths]
+    )
+
+    sequences_in_markdown_but_not_in_scripts = sequence_markdown.difference(sequence_scripts)
+    if sequences_in_markdown_but_not_in_scripts != set():
+        raise ValueError(
+            f"The following sequences are in the SEQUENCE_LIST.md,"
+            f" but are not implemented: {', '.join(list(sequences_in_markdown_but_not_in_scripts))}"
+        )
+    sequences_in_scripts_but_not_in_markdown = sequence_scripts.difference(sequence_markdown)
+    if sequences_in_scripts_but_not_in_markdown != set():
+        raise ValueError(
+            f"The following sequences are implemented,"
+            f" but are not in SEQUENCE_LIST.md: {', '.join(list(sequences_in_scripts_but_not_in_markdown))}"
+        )
