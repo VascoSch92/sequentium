@@ -48,6 +48,7 @@ class Recursive(InfiniteType, ABC):
 
     @abstractmethod
     def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
+        """Abstract method to define the recurrence relation of the sequence."""
         raise NotImplementedError
 
 
