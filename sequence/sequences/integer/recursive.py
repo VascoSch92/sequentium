@@ -50,4 +50,4 @@ class A000073(MonotonicIncreasing, Recursive):
         return terms[1], terms[2], sum(terms)
 
 
-TribonacciNumebrs = A000073
+TribonacciNumbers = A000073
