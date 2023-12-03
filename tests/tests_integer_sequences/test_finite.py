@@ -18,3 +18,9 @@ class TestA003173(FiniteSequenceTestSuite):
     sequence = A003173()  # Heegner numbers
     ground_truth = [1, 2, 3, 7, 11, 19, 43, 67, 163]
     ground_truth_length = len(ground_truth)
+
+
+class TestCollatzSequence(FiniteSequenceTestSuite):
+    sequence = CollatzSequence(start_value=19)  # Collatz sequence
+    ground_truth = [19, 58, 29, 88, 44, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
+    ground_truth_length = len(ground_truth)
