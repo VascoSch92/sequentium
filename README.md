@@ -2,13 +2,14 @@
 
 ## TODO
 
-- ruff
 - pyproject.toml
 - add changelog
 - labels
-- write documentation for each class
 - profiler
 - implement command line
+- automated tests with GitHub actions
+- add __str__ to every sequence and update tests 
+- add test for command line interface
 
 
 ## Sequence to add
