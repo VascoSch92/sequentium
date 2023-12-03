@@ -19,10 +19,16 @@ class SequenceTestSuite:
     """
 
     sequence: Type[Sequence] = None
+    sequence_name: str = None
     is_finite: bool = False
     is_periodic: bool = False
     ground_truth: List[int] = None
     ground_truth_length: int = None
+
+    def test_sequence_name(self):
+        """Test if the sequence's name matches the expected value."""
+        if self.sequence.__str__() != self.sequence_name:
+            raise ValueError(f'Expected: {self.sequence_name}. Got {self.sequence.__str__()}')
 
     def test_is_finite(self):
         """Test if the sequence's finiteness matches the expected value."""
