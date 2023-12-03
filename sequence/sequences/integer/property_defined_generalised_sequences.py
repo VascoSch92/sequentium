@@ -6,6 +6,12 @@ from sequence.core.utils.functions import is_prime
 
 
 class TypesOfPrimes(PropertyDefined):
+    """
+    Class representing a sequence of prime numbers based on a given property.
+
+    Attributes:
+        base_sequence (InfiniteType): The base sequence used for filtering prime numbers.
+    """
 
     def __init__(self, base_sequence: InfiniteType):
         super().__init__()
