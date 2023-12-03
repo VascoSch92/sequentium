@@ -55,10 +55,6 @@ CenteredHexagonalNumbers = A003215
 class A005408(Explicit):
     """ The odd numbers (https://oeis.org/A005408). """
 
-    def __init__(self):
-        super().__init__()
-        self.dimension = 1
-
     def __contains__(self, item: int) -> bool:
         return item % 2 == 1
 
@@ -67,3 +63,13 @@ class A005408(Explicit):
 
 
 OddNumebrs = A005408
+
+
+class A033999(Explicit):
+    """ Sequence of powers of -1 (https://oeis.org/A033999)."""
+
+    def __contains__(self, item):
+        return item in {-1, 1}
+
+    def formula(self, index: int) -> int:
+        return (-1)**index
