@@ -1,4 +1,7 @@
+from typing import List
+
 from sequence.core.finite_type import Finite
+from sequence.core.utils.validation import validate_positive_integer
 
 
 class A001228(Finite):
@@ -24,3 +27,30 @@ class A003173(Finite):
 
 
 HeegnerNumbers = A003173
+
+
+class CollatzSequence(Finite):
+    """
+    Collatz sequence: the sequence of numbers involved in the Collatz conjecture
+    (https://en.wikipedia.org/wiki/Collatz_conjecture)
+    """
+    def __init__(self, start_value: int):
+        super().__init__()
+        validate_positive_integer(integer=start_value)
+        assert start_value > 0
+        self.sequence = self.generate_cycle(value=start_value)
+
+    @staticmethod
+    def generate_cycle(value: int) -> List[int]:
+        cycle = [value]
+
+        while value != 1:
+            value = value // 2 if value % 2 == 0 else 3 * value + 1
+            cycle.append(value)
+
+        return cycle
+
+
+HailstoneSequence = CollatzSequence
+WondrousNumbers = CollatzSequence
+HailstoneNumbers = CollatzSequence
