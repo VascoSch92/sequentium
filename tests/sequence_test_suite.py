@@ -1,9 +1,9 @@
-from typing import List, Type
+from typing import List, Type, Dict
 
 import pytest
 
 from sequence.core.core import Sequence
-from sequence.core.utils.exceptions import InfiniteSequenceError
+from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 
 
 class SequenceTestSuite:
@@ -40,6 +40,7 @@ class SequenceTestSuite:
         if self.sequence.is_periodic != self.is_periodic:
             raise ValueError
 
+
     def test_len(self):
         """Test the length of the sequence, considering finiteness."""
         if self.sequence.is_finite:
@@ -50,30 +51,48 @@ class SequenceTestSuite:
 
     def test_getitem(self):
         """Test if sequence elements match the expected ground truth."""
+        error_msg = ''
         for index, element in enumerate(self.ground_truth):
             if self.sequence[index] != element:
-                raise ValueError(f'Expected element: {element} at index {index}, but got {self.sequence[index]}!')
+                error_msg += f'{index}. Expected: {element} at index {index}, but got {self.sequence[index]}.\n'
+
+        if error_msg:
+            raise ValueError(error_msg)
 
     def test_contains(self):
         """Test if elements from the ground truth are correctly identified in the sequence."""
-        for element in self.ground_truth:
+        error_msg = ''
+        for index, element in enumerate(self.ground_truth):
             if (element in self.sequence) is False:
-                raise ValueError(f'The expression ({element} in sequence) must be True, but it is not!')
+                error_msg += f'{index}. The expression ({element} in sequence) must be True, but it is not.'
+
+        if error_msg:
+            raise ValueError(error_msg)
 
     def test_not_contains(self):
         """Test if elements not in the ground truth are correctly identified as not in the sequence."""
+        error_msg = ''
+        count = 0
         for element in range(len(self.ground_truth)):
             if element not in self.ground_truth and (element not in self.sequence) is False:
-                raise ValueError(f'The expression ({element} in sequence) must be True, but it is not!')
+                error_msg += f'{count}. The expression ({element} in sequence) must be False, but it is not. \n'
+                count += 1
+        if error_msg:
+            raise ValueError(error_msg)
 
     def test_as_list(self):
         """Test if the as_list method returns the expected subsequence for various start and stop indices."""
+        error_msg = ''
+        count = 0
         for j in range(self.ground_truth_length - 1):
             for i in range(j, self.ground_truth_length):
                 if self.sequence.as_list(start=j, stop=i) != self.ground_truth[j:i]:
-                    raise Exception(
-                        f'Expected: {self.ground_truth[j:i]}. Got {self.sequence.as_list(start=j, stop=i)}!'
-                    )
+                    error_msg += f"{count}. Expected: {self.ground_truth[j:i]}. " \
+                                 f"Got {self.sequence.as_list(start=j, stop=i)}!\n" \
+                                 f" -> parameters: start = {j}, stop = {i}.\n"
+                    count += 1
+        if error_msg:
+            raise Exception(error_msg)
 
 
 class FiniteSequenceTestSuite(SequenceTestSuite):
@@ -96,9 +115,9 @@ class PeriodicSequenceTestSuite(SequenceTestSuite):
     def test_is_periodic(self):
         """Test if the sequence's periodicity matches the expected value."""
         if self.sequence.is_periodic != self.is_periodic:
-            raise ValueError
+            raise ValueError(f'Expected a periodic sequence, but got {self.sequence.is_periodic}.')
 
     def test_period(self):
         """Test if the sequence's period matches the expected period length."""
         if self.period_length != self.sequence.period:
-            raise ValueError(f'Expected period: {self.period_length}, but got {self.sequence.period}!')
+            raise ValueError(f'Expected period: {self.period_length}, but got {self.sequence.period}.')
