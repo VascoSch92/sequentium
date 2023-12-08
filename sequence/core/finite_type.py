@@ -34,9 +34,9 @@ class Finite(FiniteType, ABC):
 class Periodic(FiniteType, ABC):
     """Abstract base class for representing periodic sequences."""
 
-    def __init__(self):
+    def __init__(self, _period: int):
         super().__init__()
-        self._period: int = None
+        self._period = _period
 
     def __len__(self) -> int:
         raise InfiniteSequenceError
@@ -60,7 +60,7 @@ class Periodic(FiniteType, ABC):
             index = (index + 1) % self._period
 
     def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        return NotImplementedError
+        return [self.sequence[(index - start) % self._period] for index in range(start, stop+1)]
 
     def _at(self, index: int) -> Any:
         return self.sequence[index % self._period]
