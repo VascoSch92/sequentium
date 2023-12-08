@@ -8,7 +8,6 @@
 - profiler
 - implement command line
 - automated tests with GitHub actions
-- add __str__ to every sequence and update tests 
 - add test for command line interface
 
 
@@ -20,3 +19,4 @@
 - https://en.wikipedia.org/wiki/List_of_integer_sequences
 - https://oeis.org/wiki/Prime_numbers
 - https://en.m.wikipedia.org/wiki/Polygonal_number
+- https://en.wikipedia.org/wiki/Generalizations_of_Fibonacci_numbers#Fibonacci_numbers_of_higher_order 
