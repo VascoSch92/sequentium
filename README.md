@@ -3,8 +3,6 @@
 ## TODO
 
 - pyproject.toml
-- add changelog
-- labels
 - profiler
 - implement command line
 - automated tests with GitHub actions
