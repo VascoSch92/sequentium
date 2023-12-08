@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Union, List, Set
 
 
-def get_classes_from_script(script_path: Union[str, Path], pattern: Union[str, None] = None) -> List[str]:
+def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[str, None] = None) -> List[str]:
     """
     The method returns a list of all classes respecting the given pattern in the Python script provided at
     the location script_path.
