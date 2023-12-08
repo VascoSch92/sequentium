@@ -38,6 +38,7 @@ class A000045(LucasSequenceU):
 
 
 FibonacciNumbers = A000045
+FibonacciSequence = A000045
 
 
 class A000073(MonotonicIncreasing, Recursive):
@@ -60,3 +61,6 @@ class A000073(MonotonicIncreasing, Recursive):
 
 
 TribonacciNumbers = A000073
+
+
+
