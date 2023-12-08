@@ -12,20 +12,25 @@ def parser_command_line_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog='Sequentium',
         description='Sequentium is a tool for working with mathematical sequences.',
-        epilog='For help with a specific command, see: `sequentium help <command>`.'
+        epilog='For help with a specific command, see: `sequentium help <command>`.',
     )
-    parser.add_argument(
+    group = parser.add_mutually_exclusive_group()
+
+    group.add_argument(
         '-v',
         '--version',
         action='version',
-        version=f'{__version__}',
+        version=f'{parser.prog}: v{__version__}',
         help='Display the version information.',
     )
-    parser.add_argument(
+
+    group.add_argument(
         '--list',
         action='store_true',
-        help="List a list of implemented sequences.")
-    parser.add_argument(
+        help="List a list of implemented sequences.",
+    )
+
+    group.add_argument(
         "sequence",
         type=str,
         nargs="?",
@@ -36,14 +41,14 @@ def parser_command_line_arguments() -> argparse.Namespace:
         '--at',
         type=int,
         default=None,
-        help='Retrieve the term at the specified index in the sequence.'
+        help='Retrieve the term at the specified index in the sequence.',
     )
     parser.add_argument(
         '-l',
         '--length',
         action='store_true',
         default=None,
-        help='Display the length of the sequence.'
+        help='Display the length of the sequence.',
     )
     parser.add_argument(
         "--start",
