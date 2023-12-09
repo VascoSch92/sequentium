@@ -26,9 +26,9 @@ def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
         validate_positive_integer(integer=number)
 
 
-def validate_as_list_input(start: int, stop: int, step: int) -> None:
+def validate_as_list_input(start: int, stop: int, step: int) -> Tuple[int, int, int]:
     """ The method validates the input of the as_list method """
-    validate_positive_integer(integer=start)
-    validate_positive_integer(integer=stop)
-    validate_positive_integer(integer=step)
+    start = 1 if start is None else start
+    step = 1 if step is None else step
+    return stop, start, step
 
