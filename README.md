@@ -5,6 +5,7 @@
 - pyproject.toml
 - profiler
 - implement command line
+- implement slice for __getitem__
 - automated tests with GitHub actions
 - add test for command line interface
 
