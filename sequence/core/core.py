@@ -18,10 +18,15 @@ class Sequence(ABC):
         raise NotImplementedError
 
     def __iter__(self):
-        return self.as_generator()
+        return self._as_generator()
 
     def __getitem__(self, item):
-        return self._at(index=item)
+        if isinstance(item, slice):
+            if item.stop is None and self.is_finite is False:
+                return InfiniteSequenceError
+            return self._as_list(start=item.start, stop=item.stop, step=item.step)
+        else:
+            return self._at(index=item)
 
     @abstractmethod
     def is_finite(self) -> bool:
@@ -39,13 +44,13 @@ class Sequence(ABC):
         raise NotPeriodicSequenceError
 
     @abstractmethod
-    def as_generator(self) -> Generator:
-        """Return a generator for the sequence."""
+    def _as_generator(self) -> Generator:
+        """Return a generator for the sequence (internal use)."""
         raise NotImplementedError
 
     @abstractmethod
-    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        """Return a list representation of the sequence within the specified range."""
+    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+        """Return a list representation of the sequence within the specified range (internal use)."""
         raise NotImplementedError
 
     @abstractmethod
@@ -75,8 +80,8 @@ class InfiniteType(Sequence, ABC):
     def __len__(self) -> int:
         raise InfiniteSequenceError
 
-    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        validate_as_list_input(start=start, stop=stop, step=step)
+    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+        stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return list(islice(self, start, stop, step))
 
     def _at(self, index: int) -> int:

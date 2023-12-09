@@ -13,7 +13,7 @@ class Explicit(InfiniteType, ABC):
         validate_positive_integer(integer=start_index)
         self.start_index = start_index
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         index = self.start_index
         while True:
             yield self.formula(index=index)
@@ -24,8 +24,8 @@ class Explicit(InfiniteType, ABC):
         """Abstract method to define the formula for generating elements in the sequence."""
         raise NotImplementedError
 
-    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        validate_as_list_input(start=start, stop=stop, step=step)
+    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+        stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return [self.formula(index=index) for index in range(start, stop, step)]
 
     def _at(self, index: int) -> int:
@@ -40,7 +40,7 @@ class Recursive(InfiniteType, ABC):
         super().__init__()
         self.start_terms = start_terms
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         terms = self.start_terms
         while True:
             yield terms[0]
@@ -58,7 +58,7 @@ class PropertyDefined(InfiniteType, ABC):
     def __contains__(self, item: Any) -> bool:
         return self.property(number=item)
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         number = 1
         while True:
             if self.property(number=number):
@@ -75,7 +75,7 @@ class MonotonicIncreasing:
     """Mixin class for monotonic increasing sequences."""
 
     def __contains__(self, item: Any) -> bool:
-        for element in self.as_generator():
+        for element in self._as_generator():
             if element == item:
                 return True
             if element > item:

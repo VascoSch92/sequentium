@@ -19,12 +19,12 @@ class Finite(FiniteType, ABC):
     def is_finite(self) -> bool:
         return True
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         for element in self.sequence:
             yield element
 
-    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        validate_as_list_input(start=start, stop=stop, step=step)
+    def _as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
+        stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return self.sequence[start:stop:step]
 
     def _at(self, index: int) -> Any:
@@ -53,14 +53,15 @@ class Periodic(FiniteType, ABC):
     def period(self) -> int:
         return self._period
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         index = 0
         while True:
             yield self.sequence[index]
             index = (index + 1) % self._period
 
-    def as_list(self, stop: int, start: int = 0, step: int = 1) -> List[int]:
-        return [self.sequence[(index - start) % self._period] for index in range(start, stop+1)]
+    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+        stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
+        return [self.sequence[index % self._period] for index in range(start, stop, step)]
 
     def _at(self, index: int) -> Any:
         return self.sequence[index % self._period]
