@@ -17,7 +17,7 @@ class A000032(LucasSequenceV):
     def __contains__(self, item: Any) -> bool:
         if item == 1:
             return True
-        for element in self.as_generator():
+        for element in self._as_generator():
             if element == item:
                 return True
             if element > item:

@@ -18,7 +18,7 @@ class TypesOfPrimes(PropertyDefined, ABC):
         super().__init__()
         self.base_sequence = base_sequence()
 
-    def as_generator(self) -> Generator:
+    def _as_generator(self) -> Generator:
         number = 1
         while True:
             if self.property(number=number) and number in self.base_sequence:
