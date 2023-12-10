@@ -1,6 +1,9 @@
 # List of sequences
 
-## Integer Sequences
+- [Integer sequences](#integer-sequences)
+- [Generalised sequences](#generalised-sequences)
+
+## Integer sequences
 
 | OEIS    | Sequence Name                           | Sequence class name(s)                                                        | Reference                                        |     
 |---------|-----------------------------------------|-------------------------------------------------------------------------------|--------------------------------------------------|
@@ -14,10 +17,19 @@
 | A002808 | The composite numbers                   | `A002808`, `CompositeNumbers`, `PositiveCompositeNumbers`                     | https://oeis.org/A002808                         |
 | A003173 | Heegner numbers                         | `A003173`, `HeegnerNumbers`                                                   | https://oeis.org/A003173                         |
 | A003215 | The hex (or centered hexagonal) numbers | `A003215`, `HexNumbers`, `CenteredHexagonalNumbers`                           | https://oeis.org/A003215                         |
-| A005408 | The odd numbers                         | `A005408`, `OddNumebrs`                                                       | https://oeis.org/A005408                         |
+| A005408 | The odd numbers                         | `A005408`, `OddNumbers`                                                       | https://oeis.org/A005408                         |
 | A033999 | Sequence of powers of -1                | `A033999`                                                                     | https://oeis.org/A033999                         |
 | A128834 | Sequence A128834                        | `A128834`                                                                     | https://oeis.org/A128834                         |
 | -       | The Collatz sequence                    | `CollatzSequence`, `HailstoneSequence`, `WondrousNumbers`, `HailstoneNumbers` | https://en.wikipedia.org/wiki/Collatz_conjecture |
 
+
+## Generalised sequences
+
+| Sequence Name                  | Sequence class name(s)    | Reference                                      |     
+|--------------------------------|---------------------------|------------------------------------------------|
+| The generalised Nexus numbers  | `GeneralisedNexusNumbers` | https://mathworld.wolfram.com/NexusNumber.html |
+| The Lucas sequence U_n         | `LucasSequenceU`          | https://en.wikipedia.org/wiki/Lucas_sequence   |
+| The Lucas sequence V_n         | `LucasSequenceV`          | https://en.wikipedia.org/wiki/Lucas_sequence   |
+| The primes of a given sequence | `PrimesOfSequence`        | -                                              |
 
 
