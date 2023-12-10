@@ -64,4 +64,16 @@ class A000073(MonotonicIncreasing, Recursive):
 TribonacciNumbers = A000073
 
 
+class A000129(LucasSequenceU):
+    """Pell numbers (https://oeis.org/A000129)."""
+
+    def __init__(self):
+        super().__init__(p=2, q=-1)
+
+    def __str__(self):
+        return 'Pell numbers'
+
+
+PellNumbers = A000129
+LambdaNumbers = A000129
 
