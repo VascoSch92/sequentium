@@ -44,3 +44,26 @@ class TestA000129(SequenceTestSuite):
         44560482149, 107578520350, 259717522849,
     ]
     ground_truth_length = len(ground_truth)
+
+
+class TestA002203(SequenceTestSuite):
+    sequence = A002203()
+    sequence_name = 'Companion Pell numbers'
+    ground_truth = [
+        2, 2, 6, 14, 34, 82, 198, 478, 1154, 2786, 6726, 16238, 39202, 94642, 228486, 551614, 1331714, 3215042,
+        7761798, 18738638, 45239074, 109216786, 263672646, 636562078, 1536796802, 3710155682, 8957108166, 21624372014,
+        52205852194, 126036076402, 304278004998,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
+class TestA214733(SequenceTestSuite):
+    sequence = A214733()
+    sequence_name = 'sequence A214733'
+    ground_truth = [
+        0, 1, -1, -2, 5, 1, -16, 13, 35, -74, -31, 253, -160, -599, 1079, 718, -3955, 1801, 10064, -15467, -14725,
+        61126, -16951, -166427, 217280, 282001, -933841, 87838, 2713685, -2977199, -5163856, 14095453, 1396115,
+        -43682474, 39494129, 91553293, -210035680,
+    ]
+    ground_truth_length = len(ground_truth)
+
