@@ -11,11 +11,11 @@ class SequenceTestSuite:
     Test suite for evaluating properties and behavior of sequences.
 
     Attributes:
-        sequence (Type[Sequence]): The sequentium to be tested.
-        is_finite (bool): Indicates whether the sequentium is finite.
-        is_periodic (bool): Indicates whether the sequentium is periodic.
-        ground_truth (List[int]): The expected elements of the sequentium.
-        ground_truth_length (int): The expected length of the sequentium.
+        sequence (Type[Sequence]): The sequence to be tested.
+        is_finite (bool): Indicates whether the sequence is finite.
+        is_periodic (bool): Indicates whether the sequence is periodic.
+        ground_truth (List[int]): The expected elements of the sequence.
+        ground_truth_length (int): The expected length of the sequence.
     """
 
     sequence: Type[Sequence] = None
@@ -26,22 +26,22 @@ class SequenceTestSuite:
     ground_truth_length: int = None
 
     def test_sequence_name(self):
-        """Test if the sequentium's name matches the expected value."""
+        """Test if the sequence's name matches the expected value."""
         if self.sequence.__str__() != self.sequence_name:
             raise ValueError(f'Expected: {self.sequence_name}. Got {self.sequence.__str__()}')
 
     def test_is_finite(self):
-        """Test if the sequentium's finiteness matches the expected value."""
+        """Test if the sequence's finiteness matches the expected value."""
         if self.sequence.is_finite != self.is_finite:
             raise ValueError
 
     def test_is_periodic(self):
-        """Test if the sequentium's periodicity matches the expected value."""
+        """Test if the sequence's periodicity matches the expected value."""
         if self.sequence.is_periodic != self.is_periodic:
             raise ValueError
 
     def test_len(self):
-        """Test the length of the sequentium, considering finiteness."""
+        """Test the length of the sequence, considering finiteness."""
         if self.sequence.is_finite:
             assert len(self.sequence) == self.ground_truth_length
         else:
@@ -59,22 +59,22 @@ class SequenceTestSuite:
             raise ValueError(error_msg)
 
     def test_contains(self):
-        """Test if elements from the ground truth are correctly identified in the sequentium."""
+        """Test if elements from the ground truth are correctly identified in the sequence."""
         error_msg = ''
         for index, element in enumerate(self.ground_truth):
             if (element in self.sequence) is False:
-                error_msg += f'{index}. The expression ({element} in sequentium) must be True, but it is not.'
+                error_msg += f'{index}. The expression ({element} in sequence) must be True, but it is not.'
 
         if error_msg:
             raise ValueError(error_msg)
 
     def test_not_contains(self):
-        """Test if elements not in the ground truth are correctly identified as not in the sequentium."""
+        """Test if elements not in the ground truth are correctly identified as not in the sequence."""
         error_msg = ''
         count = 0
         for element in range(len(self.ground_truth)):
             if element not in self.ground_truth and (element not in self.sequence) is False:
-                error_msg += f'{count}. The expression ({element} in sequentium) must be False, but it is not. \n'
+                error_msg += f'{count}. The expression ({element} in sequence) must be False, but it is not. \n'
                 count += 1
         if error_msg:
             raise ValueError(error_msg)
@@ -105,18 +105,18 @@ class PeriodicSequenceTestSuite(SequenceTestSuite):
     Test suite for evaluating properties and behavior of periodic sequences.
 
     Attributes:
-        period_length (int): The expected period length of the sequentium.
+        period_length (int): The expected period length of the sequence.
     """
 
     is_periodic = True
     period_length: int
 
     def test_is_periodic(self):
-        """Test if the sequentium's periodicity matches the expected value."""
+        """Test if the sequence's periodicity matches the expected value."""
         if self.sequence.is_periodic != self.is_periodic:
             raise ValueError(f'Expected a periodic sequentium, but got {self.sequence.is_periodic}.')
 
     def test_period(self):
-        """Test if the sequentium's period matches the expected period length."""
+        """Test if the sequence's period matches the expected period length."""
         if self.period_length != self.sequence.period:
             raise ValueError(f'Expected period: {self.period_length}, but got {self.sequence.period}.')
