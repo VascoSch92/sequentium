@@ -61,10 +61,11 @@ class SequenceTestSuite:
     def test_contains(self):
         """Test if elements from the ground truth are correctly identified in the sequence."""
         error_msg = ''
-        for index, element in enumerate(self.ground_truth):
+        count = 0
+        for element in self.ground_truth:
             if (element in self.sequence) is False:
-                error_msg += f'{index}. The expression ({element} in sequence) must be True, but it is not.'
-
+                error_msg += f'{count}. The expression ({element} in sequence) must be True, but it is not.\n'
+                count += 1
         if error_msg:
             raise ValueError(error_msg)
 
@@ -74,7 +75,7 @@ class SequenceTestSuite:
         count = 0
         for element in range(len(self.ground_truth)):
             if element not in self.ground_truth and (element not in self.sequence) is False:
-                error_msg += f'{count}. The expression ({element} in sequence) must be False, but it is not. \n'
+                error_msg += f'{count}. The expression ({element} in sequence) must be False, but it is not.\n'
                 count += 1
         if error_msg:
             raise ValueError(error_msg)
