@@ -1,7 +1,7 @@
 import ast
 import re
 from pathlib import Path
-from typing import Union, List, Set
+from typing import Union, List, Set, Tuple
 
 
 def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[str, None] = None) -> List[str]:
@@ -24,25 +24,64 @@ def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
     return [item for item in input_list if regex.match(item)]
 
 
-def get_sequence_class_names_from_markdown() -> Set:
+def get_sequence_class_names_from_md() -> Set:
     """ The method returns all the class names contained in the markd down file SEQUENCES_LIST.md """
     with open('SEQUENCES_LIST.md', 'r') as file:
         content = file.read()
 
-        # Define the pattern for matching rows in the table
-        row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|'
-        row_matches = re.findall(row_pattern, content)
-
-        sequence_class_names = set()
-        for row in row_matches[1:]:
-            sequence_class_names_in_row = row[2].split(',')
-            sequence_class_names_in_row = {name.strip(' `') for name in sequence_class_names_in_row}
-            sequence_class_names = sequence_class_names.union(sequence_class_names_in_row)
-        return sequence_class_names
+        integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=content)
+        generalised_sequence_class_names = extract_generalised_sequences_class_names_from_md(content=content)
+        return integer_sequence_class_names.union(generalised_sequence_class_names)
 
 
-def get_sequences_defined_in_script(script_path: str) -> Set:
-    """ The method returns all sequentium defined in a given script"""
+def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
+    # extract the table integer sequences from the md
+    integer_sequences_pattern = re.compile(r'## Integer sequences\n(.+?)\n## Generalised sequences', re.DOTALL)
+    match = re.search(integer_sequences_pattern, content)
+    generalised_sequences_table = match.group(1).strip()
+
+    # extract the row of the table
+    row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|'
+    row_matches = re.findall(row_pattern, generalised_sequences_table)
+    del row_matches[0] # delete first element as it is the header
+
+    return extract_class_names_from_row(row_matches=row_matches, column_number=2)
+
+
+def extract_generalised_sequences_class_names_from_md(content: str) -> Set[str]:
+    # extract the table generalised sequences from the md
+    generalised_sequences_pattern = re.compile(r'## Generalised sequences\n(.+?)(?=\n##|$)', re.DOTALL)
+    match = re.search(generalised_sequences_pattern, content)
+    generalised_sequences_table = match.group(1).strip()
+
+    # extract the row of the table
+    row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \|'
+    row_matches = re.findall(row_pattern, generalised_sequences_table)
+    del row_matches[0]  # delete first element as it is the header
+
+    return extract_class_names_from_row(row_matches=row_matches, column_number=1)
+
+
+def extract_class_names_from_row(row_matches: List[Tuple], column_number: int) -> Set[str]:
+    """
+    Extracts sequence class names from a specific column in a list of row matches.
+
+    Args:
+        row_matches(List[Tuple]): A list of tuples representing rows, where each tuple contains data columns.
+        column_number(int): The index of the column from which to extract sequence class names.
+    Returns:
+        Set[str]: A set containing unique sequence class names extracted from the specified column.
+    """
+    sequence_class_names = set()
+    for row in row_matches:
+        sequence_class_names_in_row = row[column_number].split(',')
+        sequence_class_names_in_row = {name.strip(' `') for name in sequence_class_names_in_row}
+        sequence_class_names = sequence_class_names.union(sequence_class_names_in_row)
+    return sequence_class_names
+
+
+def get_sequences_defined_in_script(script_path: Path) -> Set:
+    """ The method returns all sequence defined in a given script"""
     sequence_defined_in_script = set()
     with open(script_path, 'r') as f:
         tree = ast.parse(f.read())

@@ -1,4 +1,5 @@
 import pytest
+from pathlib import Path
 
 from tests.tests_meta.test_cases import (
     TEST_CASES_ORDER_SCRIPT,
@@ -6,7 +7,7 @@ from tests.tests_meta.test_cases import (
 )
 from tests.tests_meta.utils import (
     get_class_names_from_script,
-    get_sequence_class_names_from_markdown,
+    get_sequence_class_names_from_md,
     get_sequences_defined_in_script,
 )
 
@@ -27,33 +28,30 @@ def test_every_sequence_is_tested(script_path, pattern, test_script_path):
 
     sequences_not_tested = set(sequence_names).difference(set(sequences_tested))
     if sequences_not_tested:
-        raise Exception(f'There are no tests for the following sequentium/s: {sequences_not_tested}')
+        raise Exception(f'There are no tests for the following sequence/s: {sequences_not_tested}')
 
 
 def test_markdown():
-    """ The test checks if every defined sequentium is also reported in the SEQUENCE_LIST.md, and vice-versa."""
-    sequence_markdown = get_sequence_class_names_from_markdown()
+    """ The test checks if every defined sequence is also reported in the SEQUENCE_LIST.md, and vice-versa."""
+    sequence_markdown = get_sequence_class_names_from_md()
 
-    sequence_script_paths = [
-        'sequentium/sequences/integer/explicit.py',
-        'sequentium/sequences/integer/recursive.py',
-        'sequentium/sequences/integer/finite.py',
-        'sequentium/sequences/integer/periodic.py',
-        'sequentium/sequences/integer/property_defined.py',
-    ]
+    sequences_scripts_path = Path('sequentium/sequences')
+    sequence_script_paths = [file for file in sequences_scripts_path.rglob('*.py') if file.name != '__init__.py']
+
     sequence_scripts = set().union(
         *[get_sequences_defined_in_script(script_path) for script_path in sequence_script_paths]
     )
 
     sequences_in_markdown_but_not_in_scripts = sequence_markdown.difference(sequence_scripts)
+    error_msg = ''
     if sequences_in_markdown_but_not_in_scripts != set():
-        raise ValueError(
-            f"The following sequences are in the SEQUENCE_LIST.md,"
-            f" but are not implemented: {', '.join(list(sequences_in_markdown_but_not_in_scripts))}"
-        )
+        error_msg += f"The following sequences are in the SEQUENCE_LIST.md, " \
+                     f"but are not implemented: {', '.join(list(sequences_in_markdown_but_not_in_scripts))}\n"
+
     sequences_in_scripts_but_not_in_markdown = sequence_scripts.difference(sequence_markdown)
     if sequences_in_scripts_but_not_in_markdown != set():
-        raise ValueError(
-            f"The following sequences are implemented,"
-            f" but are not in SEQUENCE_LIST.md: {', '.join(list(sequences_in_scripts_but_not_in_markdown))}"
-        )
+        error_msg +=  f"The following sequences are implemented, " \
+                      f"but are not in SEQUENCE_LIST.md: {', '.join(list(sequences_in_scripts_but_not_in_markdown))}"
+
+    if error_msg:
+        raise Exception(error_msg)
