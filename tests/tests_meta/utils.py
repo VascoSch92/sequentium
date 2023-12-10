@@ -42,7 +42,7 @@ def get_sequence_class_names_from_markdown() -> Set:
 
 
 def get_sequences_defined_in_script(script_path: str) -> Set:
-    """ The method returns all sequence defined in a given script"""
+    """ The method returns all sequentium defined in a given script"""
     sequence_defined_in_script = set()
     with open(script_path, 'r') as f:
         tree = ast.parse(f.read())

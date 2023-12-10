@@ -1,4 +1,4 @@
-from sequence.core.utils.exceptions import NegativeNumberError
+from sequentium.core.utils.exceptions import NegativeNumberError
 from typing import Tuple
 
 

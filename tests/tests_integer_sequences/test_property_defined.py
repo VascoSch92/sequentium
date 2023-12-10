@@ -1,5 +1,5 @@
 from tests.sequence_test_suite import SequenceTestSuite
-from sequence.sequences.integer.property_defined import *
+from sequentium.sequences.integer.property_defined import *
 
 
 class TestA000040(SequenceTestSuite):

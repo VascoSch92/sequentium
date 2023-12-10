@@ -1,7 +1,7 @@
-from sequence.sequences.integer.explicit import A000027
-from sequence.sequences.integer.property_defined_generalised_sequences import TypesOfPrimes
-from sequence.core.infinite_type import PropertyDefined
-from sequence.core.utils.functions import is_prime
+from sequentium.sequences.integer.explicit import A000027
+from sequentium.sequences.integer.property_defined_generalised_sequences import TypesOfPrimes
+from sequentium.core.infinite_type import PropertyDefined
+from sequentium.core.utils.functions import is_prime
 
 
 class A000040(TypesOfPrimes):

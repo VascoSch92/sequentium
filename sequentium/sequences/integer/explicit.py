@@ -1,5 +1,5 @@
-from sequence.core.infinite_type import Explicit
-from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
+from sequentium.core.infinite_type import Explicit
+from sequentium.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 
 
 class A000027(Explicit):
@@ -84,7 +84,7 @@ class A033999(Explicit):
         return item in {-1, 1}
 
     def __str__(self):
-        return 'the sequence of powers of -1'
+        return 'the sequentium of powers of -1'
 
     def formula(self, index: int) -> int:
         return (-1)**index

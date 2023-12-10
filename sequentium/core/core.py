@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Any
 
-from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
-from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
+from sequentium.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
+from sequentium.core.utils.validation import validate_positive_integer, validate_as_list_input
 
 
 class Sequence(ABC):
@@ -30,32 +30,32 @@ class Sequence(ABC):
 
     @abstractmethod
     def is_finite(self) -> bool:
-        """Check if the sequence is finite."""
+        """Check if the sequentium is finite."""
         raise NotImplementedError
 
     @property
     def is_periodic(self) -> bool:
-        """Check if the sequence is periodic."""
+        """Check if the sequentium is periodic."""
         return False
 
     @property
     def period(self) -> int:
-        """Get the period of the sequence. Raises NotPeriodicSequenceError if the sequence is not periodic."""
+        """Get the period of the sequentium. Raises NotPeriodicSequenceError if the sequentium is not periodic."""
         raise NotPeriodicSequenceError
 
     @abstractmethod
     def _as_generator(self) -> Generator:
-        """Return a generator for the sequence (internal use)."""
+        """Return a generator for the sequentium (internal use)."""
         raise NotImplementedError
 
     @abstractmethod
     def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
-        """Return a list representation of the sequence within the specified range (internal use)."""
+        """Return a list representation of the sequentium within the specified range (internal use)."""
         raise NotImplementedError
 
     @abstractmethod
     def _at(self, index: int) -> Any:
-        """Get the element at the specified index in the sequence (internal use)."""
+        """Get the element at the specified index in the sequentium (internal use)."""
         raise NotImplementedError
 
 

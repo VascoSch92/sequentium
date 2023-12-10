@@ -1,7 +1,7 @@
 from typing import List
 
-from sequence.core.finite_type import Finite
-from sequence.core.utils.validation import validate_positive_integer
+from sequentium.core.finite_type import Finite
+from sequentium.core.utils.validation import validate_positive_integer
 
 
 class A001228(Finite):
@@ -18,7 +18,7 @@ class A001228(Finite):
         ]
 
     def __str__(self):
-        return 'orders of sporadic simple groups sequence'
+        return 'orders of sporadic simple groups sequentium'
 
 
 class A003173(Finite):
@@ -38,7 +38,7 @@ HeegnerNumbers = A003173
 
 class CollatzSequence(Finite):
     """
-    Collatz sequence: the sequence of numbers involved in the Collatz conjecture
+    Collatz sequentium: the sequentium of numbers involved in the Collatz conjecture
     (https://en.wikipedia.org/wiki/Collatz_conjecture)
     """
     def __init__(self, start_value: int):
@@ -48,7 +48,7 @@ class CollatzSequence(Finite):
         self.sequence = self.generate_cycle(value=start_value)
 
     def __str__(self):
-        return 'the Collatz sequence'
+        return 'the Collatz sequentium'
 
     @staticmethod
     def generate_cycle(value: int) -> List[int]:

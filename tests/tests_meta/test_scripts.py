@@ -20,26 +20,26 @@ def test_order_script(script_path, pattern):
 
 @pytest.mark.parametrize('script_path, pattern, test_script_path', TEST_CASES_TESTED_SEQUENCES)
 def test_every_sequence_is_tested(script_path, pattern, test_script_path):
-    """ The test checks if for every sequence defined there is a test. """
+    """ The test checks if for every sequentium defined there is a test. """
     sequence_names = get_class_names_from_script(script_path=script_path, pattern=pattern)
     test_names = get_class_names_from_script(script_path=test_script_path)
     sequences_tested = [test.replace('Test', '') for test in test_names]
 
     sequences_not_tested = set(sequence_names).difference(set(sequences_tested))
     if sequences_not_tested:
-        raise Exception(f'There are no tests for the following sequence/s: {sequences_not_tested}')
+        raise Exception(f'There are no tests for the following sequentium/s: {sequences_not_tested}')
 
 
 def test_markdown():
-    """ The test checks if every defined sequence is also reported in the SEQUENCE_LIST.md, and vice-versa."""
+    """ The test checks if every defined sequentium is also reported in the SEQUENCE_LIST.md, and vice-versa."""
     sequence_markdown = get_sequence_class_names_from_markdown()
 
     sequence_script_paths = [
-        'sequence/sequences/integer/explicit.py',
-        'sequence/sequences/integer/recursive.py',
-        'sequence/sequences/integer/finite.py',
-        'sequence/sequences/integer/periodic.py',
-        'sequence/sequences/integer/property_defined.py',
+        'sequentium/sequences/integer/explicit.py',
+        'sequentium/sequences/integer/recursive.py',
+        'sequentium/sequences/integer/finite.py',
+        'sequentium/sequences/integer/periodic.py',
+        'sequentium/sequences/integer/property_defined.py',
     ]
     sequence_scripts = set().union(
         *[get_sequences_defined_in_script(script_path) for script_path in sequence_script_paths]

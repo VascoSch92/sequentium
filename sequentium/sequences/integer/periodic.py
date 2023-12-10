@@ -1,4 +1,4 @@
-from sequence.core.finite_type import Periodic
+from sequentium.core.finite_type import Periodic
 
 
 class A128834(Periodic):
@@ -9,4 +9,4 @@ class A128834(Periodic):
         self.sequence = [0, 1, 1, 0, -1, -1]
 
     def __str__(self):
-        return 'sequence A128834'
+        return 'sequentium A128834'

@@ -1,4 +1,4 @@
-from sequence.sequences.integer.explicit import *
+from sequentium.sequences.integer.explicit import *
 from tests.sequence_test_suite import SequenceTestSuite
 
 
@@ -37,6 +37,6 @@ class TestA005408(SequenceTestSuite):
 
 class TestA033999(SequenceTestSuite):
     sequence = A033999()
-    sequence_name = 'the sequence of powers of -1'
+    sequence_name = 'the sequentium of powers of -1'
     ground_truth = [(-1)**index for index in range(50)]
     ground_truth_length = len(ground_truth)

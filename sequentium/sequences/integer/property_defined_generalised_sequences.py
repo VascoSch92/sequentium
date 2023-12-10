@@ -1,17 +1,17 @@
 from abc import ABC
 from typing import Generator
 
-from sequence.core.core import InfiniteType
-from sequence.core.infinite_type import PropertyDefined
-from sequence.core.utils.functions import is_prime
+from sequentium.core.core import InfiniteType
+from sequentium.core.infinite_type import PropertyDefined
+from sequentium.core.utils.functions import is_prime
 
 
 class TypesOfPrimes(PropertyDefined, ABC):
     """
-    Class representing a sequence of prime numbers based on a given property.
+    Class representing a sequentium of prime numbers based on a given property.
 
     Attributes:
-        base_sequence (InfiniteType): The base sequence used for filtering prime numbers.
+        base_sequence (InfiniteType): The base sequentium used for filtering prime numbers.
     """
 
     def __init__(self, base_sequence: InfiniteType):
