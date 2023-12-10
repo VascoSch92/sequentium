@@ -78,13 +78,13 @@ OddNumebrs = A005408
 
 
 class A033999(Explicit):
-    """ Sequence of powers of -1 (https://oeis.org/A033999)."""
+    """Sequence of powers of -1 (https://oeis.org/A033999)."""
 
     def __contains__(self, item):
         return item in {-1, 1}
 
     def __str__(self):
-        return 'the sequentium of powers of -1'
+        return 'the sequence of powers of -1'
 
     def formula(self, index: int) -> int:
         return (-1)**index
