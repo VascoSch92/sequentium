@@ -1,9 +1,9 @@
-from typing import List, Type, Dict
+from typing import List, Type
 
 import pytest
 
 from sequentium.core.core import Sequence
-from sequentium.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
+from sequentium.core.utils.exceptions import InfiniteSequenceError
 
 
 class SequenceTestSuite:
