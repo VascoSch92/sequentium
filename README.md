@@ -1,12 +1,15 @@
 # Sequentium
 
+---
 ## TODO
 
 - pyproject.toml
 - profiler
-- implement command line
 - automated tests with GitHub actions
 - add test for command line interface
+- Nexus sequence, where do we use it? can we extract more sequence from that?
+- Docstring for command line
+- add command for --list integer/generalised which print just the given table
 
 
 ## Sequence to add
