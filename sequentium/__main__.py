@@ -1,6 +1,4 @@
-
-
-from cli.cli import command_line_interface, CommandLineInterface
+from cli.cli import CommandLineInterface
 
 if __name__ == '__main__':
     CommandLineInterface().execute()
