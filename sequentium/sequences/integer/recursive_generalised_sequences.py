@@ -24,7 +24,7 @@ class LucasSequenceU(MonotonicIncreasing, Recursive):
         return 'Lucas sequence U_n'
 
     def formula(self, terms: Tuple[int, int]) -> Tuple[int, int]:
-        return terms[1], self.p * terms[0] - self.q * terms[1]
+        return terms[1], self.p * terms[1] - self.q * terms[0]
 
 
 class LucasSequenceV(LucasSequenceU):
