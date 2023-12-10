@@ -16,7 +16,7 @@
 | A003215 | The hex (or centered hexagonal) numbers | `A003215`, `HexNumbers`, `CenteredHexagonalNumbers`                           | https://oeis.org/A003215                         |
 | A005408 | The odd numbers                         | `A005408`, `OddNumebrs`                                                       | https://oeis.org/A005408                         |
 | A033999 | Sequence of powers of -1                | `A033999`                                                                     | https://oeis.org/A033999                         |
-| -       | The Collatz sequence                    | `CollatzSequence`, `HailstoneSequence`, `WondrousNumbers`, `HailstoneNumbers` | https://en.wikipedia.org/wiki/Collatz_conjecture |
+| A128834 | Sequence A128834                        | `A128834`                                                                     | https://oeis.org/A128834                         |
 | -       | The Collatz sequence                    | `CollatzSequence`, `HailstoneSequence`, `WondrousNumbers`, `HailstoneNumbers` | https://en.wikipedia.org/wiki/Collatz_conjecture |
 
 
