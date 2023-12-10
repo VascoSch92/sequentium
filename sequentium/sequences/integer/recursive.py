@@ -74,3 +74,33 @@ class A000129(LucasSequenceU):
 PellNumbers = A000129
 LambdaNumbers = A000129
 
+
+class A002203(LucasSequenceV):
+    """Companion Pell numbers (https://oeis.org/A002203)."""
+    def __init__(self):
+        super().__init__(p=2, q=-1)
+
+    def __str__(self):
+        return 'Companion Pell numbers'
+
+
+CompanionPellNumbers = A002203
+
+
+class A214733(LucasSequenceU):
+    """Sequence A214733 (https://oeis.org/A214733)."""
+
+    def __init__(self):
+        super().__init__(p=-1, q=3)
+
+    def __str__(self):
+        return 'sequence A214733'
+
+    def __contains__(self, item):
+        if item == 0:
+            return True
+        for element in self._as_generator():
+            if element == item:
+                return True
+            if abs(element) > abs(item * 1_000):
+                return False
