@@ -9,4 +9,4 @@ class A128834(Periodic):
         self.sequence = [0, 1, 1, 0, -1, -1]
 
     def __str__(self):
-        return 'sequentium A128834'
+        return 'sequence A128834'

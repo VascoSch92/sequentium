@@ -1,17 +1,17 @@
-from sequentium.sequences.integer.explicit import A000027
-from sequentium.sequences.integer.property_defined_generalised_sequences import TypesOfPrimes
 from sequentium.core.infinite_type import PropertyDefined
 from sequentium.core.utils.functions import is_prime
+from sequentium.sequences.integer.explicit import A000027
+from sequentium.sequences.integer.property_defined_generalised_sequences import PrimesOfSequence
 
 
-class A000040(TypesOfPrimes):
+class A000040(PrimesOfSequence):
     """ The prime numbers (https://oeis.org/A000040)."""
 
     def __init__(self):
         super().__init__(base_sequence=A000027)
 
     def __str__(self):
-        return 'the prime numbers'
+        return 'prime numbers'
 
 
 PrimeNumbers = A000040
@@ -30,7 +30,7 @@ class A002808(PropertyDefined):
         return is_prime(number=number) is False
 
     def __str__(self):
-        return 'the composite numbers'
+        return 'composite numbers'
 
 
 CompositeNumbers = A002808

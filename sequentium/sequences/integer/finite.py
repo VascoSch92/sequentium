@@ -18,7 +18,7 @@ class A001228(Finite):
         ]
 
     def __str__(self):
-        return 'orders of sporadic simple groups sequentium'
+        return 'orders of sporadic simple groups sequence'
 
 
 class A003173(Finite):
@@ -29,7 +29,7 @@ class A003173(Finite):
         self.sequence = [1, 2, 3, 7, 11, 19, 43, 67, 163]
 
     def __str__(self):
-        return 'the Heegner numbers'
+        return 'Heegner numbers'
 
 
 HeegnerNumbers = A003173
@@ -38,17 +38,16 @@ HeegnerNumbers = A003173
 
 class CollatzSequence(Finite):
     """
-    Collatz sequentium: the sequentium of numbers involved in the Collatz conjecture
+    Collatz sequence: the sequence of numbers involved in the Collatz conjecture
     (https://en.wikipedia.org/wiki/Collatz_conjecture)
     """
     def __init__(self, start_value: int):
         super().__init__()
-        validate_positive_integer(integer=start_value)
-        assert start_value > 0
+        start_value = validate_positive_integer(integer=start_value)
         self.sequence = self.generate_cycle(value=start_value)
 
     def __str__(self):
-        return 'the Collatz sequentium'
+        return 'Collatz sequence'
 
     @staticmethod
     def generate_cycle(value: int) -> List[int]:

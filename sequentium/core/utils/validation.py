@@ -10,7 +10,7 @@ def validate_integer(integer: int) -> int:
         return integer
 
 
-def validate_positive_integer(integer: int) -> None:
+def validate_positive_integer(integer: int) -> int:
     """The method validates that an object is a positive integer."""
     if validate_integer(integer=integer) < 0:
         raise NegativeNumberError(f'Expected a non-negative integer but got {integer}!')

@@ -6,13 +6,13 @@ from sequentium.sequences.integer.recursive_generalised_sequences import LucasSe
 
 
 class A000032(LucasSequenceV):
-    """ Lucas numbers (https://oeis.org/A000032). """
+    """Lucas numbers (https://oeis.org/A000032)."""
 
     def __init__(self):
         super().__init__(p=1, q=-1)
 
     def __str__(self):
-        return 'the Lucas numbers'
+        return 'Lucas numbers'
 
     def __contains__(self, item: Any) -> bool:
         if item == 1:
@@ -34,7 +34,7 @@ class A000045(LucasSequenceU):
         super().__init__(p=1, q=-1)
 
     def __str__(self):
-        return 'the Fibonacci numbers'
+        return 'Fibonacci numbers'
 
 
 FibonacciNumbers = A000045
@@ -47,6 +47,7 @@ class A000073(MonotonicIncreasing, Recursive):
     def __init__(self, start_terms: Tuple[int, int, int] = None):
         super().__init__()
 
+        # TODO: fix here because probably this is not the case. i.e., we have a generelised sequence and then here fixe start terms
         if start_terms is None:
             self.start_terms = (0, 1, 0)
         else:
@@ -54,7 +55,7 @@ class A000073(MonotonicIncreasing, Recursive):
             self.start_terms = start_terms
 
     def __str__(self):
-        return 'the Tribonacci numbers'
+        return 'Tribonacci numbers'
 
     def formula(self, terms: Tuple[int, int, int]) -> Tuple[int, int, int]:
         return terms[1], terms[2], sum(terms)

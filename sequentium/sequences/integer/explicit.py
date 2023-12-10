@@ -9,7 +9,7 @@ class A000027(Explicit):
         return True
 
     def __str__(self):
-        return 'the natural numbers'
+        return 'natural numbers'
 
     def formula(self, index: int) -> int:
         return index
@@ -30,7 +30,7 @@ class A000326(Explicit):
             return n == int(n)
 
     def __str__(self):
-        return 'the pentagonal numbers'
+        return 'pentagonal numbers'
 
     def formula(self, index: int) -> int:
         return index * (3 * index - 1) // 2
@@ -43,11 +43,10 @@ class A003215(GeneralisedNexusNumbers):
     """Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
 
     def __init__(self):
-        super().__init__()
-        self.dimension = 2
+        super().__init__(dimension=2)
 
     def __str__(self):
-        return 'the hex numbers'
+        return 'hex numbers'
 
     def __contains__(self, item):
         if item <= 0:
@@ -68,13 +67,13 @@ class A005408(Explicit):
         return item % 2 == 1
 
     def __str__(self):
-        return 'the odd numbers'
+        return 'odd numbers'
 
     def formula(self, index: int) -> int:
         return 2*index + 1
 
 
-OddNumebrs = A005408
+OddNumbers = A005408
 
 
 class A033999(Explicit):
@@ -84,7 +83,7 @@ class A033999(Explicit):
         return item in {-1, 1}
 
     def __str__(self):
-        return 'the sequence of powers of -1'
+        return 'sequence of powers of -1'
 
     def formula(self, index: int) -> int:
         return (-1)**index
