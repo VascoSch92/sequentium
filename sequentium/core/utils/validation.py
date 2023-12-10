@@ -2,18 +2,20 @@ from sequentium.core.utils.exceptions import NegativeNumberError
 from typing import Tuple
 
 
-def validate_integer(integer: int) -> None:
-    """ The method validates that an object is an integer """
+def validate_integer(integer: int) -> int:
+    """The method validates that an object is an integer."""
     if isinstance(integer, int) is False:
         raise ValueError(f'Expected an int type, but got {type(integer).__name__} type!')
+    else:
+        return integer
 
 
 def validate_positive_integer(integer: int) -> None:
-    """ The method validates that an object is a positive integer """
-    validate_integer(integer=integer)
-
-    if integer < 0:
+    """The method validates that an object is a positive integer."""
+    if validate_integer(integer=integer) < 0:
         raise NegativeNumberError(f'Expected a non-negative integer but got {integer}!')
+    else:
+        return integer
 
 
 def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
