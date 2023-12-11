@@ -85,6 +85,7 @@ class A002203(LucasSequenceV):
 
 
 CompanionPellNumbers = A002203
+PellLucasNumbers = A002203
 
 
 class A214733(LucasSequenceU):
