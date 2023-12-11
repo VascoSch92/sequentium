@@ -2,7 +2,11 @@ from typing import Tuple, Any
 
 from sequentium.core.infinite_type import Recursive, MonotonicIncreasing
 from sequentium.core.utils.validation import validate_integer_tuple
-from sequentium.sequences.integer.recursive_generalised_sequences import LucasSequenceU, LucasSequenceV
+from sequentium.sequences.integer.recursive_generalised_sequences import (
+    HighOrderFibonacciNumbers,
+    LucasSequenceU,
+    LucasSequenceV,
+)
 
 
 class A000032(LucasSequenceV):
@@ -38,24 +42,14 @@ FibonacciNumbers = A000045
 FibonacciSequence = A000045
 
 
-class A000073(MonotonicIncreasing, Recursive):
+class A000073(HighOrderFibonacciNumbers):
     """Tribonacci numbers (https://oeis.org/A000073)."""
 
-    def __init__(self, start_terms: Tuple[int, int, int] = None):
-        super().__init__()
-
-        # TODO: fix here because probably this is not the case. i.e., we have a generelised sequence and then here fixe start terms
-        if start_terms is None:
-            self.start_terms = (0, 1, 0)
-        else:
-            validate_integer_tuple(tuple=start_terms, length=3)
-            self.start_terms = start_terms
+    def __init__(self):
+        super().__init__(order=3)
 
     def __str__(self):
         return 'Tribonacci numbers'
-
-    def formula(self, terms: Tuple[int, int, int]) -> Tuple[int, int, int]:
-        return terms[1], terms[2], sum(terms)
 
 
 TribonacciNumbers = A000073
