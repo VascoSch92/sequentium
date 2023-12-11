@@ -1,7 +1,31 @@
-from typing import Tuple
+from typing import Tuple, Any
 
 from sequentium.core.infinite_type import Recursive, MonotonicIncreasing
-from sequentium.core.utils.validation import validate_integer
+from sequentium.core.utils.validation import validate_integer, validate_positive_integer
+
+
+class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
+    """
+        Class for generating high order Fibonacci numbers (https://mathworld.wolfram.com/Fibonaccin-StepNumber.html).
+
+        Attributes:
+            order (int): The order of the Fibonacci sequence.
+    """
+
+    def __init__(self, order: int):
+        self.order = validate_positive_integer(integer=order)
+        start_terms = self._compute_start_terms()
+
+        super().__init__(start_terms=start_terms)
+
+    def __str__(self):
+        return 'High order Fibonacci numbers'
+
+    def _compute_start_terms(self) -> Tuple[Any, ...]:
+        return (0,) * (self.order - 1) + (1,)
+
+    def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
+        return tuple(terms[i] for i in range(1, self.order)) + (sum(terms),)
 
 
 class LucasSequenceU(MonotonicIncreasing, Recursive):
