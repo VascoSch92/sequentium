@@ -2,7 +2,7 @@ import argparse
 import importlib
 import sys
 import re
-
+import logging
 from sequentium.cli.parser import CliParser
 from sequentium.core.core import Sequence
 
@@ -45,18 +45,18 @@ class CommandLineInterface:
                 )
                 match = re.search(integer_sequences_pattern, content)
                 generalised_sequences_table = match.group(1).strip()
-                print(generalised_sequences_table)
+                sys.exit(generalised_sequences_table)
             elif args.list == 'generalised':
                 # extract the table generalised sequences from the md
                 generalised_sequences_pattern = re.compile(r'## Generalised sequences\n(.+?)(?=\n##|$)', re.DOTALL)
                 match = re.search(generalised_sequences_pattern, content)
                 generalised_sequences_table = match.group(1).strip()
-                print(generalised_sequences_table)
+                sys.exit(generalised_sequences_table)
             else:
                 # Define a regular expression to match the table content
                 table_pattern = re.compile(r'\|.*\|', re.DOTALL)
                 tables = table_pattern.findall(content)[0]
-                print(tables)
+                sys.exit(tables)
 
         sys.exit(1)
 
