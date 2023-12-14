@@ -21,7 +21,7 @@ def test_order_script(script_path, pattern):
 
 @pytest.mark.parametrize('script_path, pattern, test_script_path', TEST_CASES_TESTED_SEQUENCES)
 def test_every_sequence_is_tested(script_path, pattern, test_script_path):
-    """ The test checks if for every sequentium defined there is a test. """
+    """ The test checks if for every sequence defined there is a test. """
     sequence_names = get_class_names_from_script(script_path=script_path, pattern=pattern)
     test_names = get_class_names_from_script(script_path=test_script_path)
     sequences_tested = [test.replace('Test', '') for test in test_names]
@@ -35,7 +35,7 @@ def test_markdown():
     """ The test checks if every defined sequence is also reported in the SEQUENCE_LIST.md, and vice-versa."""
     sequence_markdown = get_sequence_class_names_from_md()
 
-    sequences_scripts_path = Path('sequentium/sequences')
+    sequences_scripts_path = Path('sequence/sequences')
     sequence_script_paths = [file for file in sequences_scripts_path.rglob('*.py') if file.name != '__init__.py']
 
     sequence_scripts = set().union(

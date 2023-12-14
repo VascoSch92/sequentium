@@ -26,7 +26,7 @@ def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
 
 def get_sequence_class_names_from_md() -> Set:
     """ The method returns all the class names contained in the markd down file SEQUENCES_LIST.md """
-    with open('SEQUENCES_LIST.md', 'r') as file:
+    with open('sequence/SEQUENCES_LIST.md', 'r') as file:
         content = file.read()
 
         integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=content)

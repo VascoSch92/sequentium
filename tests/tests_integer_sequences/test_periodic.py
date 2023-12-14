@@ -1,5 +1,5 @@
 from tests.sequence_test_suite import PeriodicSequenceTestSuite
-from sequentium.sequences.integer.periodic import *
+from sequence.sequences.integer.periodic import *
 
 
 class TestA087204(PeriodicSequenceTestSuite):

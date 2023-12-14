@@ -1,4 +1,4 @@
-from sequentium.sequences.integer.explicit import *
+from sequence.sequences.integer.explicit import *
 from tests.sequence_test_suite import SequenceTestSuite
 
 

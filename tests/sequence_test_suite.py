@@ -2,8 +2,8 @@ from typing import List, Type
 
 import pytest
 
-from sequentium.core.core import Sequence
-from sequentium.core.utils.exceptions import InfiniteSequenceError
+from sequence.core.core import Sequence
+from sequence.core.utils.exceptions import InfiniteSequenceError
 
 
 class SequenceTestSuite:
@@ -49,7 +49,7 @@ class SequenceTestSuite:
                 len(self.sequence)
 
     def test_getitem(self):
-        """Test if sequentium elements match the expected ground truth."""
+        """Test if sequence elements match the expected ground truth."""
         error_msg = ''
         for index, element in enumerate(self.ground_truth):
             if self.sequence[index] != element:
@@ -115,7 +115,7 @@ class PeriodicSequenceTestSuite(SequenceTestSuite):
     def test_is_periodic(self):
         """Test if the sequence's periodicity matches the expected value."""
         if self.sequence.is_periodic != self.is_periodic:
-            raise ValueError(f'Expected a periodic sequentium, but got {self.sequence.is_periodic}.')
+            raise ValueError(f'Expected a periodic sequence, but got {self.sequence.is_periodic}.')
 
     def test_period(self):
         """Test if the sequence's period matches the expected period length."""
