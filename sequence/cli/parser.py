@@ -1,5 +1,5 @@
 import argparse
-from sequentium import __version__
+from sequence import __version__
 
 
 class CliParser:
@@ -17,7 +17,7 @@ class CliParser:
         return argparse.ArgumentParser(
             prog='Sequentium',
             description='Sequentium is a tool for working with mathematical sequences.',
-            epilog='For help with a specific command, see: `sequentium help <command>`.',
+            epilog='For help with a specific command, see: `sequence help <command>`.',
         )
 
     def add_groups_to_parser(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
@@ -52,7 +52,7 @@ class CliParser:
         Adds arguments related to sequence operations such as retrieving terms, displaying length,
         defining start/stop points, specifying step size, and checking for a specific value.
         """
-        sequence_group = parser.add_argument_group('sequentium options')
+        sequence_group = parser.add_argument_group('sequence options')
         sequence_group.add_argument(
             '-a',
             '--at',

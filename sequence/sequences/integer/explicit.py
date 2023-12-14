@@ -1,5 +1,5 @@
-from sequentium.core.infinite_type import Explicit
-from sequentium.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
+from sequence.core.infinite_type import Explicit
+from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 
 
 class A000027(Explicit):

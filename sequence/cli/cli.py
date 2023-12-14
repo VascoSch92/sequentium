@@ -3,14 +3,14 @@ import importlib
 import sys
 import re
 import logging
-from sequentium.cli.parser import CliParser
-from sequentium.core.core import Sequence
+from sequence.cli.parser import CliParser
+from sequence.core.core import Sequence
 
 
 def import_sequence_dynamically(sequence: str) -> Sequence:
     """Dynamically import a sequence class by name."""
     try:
-        sequence_module = importlib.import_module('sequentium')
+        sequence_module = importlib.import_module('sequence')
         sequence_class = getattr(sequence_module, f'{sequence}')
     except ImportError:
         sys.exit(f'Sequence {sequence} is not implemented yet!')
@@ -34,7 +34,7 @@ class CommandLineInterface:
 
     def print_list(self, args: argparse.Namespace) -> None:
         """Prints a list of implemented sequences based on the provided argument."""
-        with open('SEQUENCES_LIST.md', 'r') as file:
+        with open('sequence/SEQUENCES_LIST.md', 'r') as file:
             content = file.read()
 
             if args.list == 'integer':

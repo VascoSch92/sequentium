@@ -1,9 +1,9 @@
 from abc import ABC
 from typing import Generator, Type
 
-from sequentium.core.core import Sequence
-from sequentium.core.infinite_type import PropertyDefined
-from sequentium.core.utils.functions import is_prime
+from sequence.core.core import Sequence
+from sequence.core.infinite_type import PropertyDefined
+from sequence.core.utils.functions import is_prime
 
 
 class PrimesOfSequence(PropertyDefined, ABC):

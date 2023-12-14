@@ -1,7 +1,7 @@
 from typing import List
 
-from sequentium.core.finite_type import Finite
-from sequentium.core.utils.validation import validate_positive_integer
+from sequence.core.finite_type import Finite
+from sequence.core.utils.validation import validate_positive_integer
 
 
 class A001228(Finite):

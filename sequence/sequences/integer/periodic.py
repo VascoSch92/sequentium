@@ -1,4 +1,4 @@
-from sequentium.core.finite_type import Periodic
+from sequence.core.finite_type import Periodic
 
 
 class A087204(Periodic):

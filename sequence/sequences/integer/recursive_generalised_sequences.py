@@ -1,7 +1,7 @@
 from typing import Tuple, Any
 
-from sequentium.core.infinite_type import Recursive, MonotonicIncreasing
-from sequentium.core.utils.validation import validate_integer, validate_positive_integer
+from sequence.core.infinite_type import Recursive, MonotonicIncreasing
+from sequence.core.utils.validation import validate_integer, validate_positive_integer
 
 
 class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):

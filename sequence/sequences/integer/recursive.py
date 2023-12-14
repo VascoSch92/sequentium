@@ -1,8 +1,6 @@
-from typing import Tuple, Any
+from typing import Any
 
-from sequentium.core.infinite_type import Recursive, MonotonicIncreasing
-from sequentium.core.utils.validation import validate_integer_tuple
-from sequentium.sequences.integer.recursive_generalised_sequences import (
+from sequence.sequences.integer.recursive_generalised_sequences import (
     HighOrderFibonacciNumbers,
     LucasSequenceU,
     LucasSequenceV,

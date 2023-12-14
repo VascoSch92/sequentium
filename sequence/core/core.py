@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from itertools import islice
 from typing import Generator, List, Any
 
-from sequentium.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
-from sequentium.core.utils.validation import validate_positive_integer, validate_as_list_input
+from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
+from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
 
 
 class Sequence(ABC):
@@ -40,7 +40,7 @@ class Sequence(ABC):
 
     @property
     def period(self) -> int:
-        """Get the period of the sequence. Raises NotPeriodicSequenceError if the sequentium is not periodic."""
+        """Get the period of the sequence. Raises NotPeriodicSequenceError if the sequence is not periodic."""
         raise NotPeriodicSequenceError
 
     @abstractmethod
@@ -62,9 +62,9 @@ class Sequence(ABC):
 class FiniteType(Sequence, ABC):
     """Abstract base class for representing finite sequences."""
 
-    def __init__(self):
+    def __init__(self, sequence: List[Any] = None):
         super().__init__()
-        self.sequence: List[Any] = None
+        self.sequence = sequence
 
     def __contains__(self, item: int) -> bool:
         return item in self.sequence
