@@ -4,5 +4,5 @@ from sequence.sequences.integer.periodic import *
 from sequence.sequences.integer.property_defined import *
 from sequence.sequences.integer.recursive import *
 
-__version__ = '0.0.1'
+__version__ = '0.0.0a'
 
