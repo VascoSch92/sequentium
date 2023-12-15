@@ -1,16 +1,20 @@
-from distutils.core import setup
 from sequence import __version__
+
+from setuptools import setup, find_packages, find_namespace_packages
 
 setup(
   name='sequentium',
-  packages=['sequentium'],
   version=f'{__version__}',
   license='MIT',
-  description='A package to work with sequences',
   author='Vasco Schiavo',
   author_email='vasco.schiavo@protonmail.com',
   url='https://github.com/VascoSch92',
-  download_url='https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
+  description='A package to work with sequences',
+  packages=find_namespace_packages(exclude=['tests']),
+  entry_points={
+        'console_scripts': ['sequence=sequence:main']
+    },
+  download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
   keywords=['MATH'],   # Keywords that define your package best
   classifiers=[
     'Development Status :: 3 - Alpha',
@@ -22,3 +26,4 @@ setup(
     'Programming Language :: Python :: 3.11',
   ],
 )
+
