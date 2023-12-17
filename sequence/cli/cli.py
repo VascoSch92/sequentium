@@ -1,8 +1,8 @@
 import argparse
 import importlib
-import sys
 import re
-import logging
+import sys
+
 from sequence.cli.parser import CliParser
 from sequence.core.core import Sequence
 
@@ -20,6 +20,7 @@ def import_sequence_dynamically(sequence: str) -> Sequence:
 
 class CommandLineInterface:
     """A command-line interface for interacting with sequences."""
+
     def execute(self) -> None:
         """
         Parses command-line arguments using CliParser and executes either the print_list or execute_sequence_command
@@ -58,7 +59,6 @@ class CommandLineInterface:
                 tables = table_pattern.findall(content)[0]
                 sys.exit(tables)
 
-        sys.exit(1)
 
     def execute_sequence_command(self, args: argparse.Namespace) -> None:
         """Executes a specific sequence command based on the provided arguments."""
@@ -78,6 +78,8 @@ class CommandLineInterface:
                 print(sequence.__str__().capitalize())
 
     def execute_as_list_command(self, args, sequence):
+        if args.start is None:
+            args.start = 0
         if args.start < 0:
             sys.exit(f'invalid int value for --start: {args.start}. Expected a non-negative integer!')
         if args.start > args.stop:
@@ -85,7 +87,7 @@ class CommandLineInterface:
         print(f'{sequence}: {sequence[args.start:args.stop:args.step]}')
 
     def execute_contains_command(self, args, sequence) -> None:
-        sys.exit(args.c in sequence)
+        sys.exit(f'{args.c in sequence}')
 
     def execute_length_command(self, sequence) -> None:
         if sequence.is_finite:
@@ -97,3 +99,7 @@ class CommandLineInterface:
         if args.at < 0:
             sys.exit(f'invalid int value for --start: {args.at}. Expected a non-negative integer!')
         sys.exit(f'{sequence.__str__().capitalize()} at index {args.at} is {sequence[args.at]}')
+
+
+def execute_command_line_interface() -> None:
+    CommandLineInterface().execute()

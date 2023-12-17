@@ -1,5 +1,5 @@
 import argparse
-from sequence import __version__
+from sequence.__version__ import __version__
 
 
 class CliParser:
@@ -35,9 +35,9 @@ class CliParser:
         )
         group.add_argument(
             '--list',
-            nargs='?',
+            nargs='+',
             choices=['all', 'integer', 'generalised'],
-            help="List a list of implemented sequences.",
+            help="List of implemented sequences.",
         )
         group.add_argument(
             'sequence',
