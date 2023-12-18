@@ -10,7 +10,9 @@ class CliParser:
         parser = self.create_parser()
         parser = self.add_groups_to_parser(parser=parser)
         parser = self.add_sequence_arguments(parser=parser)
-        return parser.parse_args()
+        namespace = parser.parse_args()
+        self.validate_mutually_exclusive_groups(namespace=namespace, parser=parser)
+        return namespace
 
     def create_parser(self) -> argparse.ArgumentParser:
         """Creates an ArgumentParser with program name, description, and epilog."""
@@ -45,7 +47,9 @@ class CliParser:
             nargs='?',
             help='Specify the name or identifier of the sequence to operate on.',
         )
+        # parser.error(message='ciao')
         return parser
+
 
     def add_sequence_arguments(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
         """
@@ -92,3 +96,26 @@ class CliParser:
             help='Check if the sequence contains a specific value.',
         )
         return parser
+
+    def validate_mutually_exclusive_groups(
+            self,
+            namespace: argparse.Namespace,
+            parser: argparse.ArgumentParser,
+    ) -> argparse.Namespace:
+        if namespace.list is None and namespace.sequence is None:
+            parser.error(message='No sequence or option provided. Please see --help')
+        elif namespace.list is not None and namespace.sequence is not None:
+            parser.error(message='argument --list: not allowed with argument sequence')
+        elif namespace.sequence is not None:
+            # validate sequence options
+            namespace = self.validate_sequence_options(namespace=namespace, parser=parser)
+        return namespace
+
+    def validate_sequence_options(
+            self,
+            namespace: argparse.Namespace,
+            parser: argparse.ArgumentParser,
+    ) -> argparse.Namespace:
+        pass
+
+
