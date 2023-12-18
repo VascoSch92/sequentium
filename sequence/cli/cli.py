@@ -59,23 +59,20 @@ class CommandLineInterface:
                 tables = table_pattern.findall(content)[0]
                 sys.exit(tables)
 
-
     def execute_sequence_command(self, args: argparse.Namespace) -> None:
         """Executes a specific sequence command based on the provided arguments."""
-        if not args.sequence:
-            sys.exit('no sequence given.. please see --help')
+        sequence = import_sequence_dynamically(sequence=args.sequence)
+        if args.at:
+            self.execute_at_command(args, sequence)
+        elif args.length:
+            self.execute_length_command(sequence)
+        elif args.c:
+            self.execute_contains_command(args, sequence)
+        elif args.stop is not None:
+            self.execute_as_list_command(args, sequence)
         else:
-            sequence = import_sequence_dynamically(sequence=args.sequence)
-            if args.at:
-                self.execute_at_command(args, sequence)
-            elif args.length:
-                self.execute_length_command(sequence)
-            elif args.c:
-                self.execute_contains_command(args, sequence)
-            elif args.stop is not None:
-                self.execute_as_list_command(args, sequence)
-            else:
-                print(sequence.__str__().capitalize())
+            argparse.ArgumentError('No sequence or option provided')
+            sys.exit(sequence.__str__().capitalize())
 
     def execute_as_list_command(self, args, sequence):
         if args.start is None:
@@ -84,7 +81,7 @@ class CommandLineInterface:
             sys.exit(f'invalid int value for --start: {args.start}. Expected a non-negative integer!')
         if args.start > args.stop:
             sys.exit(f'invalid int value for --stop: {args.stop}. Expected a value bigger than --start')
-        print(f'{sequence}: {sequence[args.start:args.stop:args.step]}')
+        sys.exit(f'{sequence}: {sequence[args.start:args.stop:args.step]}')
 
     def execute_contains_command(self, args, sequence) -> None:
         sys.exit(f'{args.c in sequence}')
