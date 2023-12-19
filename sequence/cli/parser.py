@@ -8,6 +8,7 @@ class CliParser:
     def parser(self) -> argparse.Namespace:
         """Parses command-line arguments and returns the parsed arguments as a namespace."""
         parser = self.create_parser()
+        parser = self.add_version_command(parser=parser)
         parser = self.add_groups_to_parser(parser=parser)
         parser = self.add_sequence_arguments(parser=parser)
         namespace = parser.parse_args()
@@ -22,19 +23,22 @@ class CliParser:
             epilog='For help with a specific command, see: `sequence help <command>`.',
         )
 
-    def add_groups_to_parser(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
-        """
-        Adds mutually exclusive argument groups for version information, listing sequences,
-        and sequence identification.
-        """
-        group = parser.add_mutually_exclusive_group()
-        group.add_argument(
+    def add_version_command(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
+        parser.add_argument(
             '-v',
             '--version',
             action='version',
             version=f'{parser.prog}: v{__version__}',
             help='Display the version information.',
         )
+        return parser
+
+    def add_groups_to_parser(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
+        """
+        Adds mutually exclusive argument groups for version information, listing sequences,
+        and sequence identification.
+        """
+        group = parser.add_mutually_exclusive_group()
         group.add_argument(
             '--list',
             nargs='+',
@@ -47,7 +51,6 @@ class CliParser:
             nargs='?',
             help='Specify the name or identifier of the sequence to operate on.',
         )
-        # parser.error(message='ciao')
         return parser
 
 
@@ -107,7 +110,6 @@ class CliParser:
         elif namespace.list is not None and namespace.sequence is not None:
             parser.error(message='argument --list: not allowed with argument sequence')
         elif namespace.sequence is not None:
-            # validate sequence options
             namespace = self.validate_sequence_options(namespace=namespace, parser=parser)
         return namespace
 
@@ -116,6 +118,16 @@ class CliParser:
             namespace: argparse.Namespace,
             parser: argparse.ArgumentParser,
     ) -> argparse.Namespace:
-        pass
+        selected_options = {key for key, value in vars(namespace).items() if value is not None}
+        selected_options.remove('sequence')
+
+        if len(selected_options) == 0:
+            parser.error(message=f'No options chosen for sequence {namespace.sequence.__str__()}')
+        elif len(selected_options) > 1:
+            if 'at' in selected_options or 'c' in selected_options or 'length' in selected_options:
+                parser.error(message=f'options {list(selected_options)}: not allowed together')
+
+        return namespace
+
 
 
