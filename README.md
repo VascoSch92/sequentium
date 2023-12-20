@@ -15,30 +15,32 @@ pip install sequentium
 Suppose you want to work with the Fibonacci sequence. First, import it into your script:
 ```python
 from sequence import FibonacciSequence
+
+fibonacci = FibonacciSequence()
 ```
 Now, FibonacciSequence is a class representing the Fibonacci sequence. It behaves similarly to a list. 
 You can iterate through it:
 
 ```python
-for x in FibonacciSequence:
+for x in fibonacci:
     print(x)
 >> 0, 1, 1, 2, 3, 5, 8, 13, 21,...
 ```
 Or you can access a specific term directly:
 ```python
-FibonacciSequence[8]
+fibonacci[8]
 >> 21
 ```
 Slicing is also supported:
 ```python
-FibonacciSequence[2:8]
+fibonacci[2:8]
 >> [1, 2, 3, 5, 13]
 ```
 Additionally, you can check if a number appears in the `Fibonacci sequence`:
 ```python
-7 in FibonacciSequence
+7 in fibonacci
 >> False
-21 in FibonacciSequence
+21 in fibonacci
 >> True
 ```
 ## Command Line Interface (CLI)
