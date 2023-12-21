@@ -42,7 +42,7 @@ class CliParser:
         group.add_argument(
             '--list',
             nargs='+',
-            choices=['all', 'integer', 'generalised'],
+            choices=['integer', 'generalised'],
             help="List of implemented sequences.",
         )
         group.add_argument(
