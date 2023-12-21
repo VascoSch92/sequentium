@@ -1,4 +1,5 @@
 import argparse
+
 from sequence.__version__ import __version__
 
 
@@ -19,8 +20,9 @@ class CliParser:
         """Creates an ArgumentParser with program name, description, and epilog."""
         return argparse.ArgumentParser(
             prog='Sequentium',
-            description='Sequentium is a tool for working with mathematical sequences.',
-            epilog='For help with a specific command, see: `sequence help <command>`.',
+            description="Sequentium is a user-friendly package that implements various well-known sequences, "
+                        "providing a seamless and intuitive experience for the user",
+            epilog='For help with a specific command, see: `sequence help <command>`',
         )
 
     def add_version_command(self, parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
