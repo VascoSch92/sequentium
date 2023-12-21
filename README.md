@@ -1,7 +1,7 @@
 # Sequentium
 
-Sequentium is a user-friendly package designed to effortlessly implement various well-known sequences, 
-providing a seamless and intuitive experience for users.
+Sequentium is a user-friendly package that implements various well-known sequences, 
+providing a seamless and intuitive experience for the user.
 
 For an exhaustive list of all sequences implemented in Sequentium, 
 please click [here](https://github.com/VascoSch92/sequentium/blob/main/sequence/SEQUENCES_LIST.md).
@@ -46,9 +46,9 @@ Additionally, you can check if a number appears in the `Fibonacci sequence`:
 ## Command Line Interface (CLI)
 Sequentium provides a Command Line Interface (CLI) for convenient usage from your terminal.
 ```text
-usage: Sequentium [-h] [-v] [--list {all,integer,generalised} [{all,integer,generalised} ...]] [-a AT] [-l] [--start START] [--stop STOP] [--step STEP] [-c C] [sequence]
+usage: Sequentium [-h] [-v] [--list {integer,generalised} [{integer,generalised} ...]] [-a AT] [-l] [--start START] [--stop STOP] [--step STEP] [-c CONTAINS] [sequence]
 
-Sequentium is a tool for working with mathematical sequences.
+Sequentium is a user-friendly package that implements various well-known sequences, providing a seamless and intuitive experience for the user
 
 positional arguments:
   sequence              Specify the name or identifier of the sequence to operate on.
@@ -56,7 +56,7 @@ positional arguments:
 options:
   -h, --help            show this help message and exit
   -v, --version         Display the version information.
-  --list {all,integer,generalised} [{all,integer,generalised} ...]
+  --list {integer,generalised} [{integer,generalised} ...]
                         List of implemented sequences.
 
 sequence options:
@@ -65,26 +65,28 @@ sequence options:
   --start START         Define the starting point of the sequence.
   --stop STOP           End point of the sequence (excluded).
   --step STEP           Step size for iterating through the sequence.
-  -c C                  Check if the sequence contains a specific value.
+  -c CONTAINS, --contains CONTAINS
+                        Check if the sequence contains a specific value.
 
-For help with a specific command, see: `sequence help <command>`.
+For help with a specific command, see: `sequence help <command>`
+
 ```
 Here are some examples illustrating the usage of the Sequentium CLI:
 - specify the index to get a specific element of `FibonacciSequence`
 ```text
 sequence FibonacciSequence --at 8
->> Fibonacci numbers at index 8 is 21
+>> 21
 ```
 - define a range of `FibonacciSequence` using start and stop parameters
 
 ```text
 sequence FibonacciSequence --start 2 --stop 8
->> Fibonacci numbers: [1, 2, 3, 5, 8, 13]
+>> [1, 2, 3, 5, 8, 13]
 ```
 - check if a particular number belongs to the `FibonacciSequence`
 ```text
-sequence FibonacciSequence -c 7
+sequence FibonacciSequence --contains 7
 >> False
-sequence FibonacciNumbers -c 21
+sequence FibonacciNumbers -contains 21
 >> True
 ```
