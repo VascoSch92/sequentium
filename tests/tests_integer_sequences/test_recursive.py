@@ -68,6 +68,17 @@ class TestA001591(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA001592(SequenceTestSuite):
+    sequence = A001592()
+    sequence_name = 'Hexanacci numbers'
+    ground_truth = [
+        0, 0, 0, 0, 0, 1, 1, 2, 4, 8, 16, 32, 63, 125, 248, 492, 976, 1936, 3840, 7617, 15109, 29970, 59448, 117920,
+        233904, 463968, 920319, 1825529, 3621088, 7182728, 14247536, 28261168, 56058368, 111196417, 220567305,
+        437513522, 867844316, 1721441096, 3414621024,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA002203(SequenceTestSuite):
     sequence = A002203()
     sequence_name = 'Companion Pell numbers'

@@ -92,6 +92,18 @@ class A001591(HighOrderFibonacciNumbers):
 PentanacciNumbers = A001591
 
 
+class A001592(HighOrderFibonacciNumbers):
+    """Hexanacci numbers (https://oeis.org/A001592)."""
+    def __init__(self):
+        super().__init__(order=6)
+
+    def __str__(self):
+        return 'Hexanacci numbers'
+
+
+HexanacciNumbers = A001591
+
+
 class A002203(LucasSequenceV):
     """Companion Pell numbers (https://oeis.org/A002203)."""
     def __init__(self):
