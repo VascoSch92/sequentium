@@ -117,6 +117,18 @@ CompanionPellNumbers = A002203
 PellLucasNumbers = A002203
 
 
+class A122189(HighOrderFibonacciNumbers):
+    """Heptanacci numbers (https://oeis.org/A122189)."""
+    def __init__(self):
+        super().__init__(order=7)
+
+    def __str__(self):
+        return 'Heptanacci numbers'
+
+
+HeptanacciNumbers = A122189
+
+
 class A214733(LucasSequenceU):
     """Sequence A214733 (https://oeis.org/A214733)."""
 

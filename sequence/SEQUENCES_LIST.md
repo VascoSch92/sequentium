@@ -27,6 +27,7 @@ TODO: description
 | A005408 | The odd numbers                  | `A005408`, `OddNumbers`                                   | https://oeis.org/A005408                         |
 | A033999 | Sequence of powers of -1         | `A033999`                                                 | https://oeis.org/A033999                         |
 | A087204 | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
+| A122189 | The Heptanacci numbers           | `A122189`, `HeptanacciNumbers`                            | https://oeis.org/A122189                         |
 | A128834 | Sequence A128834                 | `A128834`                                                 | https://oeis.org/A128834                         |
 | A214733 | Sequence A214733                 | `A214733`                                                 | https://oeis.org/A214733                         |
 | -       | The Collatz sequence             | `CollatzSequence`                                         | https://en.wikipedia.org/wiki/Collatz_conjecture |
