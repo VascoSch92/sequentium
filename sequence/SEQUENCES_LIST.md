@@ -28,6 +28,7 @@ TODO: description
 | A033999 | Sequence of powers of -1         | `A033999`                                                 | https://oeis.org/A033999                         |
 | A079262 | Octanacci numbers                | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204 | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
+| A104144 | The Enneanacci numebrs           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
 | A122189 | The Heptanacci numbers           | `A122189`, `HeptanacciNumbers`                            | https://oeis.org/A122189                         |
 | A128834 | Sequence A128834                 | `A128834`                                                 | https://oeis.org/A128834                         |
 | A214733 | Sequence A214733                 | `A214733`                                                 | https://oeis.org/A214733                         |

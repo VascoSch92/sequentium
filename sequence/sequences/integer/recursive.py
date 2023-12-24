@@ -129,6 +129,18 @@ class A079262(HighOrderFibonacciNumbers):
 OctanacciNumbers = A079262
 
 
+class A104144(HighOrderFibonacciNumbers):
+    """Enneanacci numbers (https://oeis.org/A104144)."""
+    def __init__(self):
+        super().__init__(order=9)
+
+    def __str__(self):
+        return 'Enneanacci numbers'
+
+
+EnneanacciNumebrs = A104144
+
+
 class A122189(HighOrderFibonacciNumbers):
     """Heptanacci numbers (https://oeis.org/A122189)."""
     def __init__(self):
