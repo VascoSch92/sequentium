@@ -15,6 +15,7 @@ select = [
     "D404", # First word of the docstring should not be "This"
     "D405", # capitalize-section-name
     "D419", # empty-docstring
+    "Q001", # bad-quotes-multiline-string
     "UP003", # Use {} instead of type(...)
     "UP008", # Use super() instead of super(_class_, self)
     "UP011", # Unnecessary parentheses to functools.lru_cache
@@ -25,8 +26,13 @@ select = [
     "NPY", # NumPy-specific rules (NPY)
     "ARG", # flake8-unused-arguments
     "PIE", # flake8-pie
+    "PT", # flake8-pytest-style
     "PTH", # flake8-use-pathlib
     "RET", # flake8-return
+    "T20", # flake8-print
+    "SIM", # flake8-simplify
+    "FURB", # refurb
+    "RUF", # Ruff-specific rules
 ]
 
 # Ignored rules
@@ -53,4 +59,5 @@ output-format = "text"
 ]
 "tests/*" = [
     "D101", # undocumented-public-class
+    "RUF012", # mutable-class-default
 ]
