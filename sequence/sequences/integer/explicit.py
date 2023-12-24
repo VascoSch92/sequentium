@@ -1,6 +1,6 @@
 from sequence.core.infinite_type import Explicit
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
-
+from sequence.core.infinite_type import MonotonicIncreasing
 
 class A000027(Explicit):
     """The natural numbers (https://oeis.org/A000027)."""
@@ -38,6 +38,22 @@ class A000326(Explicit):
 
 PentagonalNumbers = A000326
 
+
+class A001045(MonotonicIncreasing, Explicit):
+    """Jacobsthal numbers (https://oeis.org/A001045)."""
+
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return 'Jacobsthal numbers'
+
+    def formula(self, index: int) -> int:
+        return round(2**index/3)
+
+
+JacobsthalNumbers = A001045
+JacobsthalSequence = A001045
 
 class A003215(GeneralisedNexusNumbers):
     """Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
