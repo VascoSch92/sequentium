@@ -26,6 +26,7 @@ select = [
     "ARG", # flake8-unused-arguments
     "PIE", # flake8-pie
     "PTH", # flake8-use-pathlib
+    "RET", # flake8-return
 ]
 
 # Ignored rules

@@ -14,8 +14,7 @@ def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[st
         class_names = [node.name for node in tree.body if isinstance(node, ast.ClassDef)]
         if pattern:
             return filter_list_by_pattern(input_list=class_names, pattern=pattern)
-        else:
-            return class_names
+        return class_names
 
 
 def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:

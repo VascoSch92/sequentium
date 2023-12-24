@@ -1,8 +1,6 @@
-from math import log2
-
 from sequence.core.infinite_type import Explicit
-from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 from sequence.core.infinite_type import MonotonicIncreasing
+from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 
 
 class A000027(Explicit):
@@ -26,11 +24,13 @@ class A000326(Explicit):
     """Pentagonal numbers (https://oeis.org/A000326)."""
 
     def __contains__(self, item):
-        if item <= 0:
+        if item < 0:
+            return False
+        if item == 0:
             return True
-        else:
-            n = (1 + (1 + 24 * item) ** (1 / 2)) / 6
-            return n == int(n)
+
+        n = (1 + (1 + 24 * item) ** (1 / 2)) / 6
+        return n == int(n)
 
     def __str__(self):
         return 'pentagonal numbers'
@@ -68,9 +68,9 @@ class A003215(GeneralisedNexusNumbers):
     def __contains__(self, item):
         if item <= 0:
             return False
-        else:
-            n = (3 + (12 * item - 3) ** (1 / 2)) / 6
-            return n == int(n)
+
+        n = (3 + (12 * item - 3) ** (1 / 2)) / 6
+        return n == int(n)
 
 
 HexNumbers = A003215
@@ -99,8 +99,7 @@ class A014551(MonotonicIncreasing, Explicit):
     def __contains__(self, item):
         if item == 1:
             return True
-        else:
-            return super().__contains__(item=item)
+        return super().__contains__(item=item)
 
     def __str__(self):
         return 'Jacobsthal-Lucas numbers'

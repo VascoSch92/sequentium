@@ -25,8 +25,7 @@ class Sequence(ABC):
             if item.stop is None and self.is_finite is False:
                 return InfiniteSequenceError
             return self._as_list(start=item.start, stop=item.stop, step=item.step)
-        else:
-            return self._at(index=item)
+        return self._at(index=item)
 
     @abstractmethod
     def is_finite(self) -> bool:

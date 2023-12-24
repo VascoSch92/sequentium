@@ -80,3 +80,4 @@ class MonotonicIncreasing:
                 return True
             if element > item:
                 return False
+        return False

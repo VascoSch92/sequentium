@@ -2,12 +2,18 @@ from math import isqrt
 
 
 def is_prime(number: int) -> bool:
+    """
+    Check if a given number is a prime number.
+
+    Args:
+        - number (int): The number to be checked.
+    """
     if number <= 3:
         return number > 1
-    elif number % 2 == 0 or number % 3 == 0:
+    if number % 2 == 0 or number % 3 == 0:
         return False
-    else:
-        for d in range(5, isqrt(number) + 1, 6):
-            if number % d == 0 or number % (d + 2) == 0:
-                return False
-        return True
+
+    for d in range(5, isqrt(number) + 1, 6):
+        if number % d == 0 or number % (d + 2) == 0:
+            return False
+    return True

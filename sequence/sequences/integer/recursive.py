@@ -19,8 +19,7 @@ class A000032(LucasSequenceV):
     def __contains__(self, item: Any) -> bool:
         if item == 1:
             return True
-        else:
-            return super().__contains__(item=item)
+        return super().__contains__(item=item)
 
 
 LucasNumbers = A000032
@@ -170,3 +169,4 @@ class A214733(LucasSequenceU):
                 return True
             if abs(element) > abs(item * 1_000):
                 return False
+        return None
