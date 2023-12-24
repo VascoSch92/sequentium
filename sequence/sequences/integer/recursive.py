@@ -80,6 +80,18 @@ PellNumbers = A000129
 LambdaNumbers = A000129
 
 
+class A001591(HighOrderFibonacciNumbers):
+    """Pentanacci numbers (https://oeis.org/A001591)."""
+    def __init__(self):
+        super().__init__(order=5)
+
+    def __str__(self):
+        return 'Pentanacci numbers'
+
+
+PentanacciNumbers = A001591
+
+
 class A002203(LucasSequenceV):
     """Companion Pell numbers (https://oeis.org/A002203)."""
     def __init__(self):

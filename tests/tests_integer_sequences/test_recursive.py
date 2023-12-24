@@ -57,6 +57,17 @@ class TestA000129(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA001591(SequenceTestSuite):
+    sequence = A001591()
+    sequence_name = 'Pentanacci numbers'
+    ground_truth = [
+        0, 0, 0, 0, 1, 1, 2, 4, 8, 16, 31, 61, 120, 236, 464, 912, 1793, 3525, 6930, 13624, 26784, 52656, 103519,
+        203513, 400096, 786568, 1546352, 3040048, 5976577, 11749641, 23099186, 45411804, 89277256, 175514464,
+        345052351, 678355061, 1333610936, 2621810068,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA002203(SequenceTestSuite):
     sequence = A002203()
     sequence_name = 'Companion Pell numbers'

@@ -18,6 +18,7 @@ TODO: description
 | A000129 | The Pell numbers                 | `A000129`, `PellNumbers`, `LambdaNumbers`                 | https://oeis.org/A000129                         |
 | A000326 | The pentagonal numbers           | `A000326`, `PentagonalNumbers`                            | https://oeis.org/A000326                         |
 | A001228 | Orders of sporadic simple groups | `A001228`                                                 | https://oeis.org/A001228                         |
+| A001591 | The Pentanacci numbers           | `A001591`, `PentanacciNumbers`                            | https://oeis.org/A001591                         |
 | A002203 | Companion Pell numbers           | `A002203`, `CompanionPellNumbers`, `PellLucasNumbers`     | https://oeis.org/A002203                         |
 | A002808 | The composite numbers            | `A002808`, `CompositeNumbers`, `PositiveCompositeNumbers` | https://oeis.org/A002808                         |
 | A003173 | Heegner numbers                  | `A003173`, `HeegnerNumbers`                               | https://oeis.org/A003173                         |
