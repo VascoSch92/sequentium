@@ -14,6 +14,7 @@ TODO: description
 | A000040 | The prime numbers                | `A000040`, `PrimeNumbers`, `PositivePrimeNumbers`         | https://oeis.org/A000040                         |
 | A000045 | The Fibonacci numbers            | `A000045`, `FibonacciNumbers`, `FibonacciSequence`        | https://oeis.org/A000045                         |
 | A000073 | The Tribonacci numbers           | `A000073`, `TribonacciNumbers`                            | https://oeis.org/A000073                         |
+| A000078 | The Tetranacci numbers           | `A000078`, `TetranacciNumbers`                            | https://oeis.org/A000078                         |
 | A000129 | The Pell numbers                 | `A000129`, `PellNumbers`, `LambdaNumbers`                 | https://oeis.org/A000129                         |
 | A000326 | The pentagonal numbers           | `A000326`, `PentagonalNumbers`                            | https://oeis.org/A000326                         |
 | A001228 | Orders of sporadic simple groups | `A001228`                                                 | https://oeis.org/A001228                         |

@@ -35,6 +35,17 @@ class TestA000073(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA000078(SequenceTestSuite):
+    sequence = A000078()
+    sequence_name = 'Tetranacci numbers'
+    ground_truth = [
+        0, 0, 0, 1, 1, 2, 4, 8, 15, 29, 56, 108, 208, 401, 773, 1490, 2872, 5536, 10671, 20569, 39648, 76424, 147312,
+        283953, 547337, 1055026, 2033628, 3919944, 7555935, 14564533, 28074040, 54114452, 104308960, 201061985,
+        387559437, 747044834, 1439975216, 2775641472,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA000129(SequenceTestSuite):
     sequence = A000129()
     sequence_name = 'Pell numbers'

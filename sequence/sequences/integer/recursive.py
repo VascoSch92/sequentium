@@ -53,6 +53,19 @@ class A000073(HighOrderFibonacciNumbers):
 TribonacciNumbers = A000073
 
 
+class A000078(HighOrderFibonacciNumbers):
+    """Tetranacci numbers (https://oeis.org/A000078)."""
+
+    def __init__(self):
+        super().__init__(order=4)
+
+    def __str__(self):
+        return 'Tetranacci numbers'
+
+
+TetranacciNumbers = A000078
+
+
 class A000129(LucasSequenceU):
     """Pell numbers (https://oeis.org/A000129)."""
 
