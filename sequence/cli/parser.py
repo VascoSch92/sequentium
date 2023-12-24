@@ -127,7 +127,6 @@ class CliParser:
             parser: argparse.ArgumentParser,
     ) -> argparse.Namespace:
         """Validate the selected options for a sequence in the provided namespace using the given parser."""
-
         selected_options = {key for key, value in vars(namespace).items() if value is not None}
         selected_options.remove('sequence')
 
