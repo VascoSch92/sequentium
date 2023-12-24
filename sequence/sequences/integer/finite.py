@@ -58,8 +58,3 @@ class CollatzSequence(Finite):
             cycle.append(value)
 
         return cycle
-
-
-HailstoneSequence = CollatzSequence
-WondrousNumbers = CollatzSequence
-HailstoneNumbers = CollatzSequence
