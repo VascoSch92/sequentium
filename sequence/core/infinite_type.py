@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABC
-from typing import Generator, Any, Tuple, List
+from typing import Generator, Any, Tuple, List, Optional
 
 from sequence.core.core import InfiniteType
 from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
@@ -24,7 +24,7 @@ class Explicit(InfiniteType, ABC):
         """Abstract method to define the formula for generating elements in the sequence."""
         raise NotImplementedError
 
-    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+    def _as_list(self, stop: int, start: Optional[int] = None, step: Optional[int] = None) -> List[int]:
         stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return [self.formula(index=index) for index in range(start, stop, step)]
 
@@ -36,7 +36,7 @@ class Explicit(InfiniteType, ABC):
 class Recursive(InfiniteType, ABC):
     """Abstract base class for representing recursive infinite sequences."""
 
-    def __init__(self, start_terms: Tuple[Any, ...] = None):
+    def __init__(self, start_terms: Optional[Tuple[Any, ...]] = None):
         super().__init__()
         self.start_terms = start_terms
 

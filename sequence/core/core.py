@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from itertools import islice
-from typing import Generator, List, Any
+from typing import Generator, List, Any, Optional
 
 from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 from sequence.core.utils.validation import validate_as_list_input
@@ -48,7 +48,7 @@ class Sequence(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+    def _as_list(self, stop: int, start: Optional[int] = None, step: Optional[int] = None) -> List[int]:
         """Return a list representation of the sequence within the specified range (internal use)."""
         raise NotImplementedError
 
@@ -61,7 +61,7 @@ class Sequence(ABC):
 class FiniteType(Sequence, ABC):
     """Abstract base class for representing finite sequences."""
 
-    def __init__(self, sequence: List[Any] = None):
+    def __init__(self, sequence: Optional[List[Any]] = None):
         super().__init__()
         self.sequence = sequence
 
@@ -79,7 +79,7 @@ class InfiniteType(Sequence, ABC):
     def __len__(self) -> int:
         raise InfiniteSequenceError
 
-    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+    def _as_list(self, stop: int, start: Optional[int] = None, step: Optional[int] = None) -> List[int]:
         stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return list(islice(self, start, stop, step))
 

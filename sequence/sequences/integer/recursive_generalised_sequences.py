@@ -30,7 +30,7 @@ class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
         return (0,) * (self.order - 1) + (1,)
 
     def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
-        return tuple(terms[i] for i in range(1, self.order)) + (sum(terms),)
+        return *[terms[i] for i in range(1, self.order)], sum(terms)
 
 
 class LucasSequenceU(MonotonicIncreasing, Recursive):

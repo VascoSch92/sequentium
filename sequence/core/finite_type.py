@@ -1,5 +1,5 @@
 from abc import ABC
-from typing import List, Any, Generator
+from typing import List, Any, Generator, Optional
 
 from sequence.core.core import FiniteType
 from sequence.core.utils.exceptions import InfiniteSequenceError
@@ -59,7 +59,7 @@ class Periodic(FiniteType, ABC):
             yield self.sequence[index]
             index = (index + 1) % self._period
 
-    def _as_list(self, stop: int, start: int = None, step: int = None) -> List[int]:
+    def _as_list(self, stop: int, start: Optional[int] = None, step: Optional[int] = None) -> List[int]:
         stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
         return [self.sequence[index % self._period] for index in range(start, stop, step)]
 
