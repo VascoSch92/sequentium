@@ -1,5 +1,6 @@
-from sequence.core.utils.exceptions import NegativeNumberError
 from typing import Tuple
+
+from sequence.core.utils.exceptions import NegativeNumberError
 
 
 def validate_integer(integer: int) -> int:
@@ -19,7 +20,7 @@ def validate_positive_integer(integer: int) -> int:
 
 
 def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
-    """ The method validates that an object is a tuple of integers """
+    """The method validates that an object is a tuple of integers."""
     if isinstance(tuple, Tuple) is False:
         raise ValueError(f'Expected a tuple type, but got {type(tuple).__name__} type!')
     if len(tuple) != length:
@@ -29,7 +30,7 @@ def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
 
 
 def validate_as_list_input(start: int, stop: int, step: int) -> Tuple[int, int, int]:
-    """ The method validates the input of the as_list method """
+    """The method validates the input of the as_list method."""
     start = 0 if start is None else start
     step = 1 if step is None else step
     return stop, start, step
