@@ -13,7 +13,4 @@ def is_prime(number: int) -> bool:
     if number % 2 == 0 or number % 3 == 0:
         return False
 
-    for d in range(5, isqrt(number) + 1, 6):
-        if number % d == 0 or number % (d + 2) == 0:
-            return False
-    return True
+    return all(not (number % d == 0 or number % (d + 2) == 0) for d in range(5, isqrt(number) + 1, 6))

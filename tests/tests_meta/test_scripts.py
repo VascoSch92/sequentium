@@ -19,7 +19,7 @@ def test_order_script(script_path, pattern):
     assert sequence_names == sorted(sequence_names), f"Classes in '{script_path}' are not in alphabetical order."
 
 
-@pytest.mark.parametrize(('script_path, pattern', 'test_script_path'), TEST_CASES_TESTED_SEQUENCES)
+@pytest.mark.parametrize(('script_path', 'pattern', 'test_script_path'), TEST_CASES_TESTED_SEQUENCES)
 def test_every_sequence_is_tested(script_path, pattern, test_script_path):
     """ The test checks if for every sequence defined there is a test. """
     sequence_names = get_class_names_from_script(script_path=script_path, pattern=pattern)

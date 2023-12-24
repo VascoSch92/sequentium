@@ -132,7 +132,7 @@ class CliParser:
 
         if len(selected_options) == 0:
             parser.error(message=f'No options chosen for sequence {namespace.sequence.__str__()}')
-        elif len(selected_options) > 1:
+        elif len(selected_options) > 1:  # noqa: SIM102
             if 'at' in selected_options or 'c' in selected_options or 'length' in selected_options:
                 parser.error(message=f'options {list(selected_options)}: not allowed together')
 

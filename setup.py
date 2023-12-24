@@ -1,9 +1,9 @@
+from pathlib import Path
 from setuptools import setup, find_namespace_packages
 
 from sequence.__version__ import __version__
 
-with open('README.md') as f:
-  long_description = f.read()
+long_description = Path('README.md').read_text()
 
 setup(
   name='sequentium',
@@ -34,6 +34,6 @@ setup(
     'Topic :: Education',
     'Topic :: Scientific/Engineering :: Mathematics',
   ],
-  python_requires ='>=3.9',
+  python_requires='>=3.9',
 )
 

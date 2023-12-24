@@ -9,12 +9,12 @@ def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[st
     The method returns a list of all classes respecting the given pattern in the Python script provided at
     the location script_path.
     """
-    with open(script_path, 'r') as f:
-        tree = ast.parse(f.read())
-        class_names = [node.name for node in tree.body if isinstance(node, ast.ClassDef)]
-        if pattern:
-            return filter_list_by_pattern(input_list=class_names, pattern=pattern)
-        return class_names
+    script_text = Path(script_path).read_text()
+    tree = ast.parse(script_text)
+    class_names = [node.name for node in tree.body if isinstance(node, ast.ClassDef)]
+    if pattern:
+        return filter_list_by_pattern(input_list=class_names, pattern=pattern)
+    return class_names
 
 
 def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
@@ -25,12 +25,12 @@ def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
 
 def get_sequence_class_names_from_md() -> Set:
     """ The method returns all the class names contained in the markd down file SEQUENCES_LIST.md """
-    with open('sequence/SEQUENCES_LIST.md', 'r') as file:
-        content = file.read()
+    sequence_list = Path('sequence/SEQUENCES_LIST.md').read_text()
+    content = sequence_list.read()
 
-        integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=content)
-        generalised_sequence_class_names = extract_generalised_sequences_class_names_from_md(content=content)
-        return integer_sequence_class_names.union(generalised_sequence_class_names)
+    integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=content)
+    generalised_sequence_class_names = extract_generalised_sequences_class_names_from_md(content=content)
+    return integer_sequence_class_names.union(generalised_sequence_class_names)
 
 
 def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
@@ -42,7 +42,7 @@ def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
     # extract the row of the table
     row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|'
     row_matches = re.findall(row_pattern, generalised_sequences_table)
-    del row_matches[0] # delete first element as it is the header
+    del row_matches[0]  # delete first element as it is the header
 
     return extract_class_names_from_row(row_matches=row_matches, column_number=2)
 
@@ -82,11 +82,11 @@ def extract_class_names_from_row(row_matches: List[Tuple], column_number: int) -
 def get_sequences_defined_in_script(script_path: Path) -> Set:
     """ The method returns all sequence defined in a given script"""
     sequence_defined_in_script = set()
-    with open(script_path, 'r') as f:
-        tree = ast.parse(f.read())
-        for node in tree.body:
-            if isinstance(node, ast.ClassDef):
-                sequence_defined_in_script.add(node.name)
-            elif isinstance(node, ast.Assign):
-                sequence_defined_in_script.add(node.targets[0].id)
+    script_text = Path(script_path).read_text()
+    tree = ast.parse(script_text)
+    for node in tree.body:
+        if isinstance(node, ast.ClassDef):
+            sequence_defined_in_script.add(node.name)
+        elif isinstance(node, ast.Assign):
+            sequence_defined_in_script.add(node.targets[0].id)
     return sequence_defined_in_script

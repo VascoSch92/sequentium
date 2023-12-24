@@ -49,7 +49,7 @@ class A001045(MonotonicIncreasing, Explicit):
         return 'Jacobsthal numbers'
 
     def formula(self, index: int) -> int:
-        return round(2**index/3)
+        return round(2 ** index / 3)
 
 
 JacobsthalNumbers = A001045
@@ -87,7 +87,7 @@ class A005408(Explicit):
         return 'odd numbers'
 
     def formula(self, index: int) -> int:
-        return 2*index + 1
+        return 2 * index + 1
 
 
 OddNumbers = A005408
