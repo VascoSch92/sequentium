@@ -22,6 +22,11 @@ class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
         return 'High order Fibonacci numbers'
 
     def _compute_start_terms(self) -> Tuple[Any, ...]:
+        """
+        The method gives a tuple representing the start terms of the Fibonacci sequence.
+        The start terms are computed as following:
+            If the Fibonacci sequence has order n, then the tuple has 0 in the n-1 first position and 1 in the last.
+        """
         return (0,) * (self.order - 1) + (1,)
 
     def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
