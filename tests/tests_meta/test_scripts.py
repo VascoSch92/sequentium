@@ -50,8 +50,8 @@ def test_markdown():
 
     sequences_in_scripts_but_not_in_markdown = sequence_scripts.difference(sequence_markdown)
     if sequences_in_scripts_but_not_in_markdown != set():
-        error_msg +=  f"The following sequences are implemented, " \
-                      f"but are not in SEQUENCE_LIST.md: {', '.join(list(sequences_in_scripts_but_not_in_markdown))}"
+        error_msg += f"The following sequences are implemented, " \
+                     f"but are not in SEQUENCE_LIST.md: {', '.join(list(sequences_in_scripts_but_not_in_markdown))}"
 
     if error_msg:
         raise Exception(error_msg)
