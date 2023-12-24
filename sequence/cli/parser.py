@@ -108,7 +108,6 @@ class CliParser:
             parser: argparse.ArgumentParser,
     ) -> argparse.Namespace:
         """Validate the provided namespace using the given parser."""
-
         if namespace.list is None and namespace.sequence is None:
             parser.error(message='No sequence or option provided. Please see --help')
         elif namespace.list is not None and namespace.sequence is not None:
