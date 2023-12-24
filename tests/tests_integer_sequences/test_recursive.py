@@ -90,6 +90,17 @@ class TestA002203(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA079262(SequenceTestSuite):
+    sequence = A079262()
+    sequence_name = 'Octanacci numbers'
+    ground_truth = [
+        0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 4, 8, 16, 32, 64, 128, 255, 509, 1016, 2028, 4048, 8080, 16128, 32192, 64256,
+        128257, 256005, 510994, 1019960, 2035872, 4063664, 8111200, 16190208, 32316160, 64504063, 128752121, 256993248,
+        512966536, 1023897200, 2043730736,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA122189(SequenceTestSuite):
     sequence = A122189()
     sequence_name = 'Heptanacci numbers'
