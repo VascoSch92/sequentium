@@ -1,6 +1,9 @@
+from math import log2
+
 from sequence.core.infinite_type import Explicit
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
 from sequence.core.infinite_type import MonotonicIncreasing
+
 
 class A000027(Explicit):
     """The natural numbers (https://oeis.org/A000027)."""
@@ -42,9 +45,6 @@ PentagonalNumbers = A000326
 class A001045(MonotonicIncreasing, Explicit):
     """Jacobsthal numbers (https://oeis.org/A001045)."""
 
-    def __init__(self):
-        super().__init__()
-
     def __str__(self):
         return 'Jacobsthal numbers'
 
@@ -54,6 +54,7 @@ class A001045(MonotonicIncreasing, Explicit):
 
 JacobsthalNumbers = A001045
 JacobsthalSequence = A001045
+
 
 class A003215(GeneralisedNexusNumbers):
     """Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
@@ -90,6 +91,25 @@ class A005408(Explicit):
 
 
 OddNumbers = A005408
+
+
+class A014551(MonotonicIncreasing, Explicit):
+    """Jacobsthal-Lucas numbers (https://oeis.org/A014551)."""
+
+    def __contains__(self, item):
+        if item == 1:
+            return True
+        else:
+            return super().__contains__(item=item)
+
+    def __str__(self):
+        return 'Jacobsthal-Lucas numbers'
+
+    def formula(self, index: int) -> int:
+        return 2**index + (-1)**index
+
+
+JachobsthalLucasNumbers = A014551
 
 
 class A033999(Explicit):

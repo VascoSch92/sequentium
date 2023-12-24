@@ -46,6 +46,17 @@ class TestA005408(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA014551(SequenceTestSuite):
+    sequence = A014551()
+    sequence_name = 'Jacobsthal-Lucas numbers'
+    ground_truth = [
+        2, 1, 5, 7, 17, 31, 65, 127, 257, 511, 1025, 2047, 4097, 8191, 16385, 32767, 65537, 131071, 262145, 524287,
+        1048577, 2097151, 4194305, 8388607, 16777217, 33554431, 67108865, 134217727, 268435457, 536870911, 1073741825,
+        2147483647, 4294967297, 8589934591,
+    ]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA033999(SequenceTestSuite):
     sequence = A033999()
     sequence_name = 'sequence of powers of -1'
