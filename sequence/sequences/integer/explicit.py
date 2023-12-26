@@ -1,6 +1,6 @@
 from sequence.core.infinite_type import Explicit
 from sequence.core.infinite_type import MonotonicIncreasing
-from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers
+from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers, PolygonalNumbers
 
 
 class A000027(Explicit):
@@ -20,23 +20,25 @@ PositiveIntegers = A000027
 NaturalNumbers = A000027
 
 
-class A000326(Explicit):
+class A000217(PolygonalNumbers):
+    """Triangular numbers (https://oeis.org/A000217)"""
+    def __init__(self):
+        super().__init__(number_of_sides=3)
+
+    def __str__(self):
+        return 'triangular numbers'
+
+
+TriangularNumbers = A000217()
+
+
+class A000326(PolygonalNumbers):
     """Pentagonal numbers (https://oeis.org/A000326)."""
-
-    def __contains__(self, item):
-        if item < 0:
-            return False
-        if item == 0:
-            return True
-
-        n = (1 + (1 + 24 * item) ** (1 / 2)) / 6
-        return n == int(n)
+    def __init__(self):
+        super().__init__(number_of_sides=5)
 
     def __str__(self):
         return 'pentagonal numbers'
-
-    def formula(self, index: int) -> int:
-        return index * (3 * index - 1) // 2
 
 
 PentagonalNumbers = A000326
