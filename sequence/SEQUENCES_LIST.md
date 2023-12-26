@@ -1,11 +1,15 @@
 # List of sequences
 
+---
+
 - [Integer sequences](#integer-sequences)
-- [Generalised sequences](#generalised-sequences)
+- [Generalised integer sequences](#generalised-integer-sequences)
 
 ## Integer sequences
 
-TODO: description
+---
+
+List of implemented integer sequences.
 
 | OEIS    | Sequence Name                    | Sequence class name(s)                                    | Reference                                        |     
 |---------|----------------------------------|-----------------------------------------------------------|--------------------------------------------------|
@@ -40,9 +44,11 @@ TODO: description
 | -       | The Collatz sequence             | `CollatzSequence`                                         | https://en.wikipedia.org/wiki/Collatz_conjecture |
 
 
-## Generalised sequences
+## Generalised integer sequences
 
-TODO: description
+---
+
+List of implemented generalised integer sequences.
 
 | Sequence Name                   | Sequence class name(s)      | Reference                                                          |     
 |---------------------------------|-----------------------------|--------------------------------------------------------------------|
