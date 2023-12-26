@@ -21,7 +21,7 @@ NaturalNumbers = A000027
 
 
 class A000217(PolygonalNumbers):
-    """Triangular numbers (https://oeis.org/A000217)"""
+    """Triangular numbers (https://oeis.org/A000217)."""
     def __init__(self):
         super().__init__(number_of_sides=3)
 
@@ -29,7 +29,22 @@ class A000217(PolygonalNumbers):
         return 'triangular numbers'
 
 
-TriangularNumbers = A000217()
+TriangularNumbers = A000217
+
+
+class A000290(Explicit):
+    """Square numbers (https://oeis.org/A000290)."""
+    def __str__(self):
+        return 'square numbers'
+
+    def __contains__(self, item):
+        return False if item < 0 else int(item**(1/2)) == item**(1/2)
+
+    def formula(self, index: int) -> int:
+        return index**2
+
+
+SquareNumbers = A000290
 
 
 class A000326(PolygonalNumbers):

@@ -20,6 +20,13 @@ class TestA000217(SequenceTestSuite):
     ground_truth_length = len(ground_truth)
 
 
+class TestA000290(SequenceTestSuite):
+    sequence = A000290()
+    sequence_name = 'square numbers'
+    ground_truth = [n**2 for n in range(100)]
+    ground_truth_length = len(ground_truth)
+
+
 class TestA000326(SequenceTestSuite):
     sequence = A000326()
     sequence_name = 'pentagonal numbers'
