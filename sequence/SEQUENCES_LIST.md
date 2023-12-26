@@ -19,6 +19,7 @@ TODO: description
 | A000217 | The triangular numbers           | `A000217`, `TriangularNumbers`                            | https://oeis.org/A000217                         |
 | A000290 | The square numbers               | `A000290`, `SquareNumbers`                                | https://oeis.org/A000290                         |
 | A000326 | The pentagonal numbers           | `A000326`, `PentagonalNumbers`                            | https://oeis.org/A000326                         |
+| A000384 | The hexagonal numbers            | `A000384`, `HexagonalNumbers`                             | https://oeis.org/A000384                         |
 | A001045 | The Jacobsthal numbers           | `A001045`, `JacobsthalNumbers`, `JacobsthalSequence`      | https://oeis.org/A001045                         |
 | A001228 | Orders of sporadic simple groups | `A001228`                                                 | https://oeis.org/A001228                         |
 | A001591 | The Pentanacci numbers           | `A001591`, `PentanacciNumbers`                            | https://oeis.org/A001591                         |

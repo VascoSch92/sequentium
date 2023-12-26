@@ -59,6 +59,18 @@ class A000326(PolygonalNumbers):
 PentagonalNumbers = A000326
 
 
+class A000384(PolygonalNumbers):
+    """Hexagonal numbers (https://oeis.org/A000384)."""
+    def __init__(self):
+        super().__init__(number_of_sides=6)
+
+    def __str__(self):
+        return 'hexagonal numbers'
+
+
+HexagonalNumbers = A000384
+
+
 class A001045(MonotonicIncreasing, Explicit):
     """Jacobsthal numbers (https://oeis.org/A001045)."""
 
