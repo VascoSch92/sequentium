@@ -87,6 +87,6 @@ sequence FibonacciSequence --start 2 --stop 8
 ```text
 sequence FibonacciSequence --contains 7
 >> False
-sequence FibonacciNumbers -contains 21
+sequence FibonacciNumbers --contains 21
 >> True
 ```
