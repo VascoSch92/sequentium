@@ -47,9 +47,9 @@ def execute_contains_command(args: argparse.Namespace, sequence: Type[Sequence])
 
 def execute_length_command(sequence: Type[Sequence]) -> None:
     if sequence.is_finite:
-        sys.exit(f'{sequence.__str__().capitalize()} has order {len(sequence)}')
+        sys.exit(f'{len(sequence)}')
     else:
-        sys.exit(f'{sequence.__str__().capitalize()} is infinite')
+        sys.exit(f'{float("inf")}')
 
 
 def execute_at_command(args: argparse.Namespace, sequence: Type[Sequence]) -> None:
