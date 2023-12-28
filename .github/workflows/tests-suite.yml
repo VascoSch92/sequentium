@@ -33,10 +33,11 @@ jobs:
   tests-suite:
     runs-on: ubuntu-latest
     needs: tests-suite-by-version
+    if: success() || failure()
     steps:
     - name: Check status of tests-suite-by-version
       run: |
-        if [ "${{ needs.tests-suite-by-version.outcome }}" != "success" ]; then
+        if [ "${{ needs.tests-suite-by-version.result }}" != "success" ]; then
           echo "Previous job(s) failed."
           exit 1
         else
