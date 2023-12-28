@@ -34,7 +34,7 @@ def get_sequence_class_names_from_md() -> Set:
 
 def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
     # extract the table integer sequences from the md
-    integer_sequences_pattern = re.compile(r'## Integer sequences\n(.+?)\n## Generalised sequences', re.DOTALL)
+    integer_sequences_pattern = re.compile(r'## Integer sequences\n(.+?)\n## Generalised integer sequences', re.DOTALL)
     match = re.search(integer_sequences_pattern, content)
     generalised_sequences_table = match.group(1).strip()
 
@@ -48,7 +48,7 @@ def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
 
 def extract_generalised_sequences_class_names_from_md(content: str) -> Set[str]:
     # extract the table generalised sequences from the md
-    generalised_sequences_pattern = re.compile(r'## Generalised sequences\n(.+?)(?=\n##|$)', re.DOTALL)
+    generalised_sequences_pattern = re.compile(r'## Generalised integer sequences\n(.+?)(?=\n##|$)', re.DOTALL)
     match = re.search(generalised_sequences_pattern, content)
     generalised_sequences_table = match.group(1).strip()
 
