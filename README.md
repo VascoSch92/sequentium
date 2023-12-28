@@ -6,6 +6,8 @@ providing a seamless and intuitive experience for the user.
 For an exhaustive list of all sequences implemented in Sequentium, 
 please click [here](https://github.com/VascoSch92/sequentium/blob/main/sequence/SEQUENCES_LIST.md).
 
+If you would like to contribute to the project, take a look to the section [_How to contribute_](https://github.com/VascoSch92/sequentium/wiki/5.-How-to-contribuite) in the wiki.
+
 ## Quick start
 
 To install Sequentium, use the following command:
