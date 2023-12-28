@@ -15,6 +15,6 @@
 
 
 ---
-## [0.0.0] - Date
+## [0.0.0] - 2023-12-28
 
-Copy paste from unreleased
+First version of Sequentium :-D 
