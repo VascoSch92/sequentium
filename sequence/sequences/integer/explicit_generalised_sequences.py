@@ -39,8 +39,11 @@ class PolygonalNumbers(Explicit):
             return True
 
         item = (
-            (8 * (self.number_of_sides - 2) * item + (self.number_of_sides - 4)**2)**(1/2) + (self.number_of_sides - 4)
-            ) / (2 * (self.number_of_sides - 2))
+            (
+                    8 * (self.number_of_sides - 2) * item + (self.number_of_sides - 4) ** 2
+            ) ** (1/2)
+            + (self.number_of_sides - 4)
+        ) / (2 * (self.number_of_sides - 2))
         return item == int(item)
 
     def __str__(self):
