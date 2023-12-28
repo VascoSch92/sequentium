@@ -38,10 +38,10 @@ class A000290(Explicit):
         return 'square numbers'
 
     def __contains__(self, item):
-        return False if item < 0 else int(item**(1/2)) == item**(1/2)
+        return False if item < 0 else int(item ** (1/2)) == item ** (1/2)
 
     def formula(self, index: int) -> int:
-        return index**2
+        return index ** 2
 
 
 SquareNumbers = A000290

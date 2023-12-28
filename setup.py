@@ -12,7 +12,8 @@ setup(
   author='Vasco Schiavo',
   author_email='vasco.schiavo@protonmail.com',
   url='https://github.com/VascoSch92/sequentium',
-  description='A package to work with sequences',
+  description="Sequentium is a user-friendly package that implements various well-known sequences, providing a "
+              "seamless and intuitive experience for the user",
   long_description=long_description,
   long_description_content_type='text/markdown',
   packages=find_namespace_packages(include=['sequence*'], exclude=['tests']),
@@ -22,7 +23,7 @@ setup(
   # download_url='https://github.com/user/reponame/archive/v_01.tar.gz',
   keywords=['math', 'mathematics', 'sequence', 'fibonacci'],
   classifiers=[
-    'Development Status :: 1 - Planning',
+    'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Education',
     'Intended Audience :: End Users/Desktop',
     'Intended Audience :: Science/Research',
