@@ -6,7 +6,6 @@ class TestA000027(SequenceTestSuite):
     sequence = A000027()
     sequence_name = 'natural numbers'
     ground_truth = list(range(100))
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000217(SequenceTestSuite):
@@ -17,14 +16,12 @@ class TestA000217(SequenceTestSuite):
         276, 300, 325, 351, 378, 406, 435, 465, 496, 528, 561, 595, 630, 666, 703, 741, 780, 820, 861, 903,
         946, 990, 1035, 1081, 1128, 1176, 1225, 1275, 1326, 1378, 1431,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000290(SequenceTestSuite):
     sequence = A000290()
     sequence_name = 'square numbers'
     ground_truth = [n**2 for n in range(100)]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000326(SequenceTestSuite):
@@ -36,7 +33,6 @@ class TestA000326(SequenceTestSuite):
         1080, 1162, 1247, 1335, 1426, 1520, 1617, 1717, 1820, 1926,
         2035, 2147, 2262, 2380, 2501, 2625, 2752, 2882, 3015, 3151,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000384(SequenceTestSuite):
@@ -47,7 +43,6 @@ class TestA000384(SequenceTestSuite):
         1128, 1225, 1326, 1431, 1540, 1653, 1770, 1891, 2016, 2145, 2278, 2415, 2556, 2701, 2850, 3003, 3160, 3321,
         3486, 3655, 3828, 4005, 4186, 4371, 4560,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA001045(SequenceTestSuite):
@@ -58,21 +53,18 @@ class TestA001045(SequenceTestSuite):
         699051, 1398101, 2796203, 5592405, 11184811, 22369621, 44739243, 89478485, 178956971, 357913941, 715827883,
         1431655765, 2863311531, 5726623061, 11453246123,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA003215(SequenceTestSuite):
     sequence = A003215()
     sequence_name = 'hex numbers'
     ground_truth = [1, 7, 19, 37, 61, 91, 127, 169, 217]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA005408(SequenceTestSuite):
     sequence = A005408()
     sequence_name = 'odd numbers'
     ground_truth = [2 * index + 1 for index in range(50)]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA014551(SequenceTestSuite):
@@ -83,11 +75,9 @@ class TestA014551(SequenceTestSuite):
         1048577, 2097151, 4194305, 8388607, 16777217, 33554431, 67108865, 134217727, 268435457, 536870911, 1073741825,
         2147483647, 4294967297, 8589934591,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA033999(SequenceTestSuite):
     sequence = A033999()
     sequence_name = 'sequence of powers of -1'
     ground_truth = [(-1)**index for index in range(50)]
-    ground_truth_length = len(ground_truth)

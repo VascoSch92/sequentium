@@ -10,7 +10,6 @@ class TestA000032(SequenceTestSuite):
         64079, 103682, 167761, 271443, 439204, 710647, 1149851, 1860498, 3010349, 4870847, 7881196, 12752043, 20633239,
         33385282, 54018521, 87403803,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000045(SequenceTestSuite):
@@ -21,7 +20,6 @@ class TestA000045(SequenceTestSuite):
         10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309,
         3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000073(SequenceTestSuite):
@@ -32,7 +30,6 @@ class TestA000073(SequenceTestSuite):
         121415, 223317, 410744, 755476, 1389537, 2555757, 4700770, 8646064, 15902591, 29249425, 53798080, 98950096,
         181997601, 334745777, 615693474, 1132436852,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000078(SequenceTestSuite):
@@ -43,7 +40,6 @@ class TestA000078(SequenceTestSuite):
         283953, 547337, 1055026, 2033628, 3919944, 7555935, 14564533, 28074040, 54114452, 104308960, 201061985,
         387559437, 747044834, 1439975216, 2775641472,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA000129(SequenceTestSuite):
@@ -54,7 +50,6 @@ class TestA000129(SequenceTestSuite):
         6625109, 15994428, 38613965, 93222358, 225058681, 543339720, 1311738121, 3166815962, 7645370045, 18457556052,
         44560482149, 107578520350, 259717522849,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA001591(SequenceTestSuite):
@@ -65,7 +60,6 @@ class TestA001591(SequenceTestSuite):
         203513, 400096, 786568, 1546352, 3040048, 5976577, 11749641, 23099186, 45411804, 89277256, 175514464,
         345052351, 678355061, 1333610936, 2621810068,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA001592(SequenceTestSuite):
@@ -76,7 +70,6 @@ class TestA001592(SequenceTestSuite):
         233904, 463968, 920319, 1825529, 3621088, 7182728, 14247536, 28261168, 56058368, 111196417, 220567305,
         437513522, 867844316, 1721441096, 3414621024,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA002203(SequenceTestSuite):
@@ -87,7 +80,6 @@ class TestA002203(SequenceTestSuite):
         7761798, 18738638, 45239074, 109216786, 263672646, 636562078, 1536796802, 3710155682, 8957108166, 21624372014,
         52205852194, 126036076402, 304278004998,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA079262(SequenceTestSuite):
@@ -109,7 +101,6 @@ class TestA104144(SequenceTestSuite):
         129792, 259328, 518145, 1035269, 2068498, 4132920, 8257696, 16499120, 32965728, 65866496, 131603200, 262947072,
         525375999, 1049716729, 2097364960,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA122189(SequenceTestSuite):
@@ -120,7 +111,6 @@ class TestA122189(SequenceTestSuite):
         124946, 248888, 495776, 987568, 1967200, 3918592, 7805695, 15548665, 30972384, 61695880, 122895984, 244804400,
         487641600, 971364608, 1934923521,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA214733(SequenceTestSuite):
@@ -131,5 +121,3 @@ class TestA214733(SequenceTestSuite):
         61126, -16951, -166427, 217280, 282001, -933841, 87838, 2713685, -2977199, -5163856, 14095453, 1396115,
         -43682474, 39494129, 91553293, -210035680,
     ]
-    ground_truth_length = len(ground_truth)
-

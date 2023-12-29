@@ -12,7 +12,6 @@ class TestA087204(PeriodicSequenceTestSuite):
         -2, -1, 1, 2, 1, -1, -2, -1, 1, 2, 1, -1, -2, -1, 1, 2, 1, -1, -2, -1, 1, 2, 1, -1, -2, -1, 1, 2, 1, -1, -2,
         -1, 1, 2, 1, -1, -2, -1, 1,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA128834(PeriodicSequenceTestSuite):
@@ -25,7 +24,3 @@ class TestA128834(PeriodicSequenceTestSuite):
         0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0,
         -1, -1, 0, 1, 1,
     ]
-    ground_truth_length = len(ground_truth)
-
-
-
