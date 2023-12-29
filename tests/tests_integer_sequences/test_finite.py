@@ -12,18 +12,15 @@ class TestA001228(FiniteSequenceTestSuite):
         1255205709190661721292800, 4154781481226426191177580544000000,
         808017424794512875886459904961710757005754368000000000,
     ]
-    ground_truth_length = len(ground_truth)
 
 
 class TestA003173(FiniteSequenceTestSuite):
     sequence = A003173()
     sequence_name = 'Heegner numbers'
     ground_truth = [1, 2, 3, 7, 11, 19, 43, 67, 163]
-    ground_truth_length = len(ground_truth)
 
 
 class TestCollatzSequence(FiniteSequenceTestSuite):
     sequence = CollatzSequence(start_value=19)
     sequence_name = 'Collatz sequence'
     ground_truth = [19, 58, 29, 88, 44, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]
-    ground_truth_length = len(ground_truth)

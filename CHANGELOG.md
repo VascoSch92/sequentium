@@ -22,6 +22,8 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+ENHANCEMENT:
+- sequentium.tests.sequence_tests_suite.py: self.ground_truth_length is removed as we can perform same tests without it.
 
 ---
 ## [0.0.0] - 2023-12-28

@@ -23,7 +23,6 @@ class SequenceTestSuite:
     is_finite: bool = False
     is_periodic: bool = False
     ground_truth: List[int] = None
-    ground_truth_length: int = None
 
     def test_sequence_name(self):
         """Test if the sequence's name matches the expected value."""
@@ -43,7 +42,7 @@ class SequenceTestSuite:
     def test_len(self):
         """Test the length of the sequence, considering finiteness."""
         if self.sequence.is_finite:
-            assert len(self.sequence) == self.ground_truth_length
+            assert len(self.sequence) == len(self.ground_truth)
         else:
             with pytest.raises(InfiniteSequenceError):
                 len(self.sequence)
@@ -84,8 +83,8 @@ class SequenceTestSuite:
         """Test if the as_list method returns the expected subsequence for various start and stop indices."""
         error_msg = ''
         count = 0
-        for j in range(self.ground_truth_length - 1):
-            for i in range(j, self.ground_truth_length):
+        for j in range(len(self.ground_truth) - 1):
+            for i in range(j, len(self.ground_truth)):
                 if self.sequence[j:i] != self.ground_truth[j:i]:
                     error_msg += f"{count}. Expected: {self.ground_truth[j:i]}. " \
                                  f"Got {self.sequence[j:i]}!\n" \
