@@ -9,13 +9,11 @@ class GeneralisedNexusNumbers(MonotonicIncreasing, Explicit):
     Attributes:
         dimension (int): The dimension parameter for the Generalised Nexus Numbers.
     """
+    sequence_name = 'generalised Nexus numbers'
 
     def __init__(self, dimension: int):
         super().__init__()
         self.dimension = validate_positive_integer(integer=dimension)
-
-    def __str__(self):
-        return 'generalised Nexus numbers'
 
     def formula(self, index: int) -> int:
         return (index + 1) ** (self.dimension + 1) - index ** (self.dimension + 1)
@@ -28,6 +26,8 @@ class PolygonalNumbers(Explicit):
         Attributes:
         - number_of_sides (int): The number of sides for the polygonal numbers.
     """
+    sequence_name = 'polygonal numbers'
+
     def __init__(self, number_of_sides: int):
         super().__init__()
         self.number_of_sides = validate_positive_integer(integer=number_of_sides)
@@ -45,9 +45,6 @@ class PolygonalNumbers(Explicit):
             + (self.number_of_sides - 4)
         ) / (2 * (self.number_of_sides - 2))
         return item == int(item)
-
-    def __str__(self):
-        return 'polygonal numbers'
 
     def formula(self, index: int) -> int:
         return (self.number_of_sides - 2) * index * (index-1) // 2 + index
