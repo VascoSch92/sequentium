@@ -8,14 +8,14 @@ from sequence.core.utils.validation import validate_as_list_input
 
 class Sequence(ABC):
     """Abstract base class for representing mathematical sequences."""
+    sequence_name: str
 
     @abstractmethod
     def __contains__(self, item):
         raise NotImplementedError
 
-    @abstractmethod
     def __str__(self):
-        raise NotImplementedError
+        return self.sequence_name
 
     def __iter__(self):
         return self._as_generator()
