@@ -13,7 +13,7 @@ class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
     """
     sequence_name = 'High order Fibonacci numbers'
 
-    def __init__(self, order: int):
+    def __init__(self, order: int) -> None:
         self.order = validate_positive_integer(integer=order)
         start_terms = self._compute_start_terms()
 
@@ -43,7 +43,7 @@ class LucasSequenceU(MonotonicIncreasing, Recursive):
     """
     sequence_name = 'Lucas sequence U_n'
 
-    def __init__(self, p: int, q: int):
+    def __init__(self, p: int, q: int) -> None:
         super().__init__(start_terms=(0, 1))
         self.p = validate_integer(integer=p)
         self.q = validate_integer(integer=q)
@@ -65,7 +65,7 @@ class LucasSequenceV(LucasSequenceU):
     """
     sequence_name = 'Lucas sequence V_n'
 
-    def __init__(self, p: int, q:  int):
+    def __init__(self, p: int, q:  int) -> None:
         super().__init__(p=p, q=q)
 
         self.start_terms = (2, self.p)

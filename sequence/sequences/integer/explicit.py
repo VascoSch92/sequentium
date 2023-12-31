@@ -1,3 +1,5 @@
+from typing import Any
+
 from sequence.core.infinite_type import Explicit
 from sequence.core.infinite_type import MonotonicIncreasing
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers, PolygonalNumbers
@@ -7,7 +9,7 @@ class A000027(Explicit):
     """The natural numbers (https://oeis.org/A000027)."""
     sequence_name = 'natural numbers'
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         return True
 
     def formula(self, index: int) -> int:
@@ -22,7 +24,7 @@ class A000217(PolygonalNumbers):
     """Triangular numbers (https://oeis.org/A000217)."""
     sequence_name = 'triangular numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(number_of_sides=3)
 
 
@@ -33,7 +35,7 @@ class A000290(Explicit):
     """Square numbers (https://oeis.org/A000290)."""
     sequence_name = 'square numbers'
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         return False if item < 0 else int(item ** (1/2)) == item ** (1/2)
 
     def formula(self, index: int) -> int:
@@ -47,7 +49,7 @@ class A000326(PolygonalNumbers):
     """Pentagonal numbers (https://oeis.org/A000326)."""
     sequence_name = 'pentagonal numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(number_of_sides=5)
 
 
@@ -58,7 +60,7 @@ class A000384(PolygonalNumbers):
     """Hexagonal numbers (https://oeis.org/A000384)."""
     sequence_name = 'hexagonal numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(number_of_sides=6)
 
 
@@ -81,10 +83,10 @@ class A003215(GeneralisedNexusNumbers):
     """Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
     sequence_name = 'hex numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(dimension=2)
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         if item <= 0:
             return False
         n = (3 + (12 * item - 3) ** (1 / 2)) / 6
@@ -99,7 +101,7 @@ class A005408(Explicit):
     """The odd numbers (https://oeis.org/A005408)."""
     sequence_name = 'odd numbers'
 
-    def __contains__(self, item: int) -> bool:
+    def __contains__(self, item: Any) -> bool:
         return item % 2 == 1
 
     def formula(self, index: int) -> int:
@@ -113,7 +115,7 @@ class A014551(MonotonicIncreasing, Explicit):
     """Jacobsthal-Lucas numbers (https://oeis.org/A014551)."""
     sequence_name = 'Jacobsthal-Lucas numbers'
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         if item == 1:
             return True
         return super().__contains__(item=item)
@@ -129,7 +131,7 @@ class A033999(Explicit):
     """Sequence of powers of -1 (https://oeis.org/A033999)."""
     sequence_name = 'sequence of powers of -1'
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         return item in {-1, 1}
 
     def formula(self, index: int) -> int:
