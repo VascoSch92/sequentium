@@ -7,7 +7,7 @@ from sequence.sequences.integer.property_defined import *
 from sequence.sequences.integer.recursive import *
 
 
-def main():
+def main() -> None:
     execute_command_line_interface()
 
 
