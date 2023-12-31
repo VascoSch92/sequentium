@@ -5,6 +5,7 @@ select = [
     "B", # Flake8-bugbear
     "W", # Pycodestyle Warning
     "N", # pep8-naming
+    "ANN", # flake8-annotations
     "D101", # undocumented-public-class
     "D200", # One-line docstring should fit on one line
     "D201", # no-blank-line-before-function
@@ -37,6 +38,8 @@ select = [
 
 # Ignored rules
 ignore = [
+    "ANN101", # Missing type for self
+    "ANN401", # Dynamically typed expressions (typing.Any) are disallowed
     "B020", # Checks for contextlib.suppress without arguments
     "E226", # Missing withespace around arithmetic operations
     "B023", # Checks for function definitions that use a loop variable
@@ -61,4 +64,5 @@ output-format = "github"
 "tests/*" = [
     "D101", # undocumented-public-class
     "RUF012", # mutable-class-default
+    "ANN", # flake8-annotations
 ]

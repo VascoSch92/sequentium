@@ -1,3 +1,5 @@
+from typing import Any
+
 from sequence.core.infinite_type import Explicit, MonotonicIncreasing
 from sequence.core.utils.validation import validate_positive_integer
 
@@ -11,7 +13,7 @@ class GeneralisedNexusNumbers(MonotonicIncreasing, Explicit):
     """
     sequence_name = 'generalised Nexus numbers'
 
-    def __init__(self, dimension: int):
+    def __init__(self, dimension: int) -> None:
         super().__init__()
         self.dimension = validate_positive_integer(integer=dimension)
 
@@ -28,11 +30,11 @@ class PolygonalNumbers(Explicit):
     """
     sequence_name = 'polygonal numbers'
 
-    def __init__(self, number_of_sides: int):
+    def __init__(self, number_of_sides: int) -> None:
         super().__init__()
         self.number_of_sides = validate_positive_integer(integer=number_of_sides)
 
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         if item < 0:
             return False
         if item == 0:

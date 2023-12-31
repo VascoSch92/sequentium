@@ -15,7 +15,7 @@ class PrimesOfSequence(PropertyDefined, ABC):
         base_sequence (Type[Sequence]): The base sequence used for filtering prime numbers.
     """
 
-    def __init__(self, base_sequence: Type[Sequence]):
+    def __init__(self, base_sequence: Type[Sequence]) -> None:
         super().__init__()
         self.base_sequence = base_sequence()
 

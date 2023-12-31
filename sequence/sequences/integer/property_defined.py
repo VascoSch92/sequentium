@@ -8,7 +8,7 @@ class A000040(PrimesOfSequence):
     """ The prime numbers (https://oeis.org/A000040)."""
     sequence_name = 'prime numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(base_sequence=A000027)
 
 
@@ -20,7 +20,7 @@ class A002808(PropertyDefined):
     """The composite numbers (https://oeis.org/A002808)."""
     sequence_name = 'composite numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
     def property(self, number: int) -> bool:
