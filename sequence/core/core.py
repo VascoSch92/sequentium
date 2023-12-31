@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from itertools import islice
-from typing import Generator, List, Any, Optional
+from typing import Generator, List, Any, Optional, Union
 
 from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 from sequence.core.utils.validation import validate_as_list_input
@@ -11,16 +11,16 @@ class Sequence(ABC):
     sequence_name: str
 
     @abstractmethod
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         raise NotImplementedError
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.sequence_name
 
-    def __iter__(self):
+    def __iter__(self) -> Generator:
         return self._as_generator()
 
-    def __getitem__(self, item):
+    def __getitem__(self, item: Any) -> Union[List, Any]:
         if isinstance(item, slice):
             if item.stop is None and self.is_finite is False:
                 return InfiniteSequenceError
@@ -61,11 +61,11 @@ class Sequence(ABC):
 class FiniteType(Sequence, ABC):
     """Abstract base class for representing finite sequences."""
 
-    def __init__(self, sequence: Optional[List[Any]] = None):
+    def __init__(self, sequence: Optional[List[Any]] = None) -> None:
         super().__init__()
         self.sequence = sequence
 
-    def __contains__(self, item: int) -> bool:
+    def __contains__(self, item: Any) -> bool:
         return item in self.sequence
 
 

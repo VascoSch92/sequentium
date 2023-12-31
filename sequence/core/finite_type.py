@@ -9,7 +9,7 @@ from sequence.core.utils.validation import validate_as_list_input
 class Finite(FiniteType, ABC):
     """Abstract base class for representing finite sequences."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
     def __len__(self) -> int:
@@ -34,7 +34,7 @@ class Finite(FiniteType, ABC):
 class Periodic(FiniteType, ABC):
     """Abstract base class for representing periodic sequences."""
 
-    def __init__(self, _period: int):
+    def __init__(self, _period: int) -> None:
         super().__init__()
         self._period = _period
 
