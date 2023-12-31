@@ -14,6 +14,13 @@ class Sequence(ABC):
     def __contains__(self, item: Any) -> bool:
         raise NotImplementedError
 
+    def __eq__(self, other: Any) -> bool:
+        """
+        The method checks if the representation of the sequence is the same.
+        It doesn't check that two sequences are equal, but that two sequences are different instance of the same class.
+        """
+        return other.__str__() == self.__str__() and other.__dict__ == self.__dict__
+
     def __str__(self) -> str:
         return self.sequence_name
 

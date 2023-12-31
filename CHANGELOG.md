@@ -24,8 +24,9 @@ The version is represented by three digits: a.b.c.
 
 ENHANCEMENT:
 - sequentium.tests.sequence_tests_suite.py: self.ground_truth_length is removed as we can perform same tests without it.
-- sequentium.core.core.py: added __str__ method in core class
+- sequentium.core.core.py: added __str__ method in Sequence class
 - sequentium.ruff.toml: added rule "ANN"
+- sequentium.core.core.py: added __eq__ method in Sequence clas
 
 ---
 ## [0.0.0] - 2023-12-28
