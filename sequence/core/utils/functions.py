@@ -1,4 +1,21 @@
 from math import isqrt
+from typing import Generator, Any
+
+
+def is_in_monotonic_increasing_generator(generator: Generator, item: Any) -> bool:
+    """
+    Check if the element 'item' is present in a monotonic increasing generator.
+
+    Args:
+        - generator (Generator)
+        - item (Any): The item to be checked for presence in the generator
+    """
+    for element in generator:
+        if element == item:
+            return True
+        if element > item:
+            return False
+    return False
 
 
 def is_prime(number: int) -> bool:
