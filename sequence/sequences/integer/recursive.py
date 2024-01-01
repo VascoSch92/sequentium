@@ -1,4 +1,4 @@
-from typing import Any, Tuple
+from typing import Any, Tuple, List, ClassVar
 from sequence.core.mixin import AlmostMonotonicIncreasingMixin
 from sequence.core.infinite_type import Recursive
 from sequence.sequences.integer.recursive_generalised_sequences import (
@@ -73,7 +73,7 @@ LambdaNumbers = A000129
 class A000931(AlmostMonotonicIncreasingMixin, Recursive):
     """Padovan numbers (https://oeis.org/A000931)"""
     sequence_name = 'Padovan numbers'
-    offset = [1, 0, 0, 1, 0, 1]
+    offset: ClassVar[List[int]] = [1, 0, 0, 1, 0, 1]
 
     def __init__(self) -> None:
         super().__init__(start_terms=(1, 0, 0))
