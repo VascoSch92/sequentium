@@ -30,7 +30,7 @@ class Sequence(ABC):
     def __getitem__(self, item: Any) -> Union[List, Any]:
         if isinstance(item, slice):
             if item.stop is None and self.is_finite is False:
-                return InfiniteSequenceError
+                return islice(self._as_generator(), item.start, None)
             return self._as_list(start=item.start, stop=item.stop, step=item.step)
         return self._at(index=item)
 
