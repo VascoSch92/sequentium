@@ -1,10 +1,11 @@
 from typing import Any
 
-from sequence.core.infinite_type import Explicit, MonotonicIncreasing
+from sequence.core.infinite_type import Explicit
+from sequence.core.mixin import MonotonicIncreasingMixin
 from sequence.core.utils.validation import validate_positive_integer
 
 
-class GeneralisedNexusNumbers(MonotonicIncreasing, Explicit):
+class GeneralisedNexusNumbers(MonotonicIncreasingMixin, Explicit):
     """
     Class representing a sequence of Generalised Nexus Numbers (https://mathworld.wolfram.com/NexusNumber.html).
 

@@ -1,10 +1,11 @@
 from typing import Tuple, Any
 
-from sequence.core.infinite_type import Recursive, MonotonicIncreasing
+from sequence.core.infinite_type import Recursive
+from sequence.core.mixin import MonotonicIncreasingMixin
 from sequence.core.utils.validation import validate_integer, validate_positive_integer
 
 
-class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
+class HighOrderFibonacciNumbers(MonotonicIncreasingMixin, Recursive):
     """
         Class for generating high order Fibonacci numbers (https://mathworld.wolfram.com/Fibonaccin-StepNumber.html).
 
@@ -31,7 +32,7 @@ class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
         return *[terms[i] for i in range(1, self.order)], sum(terms)
 
 
-class LucasSequenceU(MonotonicIncreasing, Recursive):
+class LucasSequenceU(MonotonicIncreasingMixin, Recursive):
     """
     The class generates the Lucas sequence U_n (https://en.wikipedia.org/wiki/Lucas_sequence).
     The sequence is defined by the recurrence relation: U_{n+2} = p * U_{n+1} - q * U_n,

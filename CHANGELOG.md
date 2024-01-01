@@ -27,7 +27,12 @@ ENHANCEMENT:
 - sequentium.core.core.py: added __str__ method in Sequence class
 - sequentium.ruff.toml: added rule "ANN"
 - sequentium.core.core.py: added __eq__ method in Sequence clas
+- sequentium.core.mixin.py: new script for mixin classes
+- sequentium.core.mixin.py: added AlmostMonotonicIncreasingMixin class
+- sequentium.sequences.integer.recursive.py: added A000931
 
+FIX:
+- sequentium.core.core.py: method __getitem__ return a generator when the stop value in the slice is missing
 ---
 ## [0.0.0] - 2023-12-28
 

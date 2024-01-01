@@ -69,15 +69,3 @@ class PropertyDefined(InfiniteType, ABC):
     def property(self, number: Any) -> bool:
         """Abstract method to define the property for elements in the sequence."""
         raise NotImplementedError
-
-
-class MonotonicIncreasing:
-    """Mixin class for monotonic increasing sequences."""
-
-    def __contains__(self, item: Any) -> bool:
-        for element in self._as_generator():
-            if element == item:
-                return True
-            if element > item:
-                return False
-        return False
