@@ -1,7 +1,7 @@
 from typing import Any
 
 from sequence.core.infinite_type import Explicit
-from sequence.core.infinite_type import MonotonicIncreasing
+from sequence.core.mixin import MonotonicIncreasingMixin
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers, PolygonalNumbers
 
 
@@ -67,7 +67,7 @@ class A000384(PolygonalNumbers):
 HexagonalNumbers = A000384
 
 
-class A001045(MonotonicIncreasing, Explicit):
+class A001045(MonotonicIncreasingMixin, Explicit):
     """Jacobsthal numbers (https://oeis.org/A001045)."""
     sequence_name = 'Jacobsthal numbers'
 
@@ -111,7 +111,7 @@ class A005408(Explicit):
 OddNumbers = A005408
 
 
-class A014551(MonotonicIncreasing, Explicit):
+class A014551(MonotonicIncreasingMixin, Explicit):
     """Jacobsthal-Lucas numbers (https://oeis.org/A014551)."""
     sequence_name = 'Jacobsthal-Lucas numbers'
 
