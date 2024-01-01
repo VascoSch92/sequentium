@@ -1,5 +1,6 @@
-from typing import Any
-
+from typing import Any, Tuple
+from sequence.core.mixin import AlmostMonotonicIncreasingMixin
+from sequence.core.infinite_type import Recursive
 from sequence.sequences.integer.recursive_generalised_sequences import (
     HighOrderFibonacciNumbers,
     LucasSequenceU,
@@ -67,6 +68,22 @@ class A000129(LucasSequenceU):
 
 PellNumbers = A000129
 LambdaNumbers = A000129
+
+
+class A000931(AlmostMonotonicIncreasingMixin, Recursive):
+    """Padovan numbers (https://oeis.org/A000931)"""
+    sequence_name = 'Padovan numbers'
+    offset = [1, 0, 0, 1, 0, 1]
+
+    def __init__(self) -> None:
+        super().__init__(start_terms=(1, 0, 0))
+
+    def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
+        return terms[1], terms[2], terms[1] + terms[0]
+
+
+PadovanNumbers = A000931
+PadovanSequence = A000931
 
 
 class A001591(HighOrderFibonacciNumbers):

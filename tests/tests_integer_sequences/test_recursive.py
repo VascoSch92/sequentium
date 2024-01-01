@@ -52,6 +52,16 @@ class TestA000129(SequenceTestSuite):
     ]
 
 
+class TestA000931(SequenceTestSuite):
+    sequence = A000931()
+    sequence_name = 'Padovan numbers'
+    ground_truth = [
+        1, 0, 0, 1, 0, 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86, 114, 151, 200, 265, 351, 465, 616,
+        816, 1081, 1432, 1897, 2513, 3329, 4410, 5842, 7739, 10252, 13581, 17991, 23833, 31572, 41824, 55405, 73396,
+        97229, 128801, 170625,
+    ]
+
+
 class TestA001591(SequenceTestSuite):
     sequence = A001591()
     sequence_name = 'Pentanacci numbers'
