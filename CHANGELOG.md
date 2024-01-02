@@ -22,6 +22,9 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+---
+## [0.0.1] - 2024-01-02
+
 ENHANCEMENT:
 - sequentium.tests.sequence_tests_suite.py: self.ground_truth_length is removed as we can perform same tests without it.
 - sequentium.core.core.py: added __str__ method in Sequence class
@@ -33,7 +36,7 @@ ENHANCEMENT:
 
 FIX:
 - sequentium.core.core.py: method __getitem__ return a generator when the stop value in the slice is missing
----
+
 ## [0.0.0] - 2023-12-28
 
 First version of Sequentium :-D 
