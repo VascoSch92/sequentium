@@ -22,6 +22,9 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+ENHANCEMENT:
+- sequentium.github.workflows.release.yml: workflow for automatic upload on pypi
+
 ---
 ## [0.0.1] - 2024-01-02
 
