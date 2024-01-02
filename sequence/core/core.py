@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from itertools import islice
-from typing import Generator, List, Any, Optional
+from typing import Generator, List, Any, Optional, Union
 
 from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 from sequence.core.utils.validation import validate_as_list_input
@@ -8,22 +8,29 @@ from sequence.core.utils.validation import validate_as_list_input
 
 class Sequence(ABC):
     """Abstract base class for representing mathematical sequences."""
+    sequence_name: str
 
     @abstractmethod
-    def __contains__(self, item):
+    def __contains__(self, item: Any) -> bool:
         raise NotImplementedError
 
-    @abstractmethod
-    def __str__(self):
-        raise NotImplementedError
+    def __eq__(self, other: Any) -> bool:
+        """
+        The method checks if the representation of the sequence is the same.
+        It doesn't check that two sequences are equal, but that two sequences are different instance of the same class.
+        """
+        return other.__str__() == self.__str__() and other.__dict__ == self.__dict__
 
-    def __iter__(self):
+    def __str__(self) -> str:
+        return self.sequence_name
+
+    def __iter__(self) -> Generator:
         return self._as_generator()
 
-    def __getitem__(self, item):
+    def __getitem__(self, item: Any) -> Union[List, Any]:
         if isinstance(item, slice):
             if item.stop is None and self.is_finite is False:
-                return InfiniteSequenceError
+                return islice(self._as_generator(), item.start, None)
             return self._as_list(start=item.start, stop=item.stop, step=item.step)
         return self._at(index=item)
 
@@ -61,11 +68,11 @@ class Sequence(ABC):
 class FiniteType(Sequence, ABC):
     """Abstract base class for representing finite sequences."""
 
-    def __init__(self, sequence: Optional[List[Any]] = None):
+    def __init__(self, sequence: Optional[List[Any]] = None) -> None:
         super().__init__()
         self.sequence = sequence
 
-    def __contains__(self, item: int) -> bool:
+    def __contains__(self, item: Any) -> bool:
         return item in self.sequence
 
 

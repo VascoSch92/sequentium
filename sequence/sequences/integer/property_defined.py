@@ -6,12 +6,10 @@ from sequence.sequences.integer.property_defined_generalised_sequences import Pr
 
 class A000040(PrimesOfSequence):
     """ The prime numbers (https://oeis.org/A000040)."""
+    sequence_name = 'prime numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(base_sequence=A000027)
-
-    def __str__(self):
-        return 'prime numbers'
 
 
 PrimeNumbers = A000040
@@ -20,8 +18,9 @@ PositivePrimeNumbers = A000040
 
 class A002808(PropertyDefined):
     """The composite numbers (https://oeis.org/A002808)."""
+    sequence_name = 'composite numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
     def property(self, number: int) -> bool:
@@ -29,11 +28,6 @@ class A002808(PropertyDefined):
             return False
         return is_prime(number=number) is False
 
-    def __str__(self):
-        return 'composite numbers'
-
 
 CompositeNumbers = A002808
 PositiveCompositeNumbers = A002808
-
-

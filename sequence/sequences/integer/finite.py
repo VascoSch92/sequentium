@@ -6,8 +6,9 @@ from sequence.core.utils.validation import validate_positive_integer
 
 class A001228(Finite):
     """Orders of sporadic simple groups (https://oeis.org/A001228)."""
+    sequence_name = 'orders of sporadic simple groups sequence'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.sequence = [
             7920, 95040, 175560, 443520, 604800, 10200960, 44352000, 50232960, 244823040, 898128000, 4030387200,
@@ -17,23 +18,17 @@ class A001228(Finite):
             808017424794512875886459904961710757005754368000000000,
         ]
 
-    def __str__(self):
-        return 'orders of sporadic simple groups sequence'
-
 
 class A003173(Finite):
     """Heegner numbers: imaginary quadratic fields with unique factorization (https://oeis.org/A003173)."""
+    sequence_name = 'Heegner numbers'
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.sequence = [1, 2, 3, 7, 11, 19, 43, 67, 163]
 
-    def __str__(self):
-        return 'Heegner numbers'
-
 
 HeegnerNumbers = A003173
-
 
 
 class CollatzSequence(Finite):
@@ -41,13 +36,12 @@ class CollatzSequence(Finite):
     Collatz sequence: the sequence of numbers involved in the Collatz conjecture
     (https://en.wikipedia.org/wiki/Collatz_conjecture)
     """
-    def __init__(self, start_value: int):
+    sequence_name = 'Collatz sequence'
+
+    def __init__(self, start_value: int) -> None:
         super().__init__()
         start_value = validate_positive_integer(integer=start_value)
         self.sequence = self.generate_cycle(value=start_value)
-
-    def __str__(self):
-        return 'Collatz sequence'
 
     @staticmethod
     def generate_cycle(value: int) -> List[int]:

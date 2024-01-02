@@ -8,7 +8,7 @@ from sequence.core.utils.validation import validate_positive_integer, validate_a
 class Explicit(InfiniteType, ABC):
     """Abstract base class for representing explicit infinite sequences."""
 
-    def __init__(self, start_index: int = 0):
+    def __init__(self, start_index: int = 0) -> None:
         super().__init__()
         validate_positive_integer(integer=start_index)
         self.start_index = start_index
@@ -36,7 +36,7 @@ class Explicit(InfiniteType, ABC):
 class Recursive(InfiniteType, ABC):
     """Abstract base class for representing recursive infinite sequences."""
 
-    def __init__(self, start_terms: Optional[Tuple[Any, ...]] = None):
+    def __init__(self, start_terms: Optional[Tuple[Any, ...]] = None) -> None:
         super().__init__()
         self.start_terms = start_terms
 
@@ -69,15 +69,3 @@ class PropertyDefined(InfiniteType, ABC):
     def property(self, number: Any) -> bool:
         """Abstract method to define the property for elements in the sequence."""
         raise NotImplementedError
-
-
-class MonotonicIncreasing:
-    """Mixin class for monotonic increasing sequences."""
-
-    def __contains__(self, item: Any) -> bool:
-        for element in self._as_generator():
-            if element == item:
-                return True
-            if element > item:
-                return False
-        return False

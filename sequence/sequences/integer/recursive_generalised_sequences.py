@@ -1,25 +1,24 @@
 from typing import Tuple, Any
 
-from sequence.core.infinite_type import Recursive, MonotonicIncreasing
+from sequence.core.infinite_type import Recursive
+from sequence.core.mixin import MonotonicIncreasingMixin
 from sequence.core.utils.validation import validate_integer, validate_positive_integer
 
 
-class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
+class HighOrderFibonacciNumbers(MonotonicIncreasingMixin, Recursive):
     """
         Class for generating high order Fibonacci numbers (https://mathworld.wolfram.com/Fibonaccin-StepNumber.html).
 
         Attributes:
             order (int): The order of the Fibonacci sequence.
     """
+    sequence_name = 'High order Fibonacci numbers'
 
-    def __init__(self, order: int):
+    def __init__(self, order: int) -> None:
         self.order = validate_positive_integer(integer=order)
         start_terms = self._compute_start_terms()
 
         super().__init__(start_terms=start_terms)
-
-    def __str__(self):
-        return 'High order Fibonacci numbers'
 
     def _compute_start_terms(self) -> Tuple[Any, ...]:
         """
@@ -33,7 +32,7 @@ class HighOrderFibonacciNumbers(MonotonicIncreasing, Recursive):
         return *[terms[i] for i in range(1, self.order)], sum(terms)
 
 
-class LucasSequenceU(MonotonicIncreasing, Recursive):
+class LucasSequenceU(MonotonicIncreasingMixin, Recursive):
     """
     The class generates the Lucas sequence U_n (https://en.wikipedia.org/wiki/Lucas_sequence).
     The sequence is defined by the recurrence relation: U_{n+2} = p * U_{n+1} - q * U_n,
@@ -43,14 +42,12 @@ class LucasSequenceU(MonotonicIncreasing, Recursive):
         p (int): Coefficient for the U_{n+1} term.
         q (int): Coefficient for the U_n term.
     """
+    sequence_name = 'Lucas sequence U_n'
 
-    def __init__(self, p: int, q: int):
+    def __init__(self, p: int, q: int) -> None:
         super().__init__(start_terms=(0, 1))
         self.p = validate_integer(integer=p)
         self.q = validate_integer(integer=q)
-
-    def __str__(self):
-        return 'Lucas sequence U_n'
 
     def formula(self, terms: Tuple[int, int]) -> Tuple[int, int]:
         return terms[1], self.p * terms[1] - self.q * terms[0]
@@ -67,11 +64,9 @@ class LucasSequenceV(LucasSequenceU):
         p (int): Coefficient for the V_{n+1} term.
         q (int): Coefficient for the V_n term.
     """
+    sequence_name = 'Lucas sequence V_n'
 
-    def __init__(self, p: int, q:  int):
+    def __init__(self, p: int, q:  int) -> None:
         super().__init__(p=p, q=q)
 
         self.start_terms = (2, self.p)
-
-    def __str__(self):
-        return 'Lucas sequence V_n'
