@@ -2,7 +2,7 @@ from typing import Any
 
 from sequence.core.infinite_type import Explicit
 from sequence.core.mixin import MonotonicIncreasingMixin
-from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers, PolygonalNumbers
+from sequence.sequences.integer.explicit_generalised import GeneralisedNexusNumbers, PolygonalNumbers
 
 
 class A000027(Explicit):
