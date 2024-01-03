@@ -51,13 +51,14 @@ List of implemented integer sequences.
 
 List of implemented generalised integer sequences.
 
-| Sequence Name                   | Sequence class name(s)      | Reference                                                          |     
-|---------------------------------|-----------------------------|--------------------------------------------------------------------|
-| The generalised Nexus numbers   | `GeneralisedNexusNumbers`   | https://mathworld.wolfram.com/NexusNumber.html                     |
-| High order Fibonacci numbers    | `HighOrderFibonacciNumbers` | https://en.wikipedia.org/wiki/Generalizations_of_Fibonacci_numbers |
-| The Lucas sequence U_n          | `LucasSequenceU`            | https://en.wikipedia.org/wiki/Lucas_sequence                       |
-| The Lucas sequence V_n          | `LucasSequenceV`            | https://en.wikipedia.org/wiki/Lucas_sequence                       |
-| The primes of a given sequence  | `PrimesOfSequence`          | -                                                                  |
-| The polygonal numbers           | `PolygonalNumbers`          | https://en.m.wikipedia.org/wiki/Polygonal_number                   |
+| Sequence Name                  | Sequence class name(s)      | Reference                                                          |     
+|--------------------------------|-----------------------------|--------------------------------------------------------------------|
+| The constant sequence          | `ConstantSequence`          | -                                                                  |
+| The generalised Nexus numbers  | `GeneralisedNexusNumbers`   | https://mathworld.wolfram.com/NexusNumber.html                     |
+| High order Fibonacci numbers   | `HighOrderFibonacciNumbers` | https://en.wikipedia.org/wiki/Generalizations_of_Fibonacci_numbers |
+| The Lucas sequence U_n         | `LucasSequenceU`            | https://en.wikipedia.org/wiki/Lucas_sequence                       |
+| The Lucas sequence V_n         | `LucasSequenceV`            | https://en.wikipedia.org/wiki/Lucas_sequence                       |
+| The primes of a given sequence | `PrimesOfSequence`          | -                                                                  |
+| The polygonal numbers          | `PolygonalNumbers`          | https://en.m.wikipedia.org/wiki/Polygonal_number                   |
 
 
