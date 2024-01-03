@@ -1,8 +1,29 @@
 from abc import abstractmethod, ABC
+from itertools import islice
 from typing import Generator, Any, Tuple, List, Optional
 
-from sequence.core.core import InfiniteType
+from sequence.core.core import Sequence
+from sequence.core.utils.exceptions import InfiniteSequenceError
 from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
+from sequence.core.operations import AddSequences
+
+
+class InfiniteType(Sequence, ABC):
+    """Abstract base class for representing infinite sequences."""
+
+    @property
+    def is_finite(self) -> bool:
+        return False
+
+    def __len__(self) -> int:
+        raise InfiniteSequenceError
+
+    def _as_list(self, stop: int, start: Optional[int] = None, step: Optional[int] = None) -> List[int]:
+        stop, start, step = validate_as_list_input(start=start, stop=stop, step=step)
+        return list(islice(self, start, stop, step))
+
+    def _at(self, index: int) -> int:
+        return next(islice(self, index, index + 1))
 
 
 class Explicit(InfiniteType, ABC):
