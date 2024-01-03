@@ -1,5 +1,5 @@
 from typing import Any, Tuple, List, ClassVar
-from sequence.core.mixin import AlmostMonotonicIncreasingMixin
+from sequence.core.infinite_type_mixin import AlmostMonotonicIncreasingMixin
 from sequence.core.infinite_type import Recursive
 from sequence.sequences.integer.recursive_generalised_sequences import (
     HighOrderFibonacciNumbers,

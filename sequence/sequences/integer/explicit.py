@@ -1,7 +1,7 @@
 from typing import Any
 
 from sequence.core.infinite_type import Explicit
-from sequence.core.mixin import MonotonicIncreasingMixin
+from sequence.core.infinite_type_mixin import MonotonicIncreasingMixin
 from sequence.sequences.integer.explicit_generalised_sequences import GeneralisedNexusNumbers, PolygonalNumbers
 
 

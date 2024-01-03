@@ -1,7 +1,7 @@
 from typing import Tuple, Any
 
 from sequence.core.infinite_type import Recursive
-from sequence.core.mixin import MonotonicIncreasingMixin
+from sequence.core.infinite_type_mixin import MonotonicIncreasingMixin
 from sequence.core.utils.validation import validate_integer, validate_positive_integer
 
 
