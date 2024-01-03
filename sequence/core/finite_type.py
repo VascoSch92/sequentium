@@ -1,9 +1,20 @@
 from abc import ABC
 from typing import List, Any, Generator, Optional
 
-from sequence.core.core import FiniteType
+from sequence.core.core import Sequence
 from sequence.core.utils.exceptions import InfiniteSequenceError
 from sequence.core.utils.validation import validate_as_list_input
+
+
+class FiniteType(Sequence, ABC):
+    """Abstract base class for representing finite sequences."""
+
+    def __init__(self, sequence: Optional[List[Any]] = None) -> None:
+        super().__init__()
+        self.sequence = sequence
+
+    def __contains__(self, item: Any) -> bool:
+        return item in self.sequence
 
 
 class Finite(FiniteType, ABC):
