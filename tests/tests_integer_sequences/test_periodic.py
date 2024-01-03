@@ -1,4 +1,4 @@
-from tests.sequence_test_suite import PeriodicSequenceTestSuite
+from tests.tests_integer_sequences.sequence_test_suite import PeriodicSequenceTestSuite
 from sequence.sequences.integer.periodic import *
 
 

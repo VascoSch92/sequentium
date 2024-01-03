@@ -1,5 +1,5 @@
 from sequence.sequences.integer.finite import *
-from tests.sequence_test_suite import FiniteSequenceTestSuite
+from tests.tests_integer_sequences.sequence_test_suite import FiniteSequenceTestSuite
 
 
 class TestA001228(FiniteSequenceTestSuite):

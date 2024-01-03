@@ -1,4 +1,4 @@
-from tests.sequence_test_suite import SequenceTestSuite
+from tests.tests_integer_sequences.sequence_test_suite import SequenceTestSuite
 from sequence.sequences.integer.recursive import *
 
 
