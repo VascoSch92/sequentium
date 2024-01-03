@@ -1,7 +1,7 @@
 from sequence.core.infinite_type import PropertyDefined
 from sequence.core.utils.functions import is_prime
 from sequence.sequences.integer.explicit import A000027
-from sequence.sequences.integer.property_defined_generalised_sequences import PrimesOfSequence
+from sequence.sequences.integer.property_defined_generalised import PrimesOfSequence
 
 
 class A000040(PrimesOfSequence):
