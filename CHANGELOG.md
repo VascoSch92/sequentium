@@ -25,6 +25,7 @@ The version is represented by three digits: a.b.c.
 ENHANCEMENT:
 - sequentium.github.workflows.release.yml: workflow for automatic upload on pypi
 - sequentium.sequence.sequences.integer.periodic_generalised.py: added class for representing constant sequences
+- sequentium.sequence.sequences.integer.recursive.py: added sequence A001608
 
 ---
 ## [0.0.1] - 2024-01-02

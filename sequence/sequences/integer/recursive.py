@@ -108,6 +108,20 @@ class A001592(HighOrderFibonacciNumbers):
 HexanacciNumbers = A001591
 
 
+class A001608(AlmostMonotonicIncreasingMixin, Recursive):
+    """Perrin numbers (https://oeis.org/A001608)."""
+    sequence_name = 'Perrin numbers'
+    offset: ClassVar[List[int]] = [3, 0, 2, 3, 2, 5]
+
+    def __init__(self) -> None:
+        super().__init__(start_terms=(3, 0, 2))
+
+    def formula(self, terms: Tuple[Any, ...]) -> Tuple[Any, ...]:
+        return terms[1], terms[2], terms[1] + terms[0]
+
+
+PerrinNumbers = A001608
+
 class A002203(LucasSequenceV):
     """Companion Pell numbers (https://oeis.org/A002203)."""
     sequence_name = 'Companion Pell numbers'
