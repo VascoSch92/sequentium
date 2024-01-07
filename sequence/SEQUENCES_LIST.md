@@ -41,6 +41,7 @@ List of implemented integer sequences.
 | A005408  | The odd numbers                  | `A005408`, `OddNumbers`                                   | https://oeis.org/A005408                         |
 | A014551  | Jacobsthal-Lucas numbers         | `A014551`, `JachobsthalLucasNumbers`                      | https://oeis.org/A014551                         |
 | A033999  | Sequence of powers of -1         | `A033999`                                                 | https://oeis.org/A033999                         |
+| A051624  | The dodecagonal numbers          | `A051624`, `DodecagonalNumbers`                           | https://oeis.org/A051624                         | 
 | A051682  | The hendecagonal numbers         | `A051682`, `HendecagonalNumbers`                          | https://oeis.org/A051682                         |  
 | A079262  | The Octanacci numbers            | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204  | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
