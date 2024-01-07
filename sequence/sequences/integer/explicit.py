@@ -213,3 +213,14 @@ class A051865(PolygonalNumbers):
 
 
 TridecagonalNumbers = A051865
+
+
+class A051866(PolygonalNumbers):
+    """Tetradecagonal numbers (https://oeis.org/A051866)."""
+    sequence_name = 'tetradecagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=14)
+
+
+TetradecagonalNumbers = A051866
