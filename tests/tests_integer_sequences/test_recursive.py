@@ -82,6 +82,16 @@ class TestA001592(SequenceTestSuite):
     ]
 
 
+class TestA001608(SequenceTestSuite):
+    sequence = A001608()
+    sequence_name = 'Perrin numbers'
+    ground_truth = [
+        3, 0, 2, 3, 2, 5, 5, 7, 10, 12, 17, 22, 29, 39, 51, 68, 90, 119, 158, 209, 277, 367, 486, 644, 853, 1130, 1497,
+        1983, 2627, 3480, 4610, 6107, 8090, 10717, 14197, 18807, 24914, 33004, 43721, 57918, 76725, 101639, 134643,
+        178364, 236282, 313007,
+    ]
+
+
 class TestA002203(SequenceTestSuite):
     sequence = A002203()
     sequence_name = 'Companion Pell numbers'
