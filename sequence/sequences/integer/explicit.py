@@ -257,3 +257,14 @@ class A051869(PolygonalNumbers):
 
 
 HeptadecagonalNumbers = A051869
+
+
+class A051870(PolygonalNumbers):
+    """Octadecagonal numbers (https://oeis.org/A051870)."""
+    sequence_name = 'octadecagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=18)
+
+
+OctadecagonalNumbers = A051870
