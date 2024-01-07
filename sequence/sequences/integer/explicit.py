@@ -78,6 +78,17 @@ class A000566(PolygonalNumbers):
 HeptagonalNumbers = A000566
 
 
+class A000567(PolygonalNumbers):
+    """Octagonal numbers (https://oeis.org/A000567)"""
+    sequence_name = 'octagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=8)
+
+
+OctagonalNumbers = A000567
+
+
 class A001045(MonotonicIncreasingMixin, Explicit):
     """Jacobsthal numbers (https://oeis.org/A001045)."""
     sequence_name = 'Jacobsthal numbers'
