@@ -54,6 +54,7 @@ List of implemented integer sequences.
 | A051873 | The icosihenagonal numbers       | `A051873`, `IcosihenagonalNumbers`                        | https://oeis.org/A051873                         |
 | A051874 | The icosidigonal numbers         | `A051874`, `IcosidigonalNumbers`                          | https://oeis.org/A051874                         |
 | A051875 | The icositrigonal numbers        | `A051875`, `IcositrigonalNumbers`                         | https://oeis.org/A051875                         |
+| A051876 | The icositetragonal numbers      | `A051876`, `IcositetragonalNumbers`                       | https://oeis.org/A051876                         |
 | A079262 | The Octanacci numbers            | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204 | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
 | A104144 | The Enneanacci numbers           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
