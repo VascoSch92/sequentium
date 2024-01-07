@@ -180,3 +180,14 @@ class A033999(Explicit):
 
     def formula(self, index: int) -> int:
         return (-1)**index
+
+
+class A051682(PolygonalNumbers):
+    """Hendecagonal numbers (https://oeis.org/A051682)."""
+    sequence_name = 'hendecagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=11)
+
+
+HendecagonalNumbers = A051682
