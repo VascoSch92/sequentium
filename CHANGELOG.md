@@ -26,6 +26,7 @@ ENHANCEMENT:
 - sequentium.github.workflows.release.yml: workflow for automatic upload on pypi
 - sequentium.sequence.sequences.integer.periodic_generalised.py: added class for representing constant sequences
 - sequentium.sequence.sequences.integer.recursive.py: added sequence A001608
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A000566 (heptagonal numbers)
 
 ---
 ## [0.0.1] - 2024-01-02

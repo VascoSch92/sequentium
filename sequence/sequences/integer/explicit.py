@@ -67,6 +67,17 @@ class A000384(PolygonalNumbers):
 HexagonalNumbers = A000384
 
 
+class A000566(PolygonalNumbers):
+    """Heptagonal numbers (https://oeis.org/A000566)"""
+    sequence_name = 'heptagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=7)
+
+
+HeptagonalNumbers = A000566
+
+
 class A001045(MonotonicIncreasingMixin, Explicit):
     """Jacobsthal numbers (https://oeis.org/A001045)."""
     sequence_name = 'Jacobsthal numbers'
