@@ -302,3 +302,13 @@ class A051873(PolygonalNumbers):
 
 IcosihenagonalNumbers = A051873
 
+
+class A051874(PolygonalNumbers):
+    """Icosidigonal numbers (https://oeis.org/A051874)."""
+    sequence_name = 'icosidigonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=22)
+
+
+IcosidigonalNumbers = A051874
