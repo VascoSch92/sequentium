@@ -41,6 +41,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051871 (enneadecagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051872 (icosagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051873 (icosihenagonal numbers)
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A051874 (Icosidigonal numbers)
 
 ---
 ## [0.0.1] - 2024-01-02
