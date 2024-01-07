@@ -22,6 +22,9 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+---
+## [0.0.2] - 2024-01-07
+
 ENHANCEMENT:
 - sequentium.github.workflows.release.yml: workflow for automatic upload on pypi
 - sequentium.sequence.sequences.integer.periodic_generalised.py: added class for representing constant sequences
@@ -46,7 +49,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
 
----
+
 ## [0.0.1] - 2024-01-02
 
 ENHANCEMENT:
