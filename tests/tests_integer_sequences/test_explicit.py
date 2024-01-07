@@ -121,3 +121,14 @@ class TestA033999(SequenceTestSuite):
     sequence = A033999()
     sequence_name = 'sequence of powers of -1'
     ground_truth = [(-1)**index for index in range(50)]
+
+
+class TestA051682(SequenceTestSuite):
+    sequence = A051682()
+    sequence_name = 'hendecagonal numbers'
+    ground_truth = [
+        0, 1, 11, 30, 58, 95, 141, 196, 260, 333, 415, 506, 606, 715, 833, 960, 1096, 1241, 1395, 1558, 1730, 1911,
+        2101, 2300, 2508, 2725, 2951, 3186, 3430, 3683, 3945, 4216, 4496, 4785, 5083, 5390, 5706, 6031, 6365, 6708,
+        7060, 7421, 7791, 8170
+    ]
+
