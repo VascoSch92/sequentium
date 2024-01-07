@@ -43,6 +43,7 @@ List of implemented integer sequences.
 | A033999  | Sequence of powers of -1         | `A033999`                                                 | https://oeis.org/A033999                         |
 | A051624  | The dodecagonal numbers          | `A051624`, `DodecagonalNumbers`                           | https://oeis.org/A051624                         | 
 | A051682  | The hendecagonal numbers         | `A051682`, `HendecagonalNumbers`                          | https://oeis.org/A051682                         |  
+| A051865  | The tridecagonal numbers         | `A051865`, `TridecagonalNumbers`                          | https://oeis.org/A051865                         |
 | A079262  | The Octanacci numbers            | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204  | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
 | A104144  | The Enneanacci numbers           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
