@@ -44,6 +44,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051874 (Icosidigonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051875 (icositrigonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
 
 ---
 ## [0.0.1] - 2024-01-02

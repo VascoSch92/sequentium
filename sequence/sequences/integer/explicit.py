@@ -334,3 +334,14 @@ class A051876(PolygonalNumbers):
 
 
 IcositetragonalNumbers = A051876
+
+
+class A167149(PolygonalNumbers):
+    """Myriagonal numbers (https://oeis.org/A167149)."""
+    sequence_name = 'myriagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=10_000)
+
+
+MyriagonalNumbers = A167149

@@ -60,6 +60,7 @@ List of implemented integer sequences.
 | A104144 | The Enneanacci numbers           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
 | A122189 | The Heptanacci numbers           | `A122189`, `HeptanacciNumbers`                            | https://oeis.org/A122189                         |
 | A128834 | Sequence A128834                 | `A128834`                                                 | https://oeis.org/A128834                         |
+| A167149 | The myriagonal numbers           | `A167149`, `MyriagonalNumbers`                            | https://oeis.org/A167149                         |
 | A214733 | Sequence A214733                 | `A214733`                                                 | https://oeis.org/A214733                         |
 | -       | The Collatz sequence             | `CollatzSequence`                                         | https://en.wikipedia.org/wiki/Collatz_conjecture |
 
