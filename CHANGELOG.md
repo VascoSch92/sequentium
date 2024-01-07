@@ -38,6 +38,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051868 (hexadecagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051869 (heptadecagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051870 (octadecagonal numbers)
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A051871 (enneadecagonal numbers)
 
 ---
 ## [0.0.1] - 2024-01-02

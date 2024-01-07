@@ -33,7 +33,7 @@ List of implemented integer sequences.
 | A001228 | Orders of sporadic simple groups | `A001228`                                                 | https://oeis.org/A001228                         |
 | A001591 | The Pentanacci numbers           | `A001591`, `PentanacciNumbers`                            | https://oeis.org/A001591                         |
 | A001592 | The Hexanacci numbers            | `A001592`, `HexanacciNumbers`                             | https://oeis.org/A001592                         |
-| A001608 | Perrin numbers                   | `A001608`, `PerrinNumbers`                                | https://oeis.org/A002203                         |
+| A001608 | Perrin numbers                   | `A001608`, `PerrinNumbers`                                | https://oeis.org/A001608                         |
 | A002203 | Companion Pell numbers           | `A002203`, `CompanionPellNumbers`, `PellLucasNumbers`     | https://oeis.org/A002203                         |
 | A002808 | The composite numbers            | `A002808`, `CompositeNumbers`, `PositiveCompositeNumbers` | https://oeis.org/A002808                         |
 | A003173 | The Heegner numbers              | `A003173`, `HeegnerNumbers`                               | https://oeis.org/A003173                         |
@@ -49,6 +49,7 @@ List of implemented integer sequences.
 | A051868 | The hexadecagonal numbers        | `A051868`, `HexadecagonalNumbers`                         | https://oeis.org/A051868                         |
 | A051869 | The heptadecagonal numbers       | `A051869`, `HeptadecagonalNumbers`                        | https://oeis.org/A051869                         |
 | A051870 | The octadecagonal numbers        | `A051870`, `OctadecagonalNumbers`                         | https://oeis.org/A051870                         |
+| A051871 | The enneadecagonal numbers       | `A051871`, `EnneadecagonalNumbers`                        | https://oeis.org/A051871                         |
 | A079262 | The Octanacci numbers            | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204 | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
 | A104144 | The Enneanacci numbers           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
