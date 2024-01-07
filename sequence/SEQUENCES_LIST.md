@@ -47,6 +47,7 @@ List of implemented integer sequences.
 | A051866 | The tetradecagonal numbers       | `A051866`, `TetradecagonalNumbers`                        | https://oeis.org/A051866                         |
 | A051867 | The pentadecagonal numbers       | `A051867`, `PentadecagonalNumbers`                        | https://oeis.org/A051867                         |
 | A051868 | The hexadecagonal numbers        | `A051868`, `HexadecagonalNumbers`                         | https://oeis.org/A051868                         |
+| A051869 | The heptadecagonal numbers       | `A051869`, `HeptadecagonalNumbers`                        | https://oeis.org/A051869                         |
 | A079262 | The Octanacci numbers            | `A079262`, `OctanacciNumbers`                             | https://oeis.org/A079262                         |
 | A087204 | Sequence A087204                 | `A087204`                                                 | https://oeis.org/A087204                         |
 | A104144 | The Enneanacci numbers           | `A104144`, `EnneanacciNumebrs`                            | https://oeis.org/A104144                         |
