@@ -101,6 +101,17 @@ JacobsthalNumbers = A001045
 JacobsthalSequence = A001045
 
 
+class A001106(PolygonalNumbers):
+    """Nonagonal numbers (https://oeis.org/A001106)"""
+    sequence_name = 'nonagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=9)
+
+
+NonagonalNumbers = A000567
+
+
 class A003215(GeneralisedNexusNumbers):
     """Hex (or centered hexagonal) numbers (https://oeis.org/A003215)."""
     sequence_name = 'hex numbers'

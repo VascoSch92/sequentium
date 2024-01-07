@@ -75,6 +75,16 @@ class TestA001045(SequenceTestSuite):
     ]
 
 
+class TestA001106(SequenceTestSuite):
+    sequence = A001106()
+    sequence_name = 'nonagonal numbers'
+    ground_truth = [
+        0, 1, 9, 24, 46, 75, 111, 154, 204, 261, 325, 396, 474, 559, 651, 750, 856, 969, 1089, 1216, 1350, 1491, 1639,
+        1794, 1956, 2125, 2301, 2484, 2674, 2871, 3075, 3286, 3504, 3729, 3961, 4200, 4446, 4699, 4959, 5226, 5500,
+        5781, 6069, 6364,
+    ]
+
+
 class TestA003215(SequenceTestSuite):
     sequence = A003215()
     sequence_name = 'hex numbers'
