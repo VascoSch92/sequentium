@@ -29,6 +29,7 @@ List of implemented integer sequences.
 | A000931 | The Padovan numbers              | `A000931`, `PadovanNumbers`, `PadovanSequence`            | https://oeis.org/A000931                         |
 | A001045 | The Jacobsthal numbers           | `A001045`, `JacobsthalNumbers`, `JacobsthalSequence`      | https://oeis.org/A001045                         |
 | A001106 | The nonagonal numbers            | `A001106`, `NonagonalNumbers`                             | https://oeis.org/A001106                         |
+| A001107 | The decagonal numbers            | `A001107`, `DecagonalNumbers`                             | https://oeis.org/A001107                         |
 | A001228 | Orders of sporadic simple groups | `A001228`                                                 | https://oeis.org/A001228                         |
 | A001591 | The Pentanacci numbers           | `A001591`, `PentanacciNumbers`                            | https://oeis.org/A001591                         |
 | A001592 | The Hexanacci numbers            | `A001592`, `HexanacciNumbers`                             | https://oeis.org/A001592                         |

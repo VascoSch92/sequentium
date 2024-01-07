@@ -29,6 +29,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A000566 (heptagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A000567 (octagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A001106 (nonagonal numbers)
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A001107 (decagonal numbers) 
 
 ---
 ## [0.0.1] - 2024-01-02

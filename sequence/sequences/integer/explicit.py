@@ -109,7 +109,18 @@ class A001106(PolygonalNumbers):
         super().__init__(number_of_sides=9)
 
 
-NonagonalNumbers = A000567
+NonagonalNumbers = A001106
+
+
+class A001107(PolygonalNumbers):
+    """Decagonal numbers (https://oeis.org/A001107)"""
+    sequence_name = 'decagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=10)
+
+
+DecagonalNumbers = A001107
 
 
 class A003215(GeneralisedNexusNumbers):
