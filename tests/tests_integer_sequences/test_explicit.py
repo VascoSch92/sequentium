@@ -123,6 +123,16 @@ class TestA033999(SequenceTestSuite):
     ground_truth = [(-1)**index for index in range(50)]
 
 
+class TestA051624(SequenceTestSuite):
+    sequence = A051624()
+    sequence_name = 'dodecagonal numbers'
+    ground_truth = [
+        0, 1, 12, 33, 64, 105, 156, 217, 288, 369, 460, 561, 672, 793, 924, 1065, 1216, 1377, 1548, 1729, 1920, 2121,
+        2332, 2553, 2784, 3025, 3276, 3537, 3808, 4089, 4380, 4681, 4992, 5313, 5644, 5985, 6336, 6697, 7068, 7449,
+        7840, 8241, 8652,
+    ]
+
+
 class TestA051682(SequenceTestSuite):
     sequence = A051682()
     sequence_name = 'hendecagonal numbers'

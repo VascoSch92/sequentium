@@ -182,6 +182,17 @@ class A033999(Explicit):
         return (-1)**index
 
 
+class A051624(PolygonalNumbers):
+    """Dodecagonal numbers https://oeis.org/A051624)."""
+    sequence_name = 'dodecagonal numbers'
+
+    def __init__(self) -> None:
+        super().__init__(number_of_sides=12)
+
+
+DodecagonalNumbers = A051624
+
+
 class A051682(PolygonalNumbers):
     """Hendecagonal numbers (https://oeis.org/A051682)."""
     sequence_name = 'hendecagonal numbers'
