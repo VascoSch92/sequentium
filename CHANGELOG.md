@@ -34,6 +34,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051624 (dodecagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051865 (tridecagonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051866 (tetradecagonal numbers)
+- sequentium.sequence.sequences.integer.explicit.py: added sequence A051867 (pentadecagonal numbers)
 
 ---
 ## [0.0.1] - 2024-01-02
