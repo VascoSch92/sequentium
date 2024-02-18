@@ -1,4 +1,9 @@
 # Sequentium
+[![Downloads](https://static.pepy.tech/badge/sequentium)](https://pepy.tech/project/sequentium)
+![PyPI - License](https://img.shields.io/pypi/l/sequentium)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sequentium)
+
+---
 
 Sequentium is a user-friendly package that implements various well-known sequences, 
 providing a seamless and intuitive experience for the user.
@@ -48,9 +53,11 @@ Additionally, you can check if a number appears in the `Fibonacci sequence`:
 ## Command Line Interface (CLI)
 Sequentium provides a Command Line Interface (CLI) for convenient usage from your terminal.
 ```text
-usage: Sequentium [-h] [-v] [--list {integer,generalised} [{integer,generalised} ...]] [-a AT] [-l] [--start START] [--stop STOP] [--step STEP] [-c CONTAINS] [sequence]
+usage: Sequentium [-h] [-v] [--list {integer,generalised} [{integer,generalised} ...]] [-a AT] [-l] [--start START] 
+    [--stop STOP] [--step STEP] [-c CONTAINS] [sequence]
 
-Sequentium is a user-friendly package that implements various well-known sequences, providing a seamless and intuitive experience for the user
+Sequentium is a user-friendly package that implements various well-known sequences, providing a seamless and intuitive 
+experience for the user.
 
 positional arguments:
   sequence              Specify the name or identifier of the sequence to operate on.
@@ -71,7 +78,6 @@ sequence options:
                         Check if the sequence contains a specific value.
 
 For help with a specific command, see: `sequence help <command>`
-
 ```
 Here are some examples illustrating the usage of the Sequentium CLI:
 - specify the index to get a specific element of `FibonacciSequence`
