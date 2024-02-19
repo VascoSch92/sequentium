@@ -1,8 +1,8 @@
-from abc import abstractmethod, ABC
-from typing import Generator, Any, Tuple, List, Optional
+from abc import ABC, abstractmethod
+from typing import Any, List, Tuple, Optional, Generator
 
 from sequence.core.core import InfiniteType
-from sequence.core.utils.validation import validate_positive_integer, validate_as_list_input
+from sequence.core.utils.validation import validate_as_list_input, validate_positive_integer
 
 
 class Explicit(InfiniteType, ABC):

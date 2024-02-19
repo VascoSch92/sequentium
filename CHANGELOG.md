@@ -22,6 +22,10 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+ENHANCEMENT:
+- ruff.toml: config update with new rules
+- README.md: add badges
+
 ---
 ## [0.0.2] - 2024-01-07
 

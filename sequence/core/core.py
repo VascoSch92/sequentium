@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
+from typing import Any, List, Union, Optional, Generator
 from itertools import islice
-from typing import Generator, List, Any, Optional, Union
 
 from sequence.core.utils.exceptions import InfiniteSequenceError, NotPeriodicSequenceError
 from sequence.core.utils.validation import validate_as_list_input

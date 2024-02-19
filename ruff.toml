@@ -1,3 +1,15 @@
+
+# Set the max length of a line
+line-length = 121
+
+# The style in which the output message should be formatted
+output-format = "github"
+
+[format]
+
+quote-style = "double"
+
+[lint]
 # Set of rules enabled
 select = [
     "E", # Pycodestyle Error
@@ -5,6 +17,8 @@ select = [
     "B", # Flake8-bugbear
     "W", # Pycodestyle Warning
     "N", # pep8-naming
+    "Q", # flake8-quotes
+    "I", # isort rules
     "ANN", # flake8-annotations
     "D101", # undocumented-public-class
     "D200", # One-line docstring should fit on one line
@@ -50,19 +64,27 @@ ignore = [
     "F405", # undefined-local-with-import-star-usage
 ]
 
-# Set the max length of a line
-line-length = 121
-
-# The style in which the output message should be formatted
-output-format = "github"
-
 # Set of rules ignored per file
-[per-file-ignores]
-"sequence/_init_.py" = [
-    "F401", # Checks for unused imports
-]
-"tests/*" = [
+per-file-ignores = { "sequence/_init_.py" = [
+    "F401" # Checks for unused imports
+    ], "tests/*" = [
     "D101", # undocumented-public-class
     "RUF012", # mutable-class-default
-    "ANN", # flake8-annotations
-]
+    "ANN" # flake8-annotations
+    ]}
+
+[lint.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "double"
+multiline-quotes = "double"
+
+[lint.flake8-unused-arguments]
+ignore-variadic-names = true
+
+[lint.isort]
+case-sensitive = true
+combine-as-imports = true
+force-wrap-aliases = true
+length-sort = true
+
+

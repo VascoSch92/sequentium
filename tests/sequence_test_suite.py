@@ -27,7 +27,7 @@ class SequenceTestSuite:
     def test_sequence_name(self):
         """Test if the sequence's name matches the expected value."""
         if self.sequence.__str__() != self.sequence_name:
-            raise ValueError(f'Expected: {self.sequence_name}. Got {self.sequence.__str__()}')
+            raise ValueError(f"Expected: {self.sequence_name}. Got {self.sequence.__str__()}")
 
     def test_is_finite(self):
         """Test if the sequence's finiteness matches the expected value."""
@@ -49,39 +49,39 @@ class SequenceTestSuite:
 
     def test_getitem(self):
         """Test if sequence elements match the expected ground truth."""
-        error_msg = ''
+        error_msg = ""
         for index, element in enumerate(self.ground_truth):
             if self.sequence[index] != element:
-                error_msg += f'{index}. Expected: {element} at index {index}, but got {self.sequence[index]}.\n'
+                error_msg += f"{index}. Expected: {element} at index {index}, but got {self.sequence[index]}.\n"
 
         if error_msg:
             raise ValueError(error_msg)
 
     def test_contains(self):
         """Test if elements from the ground truth are correctly identified in the sequence."""
-        error_msg = ''
+        error_msg = ""
         count = 0
         for element in self.ground_truth:
             if (element in self.sequence) is False:
-                error_msg += f'{count}. The expression ({element} in sequence) must be True, but it is not.\n'
+                error_msg += f"{count}. The expression ({element} in sequence) must be True, but it is not.\n"
                 count += 1
         if error_msg:
             raise ValueError(error_msg)
 
     def test_not_contains(self):
         """Test if elements not in the ground truth are correctly identified as not in the sequence."""
-        error_msg = ''
+        error_msg = ""
         count = 0
         for element in range(len(self.ground_truth)):
             if element not in self.ground_truth and (element not in self.sequence) is False:
-                error_msg += f'{count}. The expression ({element} in sequence) must be False, but it is not.\n'
+                error_msg += f"{count}. The expression ({element} in sequence) must be False, but it is not.\n"
                 count += 1
         if error_msg:
             raise ValueError(error_msg)
 
     def test_as_list(self):
         """Test if the as_list method returns the expected subsequence for various start and stop indices."""
-        error_msg = ''
+        error_msg = ""
         count = 0
         for j in range(len(self.ground_truth) - 1):
             for i in range(j, len(self.ground_truth)):
@@ -114,9 +114,9 @@ class PeriodicSequenceTestSuite(SequenceTestSuite):
     def test_is_periodic(self):
         """Test if the sequence's periodicity matches the expected value."""
         if self.sequence.is_periodic != self.is_periodic:
-            raise ValueError(f'Expected a periodic sequence, but got {self.sequence.is_periodic}.')
+            raise ValueError(f"Expected a periodic sequence, but got {self.sequence.is_periodic}.")
 
     def test_period(self):
         """Test if the sequence's period matches the expected period length."""
         if self.period_length != self.sequence.period:
-            raise ValueError(f'Expected period: {self.period_length}, but got {self.sequence.period}.')
+            raise ValueError(f"Expected period: {self.period_length}, but got {self.sequence.period}.")

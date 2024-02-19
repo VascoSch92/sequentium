@@ -1,5 +1,12 @@
 # Sequentium
 
+---
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sequentium)
+[![Downloads](https://static.pepy.tech/badge/sequentium)](https://pepy.tech/project/sequentium)
+![PyPI - License](https://img.shields.io/pypi/l/sequentium)
+[![first-timers-only](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat)](https://www.firsttimersonly.com/)
+---
+
 Sequentium is a user-friendly package that implements various well-known sequences, 
 providing a seamless and intuitive experience for the user.
 

@@ -1,9 +1,9 @@
-import argparse
 import re
 import sys
+import argparse
 from pathlib import Path
 
-sequence_list_filepath = Path('sequence/SEQUENCES_LIST.md')
+sequence_list_filepath = Path("sequence/SEQUENCES_LIST.md")
 
 
 def execute_command_list(args: argparse.Namespace) -> None:
@@ -11,18 +11,18 @@ def execute_command_list(args: argparse.Namespace) -> None:
     with sequence_list_filepath.open() as file:
         content = file.read()
 
-        if args.list == ['integer']:
+        if args.list == ["integer"]:
             integer_table = extract_table(text=content, start_point="| OEIS    |")
-            sys.exit('\n' + integer_table + '\n')
+            sys.exit("\n" + integer_table + "\n")
 
-        if args.list == ['generalised']:
+        if args.list == ["generalised"]:
             # extract the part of text containing the table generalised sequences from the md
-            generalised_sequences_pattern = re.compile(r'## Generalised sequences\n(.+?)(?=\n##|$)', re.DOTALL)
+            generalised_sequences_pattern = re.compile(r"## Generalised sequences\n(.+?)(?=\n##|$)", re.DOTALL)
             match = re.search(generalised_sequences_pattern, content)
             text = match.group(1).strip()
 
-            generalised_table = extract_table(text=text, start_point='| Sequence Name')
-            sys.exit('\n' + generalised_table + '\n')
+            generalised_table = extract_table(text=text, start_point="| Sequence Name")
+            sys.exit("\n" + generalised_table + "\n")
 
 
 def extract_table(text: str, start_point: str) -> str:

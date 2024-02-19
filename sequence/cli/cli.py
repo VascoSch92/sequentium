@@ -1,6 +1,6 @@
+from sequence.cli.parser import CliParser
 from sequence.cli.commands.list import execute_command_list
 from sequence.cli.commands.sequence import execute_sequence_command
-from sequence.cli.parser import CliParser
 
 
 class CommandLineInterface:
