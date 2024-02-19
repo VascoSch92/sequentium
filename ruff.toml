@@ -3,7 +3,7 @@
 line-length = 121
 
 # The style in which the output message should be formatted
-output-format = "full"
+output-format = "github"
 
 [format]
 

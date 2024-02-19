@@ -123,6 +123,7 @@ class A001608(AlmostMonotonicIncreasingMixin, Recursive):
 
 PerrinNumbers = A001608
 
+
 class A002203(LucasSequenceV):
     """Companion Pell numbers (https://oeis.org/A002203)."""
     sequence_name = "Companion Pell numbers"
