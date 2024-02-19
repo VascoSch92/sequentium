@@ -1,7 +1,7 @@
-import ast
 import re
+import ast
+from typing import Set, List, Tuple, Union
 from pathlib import Path
-from typing import Union, List, Set, Tuple
 
 
 def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[str, None] = None) -> List[str]:
@@ -25,7 +25,7 @@ def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
 
 def get_sequence_class_names_from_md() -> Set:
     """ The method returns all the class names contained in the markd down file SEQUENCES_LIST.md """
-    sequence_list = Path('sequence/SEQUENCES_LIST.md').read_text()
+    sequence_list = Path("sequence/SEQUENCES_LIST.md").read_text()
 
     integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=sequence_list)
     generalised_sequence_class_names = extract_generalised_sequences_class_names_from_md(content=sequence_list)
@@ -34,12 +34,12 @@ def get_sequence_class_names_from_md() -> Set:
 
 def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
     # extract the table integer sequences from the md
-    integer_sequences_pattern = re.compile(r'## Integer sequences\n(.+?)\n## Generalised integer sequences', re.DOTALL)
+    integer_sequences_pattern = re.compile(r"## Integer sequences\n(.+?)\n## Generalised integer sequences", re.DOTALL)
     match = re.search(integer_sequences_pattern, content)
     generalised_sequences_table = match.group(1).strip()
 
     # extract the row of the table
-    row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|'
+    row_pattern = r"\| (.*?) \| (.*?) \| (.*?) \| (.*?) \|"
     row_matches = re.findall(row_pattern, generalised_sequences_table)
     del row_matches[0]  # delete first element as it is the header
 
@@ -48,12 +48,12 @@ def extract_integer_sequences_class_names_from_md(content: str) -> Set[str]:
 
 def extract_generalised_sequences_class_names_from_md(content: str) -> Set[str]:
     # extract the table generalised sequences from the md
-    generalised_sequences_pattern = re.compile(r'## Generalised integer sequences\n(.+?)(?=\n##|$)', re.DOTALL)
+    generalised_sequences_pattern = re.compile(r"## Generalised integer sequences\n(.+?)(?=\n##|$)", re.DOTALL)
     match = re.search(generalised_sequences_pattern, content)
     generalised_sequences_table = match.group(1).strip()
 
     # extract the row of the table
-    row_pattern = r'\| (.*?) \| (.*?) \| (.*?) \|'
+    row_pattern = r"\| (.*?) \| (.*?) \| (.*?) \|"
     row_matches = re.findall(row_pattern, generalised_sequences_table)
     del row_matches[0]  # delete first element as it is the header
 
@@ -72,8 +72,8 @@ def extract_class_names_from_row(row_matches: List[Tuple], column_number: int) -
     """
     sequence_class_names = set()
     for row in row_matches:
-        sequence_class_names_in_row = row[column_number].split(',')
-        sequence_class_names_in_row = {name.strip(' `') for name in sequence_class_names_in_row}
+        sequence_class_names_in_row = row[column_number].split(",")
+        sequence_class_names_in_row = {name.strip(" `") for name in sequence_class_names_in_row}
         sequence_class_names = sequence_class_names.union(sequence_class_names_in_row)
     return sequence_class_names
 

@@ -1,7 +1,7 @@
 from typing import Any
 
-from sequence.core.infinite_type import Explicit
 from sequence.core.mixin import MonotonicIncreasingMixin
+from sequence.core.infinite_type import Explicit
 from sequence.core.utils.validation import validate_positive_integer
 
 
@@ -12,7 +12,7 @@ class GeneralisedNexusNumbers(MonotonicIncreasingMixin, Explicit):
     Attributes:
         dimension (int): The dimension parameter for the Generalised Nexus Numbers.
     """
-    sequence_name = 'generalised Nexus numbers'
+    sequence_name = "generalised Nexus numbers"
 
     def __init__(self, dimension: int) -> None:
         super().__init__()
@@ -29,7 +29,7 @@ class PolygonalNumbers(Explicit):
         Attributes:
         - number_of_sides (int): The number of sides for the polygonal numbers.
     """
-    sequence_name = 'polygonal numbers'
+    sequence_name = "polygonal numbers"
 
     def __init__(self, number_of_sides: int) -> None:
         super().__init__()

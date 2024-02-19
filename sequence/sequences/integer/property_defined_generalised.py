@@ -1,5 +1,5 @@
 from abc import ABC
-from typing import Generator, Type
+from typing import Type, Generator
 
 from sequence.core.core import Sequence
 from sequence.core.infinite_type import PropertyDefined
