@@ -13,14 +13,22 @@ from tests.tests_meta.test_cases import (
 )
 
 
-@pytest.mark.parametrize(("script_path", "pattern"), TEST_CASES_ORDER_SCRIPT)
+@pytest.mark.parametrize(
+    argnames=("script_path", "pattern"),
+    argvalues=TEST_CASES_ORDER_SCRIPT,
+    ids=[script for script, _ in TEST_CASES_ORDER_SCRIPT],
+)
 def test_order_script(script_path, pattern):
     """ The test checks if the script give at script_path is sorted alphabetically after filtered by pattern. """
     sequence_names = get_class_names_from_script(script_path=script_path, pattern=pattern)
     assert sequence_names == sorted(sequence_names), f"Classes in '{script_path}' are not in alphabetical order."
 
 
-@pytest.mark.parametrize(("script_path", "pattern", "test_script_path"), TEST_CASES_TESTED_SEQUENCES)
+@pytest.mark.parametrize(
+    argnames=("script_path", "pattern", "test_script_path"),
+    argvalues=TEST_CASES_TESTED_SEQUENCES,
+    ids=[script for script, _, _ in TEST_CASES_TESTED_SEQUENCES]
+)
 def test_every_sequence_is_tested(script_path, pattern, test_script_path):
     """ The test checks if for every sequence defined there is a test. """
     sequence_names = get_class_names_from_script(script_path=script_path, pattern=pattern)
