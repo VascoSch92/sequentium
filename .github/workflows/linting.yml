@@ -1,9 +1,6 @@
 name: linting
 
 on:
-  push:
-    branches:
-      - staging
   pull_request:
     branches:
       - main
