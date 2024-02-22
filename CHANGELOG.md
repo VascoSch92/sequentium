@@ -22,11 +22,15 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+---
+
+## [0.0.3] - 2024-02-22
+
 ENHANCEMENT:
 - ruff.toml: config update with new rules
 - README.md: add badges
+- sequentium.tests: refactoring of the tests
 
----
 ## [0.0.2] - 2024-01-07
 
 ENHANCEMENT:
@@ -52,7 +56,6 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051875 (icositrigonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
-
 
 ## [0.0.1] - 2024-01-02
 
