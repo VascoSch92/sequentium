@@ -6,23 +6,23 @@ from sequence.core.utils.exceptions import NegativeNumberError
 def validate_integer(integer: int) -> int:
     """The method validates that an object is an integer."""
     if isinstance(integer, int) is False:
-        raise ValueError(f'Expected an int type, but got {type(integer).__name__} type!')
+        raise ValueError(f"Expected an int type, but got {type(integer).__name__} type!")
     return integer
 
 
 def validate_positive_integer(integer: int) -> int:
     """The method validates that an object is a positive integer."""
     if validate_integer(integer=integer) < 0:
-        raise NegativeNumberError(f'Expected a non-negative integer but got {integer}!')
+        raise NegativeNumberError(f"Expected a non-negative integer but got {integer}!")
     return integer
 
 
 def validate_integer_tuple(tuple: Tuple[int, ...], length: int) -> None:
     """The method validates that an object is a tuple of integers."""
     if isinstance(tuple, Tuple) is False:
-        raise ValueError(f'Expected a tuple type, but got {type(tuple).__name__} type!')
+        raise ValueError(f"Expected a tuple type, but got {type(tuple).__name__} type!")
     if len(tuple) != length:
-        raise ValueError(f'They are needed exactly {length} terms. Got {len(tuple)}')
+        raise ValueError(f"They are needed exactly {length} terms. Got {len(tuple)}")
     for number in tuple:
         validate_positive_integer(integer=number)
 

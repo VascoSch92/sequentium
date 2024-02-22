@@ -1,5 +1,5 @@
 from abc import ABC
-from typing import List, Any, Generator, Optional
+from typing import Any, List, Optional, Generator
 
 from sequence.core.core import FiniteType
 from sequence.core.utils.exceptions import InfiniteSequenceError

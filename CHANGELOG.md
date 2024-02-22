@@ -23,6 +23,17 @@ The version is represented by three digits: a.b.c.
 ## Unreleased
 
 ---
+
+## [0.0.3] - 2024-02-22
+
+ENHANCEMENT:
+- sequentium.ruff.toml: config update with new rules
+- sequentium.README.md: add badges
+- sequentium.tests: refactoring of the tests
+
+FIX:
+- sequentium.sequence.cli: fixed small bugs and unexpected behavior for the cli
+
 ## [0.0.2] - 2024-01-07
 
 ENHANCEMENT:
@@ -48,7 +59,6 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051875 (icositrigonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
-
 
 ## [0.0.1] - 2024-01-02
 

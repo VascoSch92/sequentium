@@ -1,9 +1,6 @@
 name: tests-suite
 
 on:
-  push:
-    branches:
-      - staging # because we can force-push on staging
   pull_request:
     branches:
       - main

@@ -1,5 +1,5 @@
 from math import isqrt
-from typing import Generator, Any
+from typing import Any, Generator
 
 
 def is_in_monotonic_increasing_generator(generator: Generator, item: Any) -> bool:
