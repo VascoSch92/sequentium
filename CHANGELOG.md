@@ -27,9 +27,12 @@ The version is represented by three digits: a.b.c.
 ## [0.0.3] - 2024-02-22
 
 ENHANCEMENT:
-- ruff.toml: config update with new rules
-- README.md: add badges
+- sequentium.ruff.toml: config update with new rules
+- sequentium.README.md: add badges
 - sequentium.tests: refactoring of the tests
+
+FIX:
+- sequentium.sequence.cli: fixed small bugs and unexpected behavior for the cli
 
 ## [0.0.2] - 2024-01-07
 
