@@ -27,7 +27,7 @@ copy-pages:
 	@echo "[Makefile] copying pages..."
 	@cp -r ../docs/pages/usage.md "$(SOURCEDIR)/usage.md"
 	@cp -r ../docs/pages/quickstart.md "$(SOURCEDIR)/quickstart.md"
-	@cp -r ../docs/pages/how-to-contribute.md "$(SOURCEDIR)/contributing.md"
+	@cp -r ../docs/pages/contributing.md "$(SOURCEDIR)/contributing.md"
 	@cp -r ../docs/pages/command‐line-interface.md "$(SOURCEDIR)/command‐line-interface.md"
 
 copy-sequences-list:
