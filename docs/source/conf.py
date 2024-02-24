@@ -7,6 +7,10 @@
 # pip install sphinx_rtd_theme
 # is needed in order to build the documentation
 
+import sys
+sys.path.append('sequentium')
+print(sys.path)
+
 from sequence.__version__ import __version__
 from datetime import datetime
 
