@@ -8,11 +8,12 @@
 # is needed in order to build the documentation
 
 import sys
-sys.path.append('sequentium')
-print(sys.path)
-
+from pathlib import Path
 from sequence.__version__ import __version__
 from datetime import datetime
+
+sys.path.append(str(Path.cwd().parent.parent))
+print(sys.path)
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
