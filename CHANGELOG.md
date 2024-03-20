@@ -9,6 +9,7 @@
 - ENHANCEMENT: Improvements to existing features that do not introduce new functionality
 - FEATURE: New features added to enhance functionality
 - FIX: Resolved issues, bugs, or unexpected behavior
+- MAINTENANCE: Changing, modifying, and updating the code to keep up with user needs
 - REMOVED: Features or functionalities removed from the project
 
 ### Version Policy
@@ -16,11 +17,17 @@
 The version is represented by three digits: a.b.c.
 - Bump the first digit (a) for an API_CHANGE.
 - Bump the second digit (b) for a FEATURE or a critical FIX.
-- Bump the third digit (c) for an ENHANCEMENT or a small FIX.
+- Bump the third digit (c) for an ENHANCEMENT, MAINTENANCE or a small FIX.
 - Once a digit is bumped, set all the digits to its right to zero.
 
 ---
 ## Unreleased
+
+MAINTENANCE:
+- ruff.toml: deleted
+- tests.pytest.ini: deleted
+- pyproject.toml: added with the config of ruff.toml and pytest.ini
+- .github.workflows.linting-and-formatting: renamed and add checks also for the tests directory
 
 ---
 

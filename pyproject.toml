@@ -1,0 +1,76 @@
+[tool.pytest.ini_options]
+cache_dir = "tests/.cache/pytest"
+
+log_cli = true
+log_level = "DEBUG"
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+
+[tool.ruff]
+cache-dir = "tests/.cache/ruff"
+
+# Set of rules enabled
+lint.select = [
+    "ARG002", # Checks for the presence of unused arguments in instance method definitions
+    "ANN201", # Missing return type annotation for public function
+    "E", # Pycodestyle Error
+    "F", # Pyflakes
+    "B", # Flake8-bugbear
+    "W", # Pycodestyle Warning
+    "D200", # One-line docstring should fit on one line
+    "D202", # No blank lines allowed after function docstring
+    "D300", # Use triple double quotes """
+    "D404", # First word of the docstring should not be "This"
+    "UP003", # Use {} instead of type(...)
+    "UP008", # Use super() instead of super(_class_, self)
+    "UP011", # Unnecessary parentheses to functools.lru_cache
+    "UP027", # Replace unpacked list comprehension with a generator expression
+    "UP032", # Use f-string instead of format call
+    "C4", # flake8-comprehensions
+    "ICN", # flake8-import-conventions
+    "NPY", # NumPy-specific rules (NPY)
+    "ARG", # flake8-unused-arguments
+    "PLE0604", # Invalid object in __all__, must contain only strings
+    "PLE0605", # Invalid format for __all__, must be tuple or list
+    "PIE", # flake8-pie
+    "PTH", # flake8-use-pathlib
+    "Q000",
+    "LOG", # checks for impropriate use of logging
+    "Q002", # flake-8 double quotes for dosctring
+    "I001", # Import block is un-sorted or un-formatted
+]
+
+# Ignored rules
+lint.ignore = [
+    "C400", # Unnecessary generator (rewrite using list())
+    "F821", # Checks for uses of undefined names
+    "B020", # Checks for contextlib.suppress without arguments
+    "B023", # Checks for function definitions that use a loop variable
+    "PTH123", # Checks for uses of the open builtin
+    "PIE804", # Checks for unnecessary dict kwargs
+    "PIE807", # Checks for lambdas that can be replaced with the list builtin
+    "W605", # Checks for invalid escape sequences
+]
+
+# ignore unusued imports in the __init__
+lint.per-file-ignores = {"sequence/__init__.py" = ["F401", "F403"], "tests/tests_parser/script_test_case.py"=["ANN201", "ARG002"]}
+
+lint.extend-per-file-ignores = {"tests/*" = ["F403", "F405", "D103"]}
+
+# Set the max length of a line
+line-length = 121
+
+# The style in which the output message should be formatted
+output-format = "grouped"
+
+lint.flake8-quotes.inline-quotes = "double"
+lint.flake8-quotes.docstring-quotes = "double"
+lint.flake8-quotes.multiline-quotes = "double"
+
+lint.isort.combine-as-imports = true
+lint.isort.length-sort = true
+
+[tool.ruff.format]
+indent-style = "space"
+skip-magic-trailing-comma = false
+exclude = ["tests/tests_integer_sequences/*.py"]

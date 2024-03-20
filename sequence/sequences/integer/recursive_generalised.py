@@ -7,11 +7,12 @@ from sequence.core.utils.validation import validate_integer, validate_positive_i
 
 class HighOrderFibonacciNumbers(MonotonicIncreasingMixin, Recursive):
     """
-        Class for generating high order Fibonacci numbers (https://mathworld.wolfram.com/Fibonaccin-StepNumber.html).
+    Class for generating high order Fibonacci numbers (https://mathworld.wolfram.com/Fibonaccin-StepNumber.html).
 
-        Attributes:
-            order (int): The order of the Fibonacci sequence.
+    Attributes:
+        order (int): The order of the Fibonacci sequence.
     """
+
     sequence_name = "High order Fibonacci numbers"
 
     def __init__(self, order: int) -> None:
@@ -42,6 +43,7 @@ class LucasSequenceU(MonotonicIncreasingMixin, Recursive):
         p (int): Coefficient for the U_{n+1} term.
         q (int): Coefficient for the U_n term.
     """
+
     sequence_name = "Lucas sequence U_n"
 
     def __init__(self, p: int, q: int) -> None:
@@ -64,9 +66,10 @@ class LucasSequenceV(LucasSequenceU):
         p (int): Coefficient for the V_{n+1} term.
         q (int): Coefficient for the V_n term.
     """
+
     sequence_name = "Lucas sequence V_n"
 
-    def __init__(self, p: int, q:  int) -> None:
+    def __init__(self, p: int, q: int) -> None:
         super().__init__(p=p, q=q)
 
         self.start_terms = (2, self.p)

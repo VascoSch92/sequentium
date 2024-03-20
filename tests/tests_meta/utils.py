@@ -18,13 +18,13 @@ def get_class_names_from_script(script_path: Union[str, Path], pattern: Union[st
 
 
 def filter_list_by_pattern(input_list: List[str], pattern: str) -> List[str]:
-    """ The method filter a list of string by a given pattern. """
+    """The method filter a list of string by a given pattern."""
     regex = re.compile(pattern)
     return [item for item in input_list if regex.match(item)]
 
 
 def get_sequence_class_names_from_md() -> Set:
-    """ The method returns all the class names contained in the markd down file SEQUENCES_LIST.md """
+    """The method returns all the class names contained in the markd down file SEQUENCES_LIST.md"""
     sequence_list = Path("sequence/SEQUENCES_LIST.md").read_text()
 
     integer_sequence_class_names = extract_integer_sequences_class_names_from_md(content=sequence_list)
@@ -79,7 +79,7 @@ def extract_class_names_from_row(row_matches: List[Tuple], column_number: int) -
 
 
 def get_sequences_defined_in_script(script_path: Path) -> Set:
-    """ The method returns all sequence defined in a given script"""
+    """The method returns all sequence defined in a given script"""
     sequence_defined_in_script = set()
     script_text = Path(script_path).read_text()
     tree = ast.parse(script_text)

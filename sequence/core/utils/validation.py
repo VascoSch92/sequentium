@@ -32,4 +32,3 @@ def validate_as_list_input(start: int, stop: int, step: int) -> Tuple[int, int, 
     start = 0 if start is None else start
     step = 1 if step is None else step
     return stop, start, step
-

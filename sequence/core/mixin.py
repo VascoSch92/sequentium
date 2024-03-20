@@ -12,9 +12,10 @@ class MonotonicIncreasingMixin:
 
 class AlmostMonotonicIncreasingMixin:
     """Mixin class for almost monotonic increasing sequences."""
+
     offset: ClassVar[List[Any]]
 
     def __contains__(self, item: Any) -> bool:
         if item in self.offset:
             return True
-        return is_in_monotonic_increasing_generator(generator=self[len(self.offset):], item=item)
+        return is_in_monotonic_increasing_generator(generator=self[len(self.offset) :], item=item)

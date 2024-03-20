@@ -65,4 +65,3 @@ class Periodic(FiniteType, ABC):
 
     def _at(self, index: int) -> Any:
         return self.sequence[index % self._period]
-
