@@ -30,4 +30,3 @@ def extract_table(text: str, start_point: str) -> str:
     start_index = text.find(start_point)
     end_index = text.find("\n\n", text.find(start_point))
     return text[start_index:end_index].strip()
-

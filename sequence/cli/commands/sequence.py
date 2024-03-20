@@ -38,7 +38,7 @@ def execute_as_list_command(args: argparse.Namespace, sequence: Type[Sequence]) 
         sys.exit(f"invalid int value for --start: {args.start}. Expected a non-negative integer")
     if args.start > args.stop:
         sys.exit(f"invalid int value for --stop: {args.stop}. Expected a value bigger than --start")
-    sys.exit(sequence[args.start:args.stop:args.step])
+    sys.exit(sequence[args.start : args.stop : args.step])
 
 
 def execute_contains_command(args: argparse.Namespace, sequence: Type[Sequence]) -> None:

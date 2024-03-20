@@ -6,21 +6,44 @@ from sequence.core.utils.validation import validate_positive_integer
 
 class A001228(Finite):
     """Orders of sporadic simple groups (https://oeis.org/A001228)."""
+
     sequence_name = "orders of sporadic simple groups sequence"
 
     def __init__(self) -> None:
         super().__init__()
         self.sequence = [
-            7920, 95040, 175560, 443520, 604800, 10200960, 44352000, 50232960, 244823040, 898128000, 4030387200,
-            145926144000, 448345497600, 460815505920, 495766656000, 42305421312000, 64561751654400, 273030912000000,
-            51765179004000000, 90745943887872000, 4089470473293004800, 4157776806543360000, 86775571046077562880,
-            1255205709190661721292800, 4154781481226426191177580544000000,
+            7920,
+            95040,
+            175560,
+            443520,
+            604800,
+            10200960,
+            44352000,
+            50232960,
+            244823040,
+            898128000,
+            4030387200,
+            145926144000,
+            448345497600,
+            460815505920,
+            495766656000,
+            42305421312000,
+            64561751654400,
+            273030912000000,
+            51765179004000000,
+            90745943887872000,
+            4089470473293004800,
+            4157776806543360000,
+            86775571046077562880,
+            1255205709190661721292800,
+            4154781481226426191177580544000000,
             808017424794512875886459904961710757005754368000000000,
         ]
 
 
 class A003173(Finite):
     """Heegner numbers: imaginary quadratic fields with unique factorization (https://oeis.org/A003173)."""
+
     sequence_name = "Heegner numbers"
 
     def __init__(self) -> None:
@@ -36,6 +59,7 @@ class CollatzSequence(Finite):
     Collatz sequence: the sequence of numbers involved in the Collatz conjecture
     (https://en.wikipedia.org/wiki/Collatz_conjecture)
     """
+
     sequence_name = "Collatz sequence"
 
     def __init__(self, start_value: int) -> None:
