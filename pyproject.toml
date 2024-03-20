@@ -73,3 +73,4 @@ lint.isort.length-sort = true
 [tool.ruff.format]
 indent-style = "space"
 skip-magic-trailing-comma = false
+exclude = ["tests/tests_integer_sequences/*.py"]
