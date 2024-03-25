@@ -23,6 +23,13 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+ENHANCEMENT:
+- README.md: improve description
+- examples.solving_project_euler_problems: add notebook to present and explain the package functionalities
+
+FIX:
+- sequentium.sequence.core.utils.validation: Fix validate_positive_integer. Added flag when 0 is allowed.
+
 MAINTENANCE:
 - ruff.toml: deleted
 - tests.pytest.ini: deleted
