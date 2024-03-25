@@ -9,6 +9,7 @@
 - ENHANCEMENT: Improvements to existing features that do not introduce new functionality
 - FEATURE: New features added to enhance functionality
 - FIX: Resolved issues, bugs, or unexpected behavior
+- MAINTENANCE: Changing, modifying, and updating the code to keep up with user needs
 - REMOVED: Features or functionalities removed from the project
 
 ### Version Policy
@@ -16,13 +17,29 @@
 The version is represented by three digits: a.b.c.
 - Bump the first digit (a) for an API_CHANGE.
 - Bump the second digit (b) for a FEATURE or a critical FIX.
-- Bump the third digit (c) for an ENHANCEMENT or a small FIX.
+- Bump the third digit (c) for an ENHANCEMENT, MAINTENANCE or a small FIX.
 - Once a digit is bumped, set all the digits to its right to zero.
 
 ---
 ## Unreleased
 
 ---
+
+## [0.0.4] - 2024-03-25
+
+ENHANCEMENT:
+- README.md: improve description
+- examples.solving_project_euler_problems: add notebook to present and explain the package functionalities
+
+FIX:
+- sequentium.sequence.core.utils.validation: Fix validate_positive_integer. Added flag when 0 is allowed.
+
+MAINTENANCE:
+- ruff.toml: deleted
+- tests.pytest.ini: deleted
+- pyproject.toml: added with the config of ruff.toml and pytest.ini
+- .github.workflows.linting-and-formatting: renamed and add checks also for the tests directory
+
 
 ## [0.0.3] - 2024-02-22
 
@@ -33,6 +50,7 @@ ENHANCEMENT:
 
 FIX:
 - sequentium.sequence.cli: fixed small bugs and unexpected behavior for the cli
+
 
 ## [0.0.2] - 2024-01-07
 
@@ -60,6 +78,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
 
+
 ## [0.0.1] - 2024-01-02
 
 ENHANCEMENT:
@@ -73,6 +92,7 @@ ENHANCEMENT:
 
 FIX:
 - sequentium.core.core.py: method __getitem__ return a generator when the stop value in the slice is missing
+
 
 ## [0.0.0] - 2023-12-28
 

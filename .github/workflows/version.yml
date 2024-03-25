@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Retrieve version from __version__.py
         run: |
           VERSION=$(awk -F"'" '/__version__/{print $2}' sequence/__version__.py)

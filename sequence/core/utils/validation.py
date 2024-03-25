@@ -10,10 +10,14 @@ def validate_integer(integer: int) -> int:
     return integer
 
 
-def validate_positive_integer(integer: int) -> int:
+def validate_positive_integer(integer: int, strict: bool = False) -> int:
     """The method validates that an object is a positive integer."""
-    if validate_integer(integer=integer) < 0:
-        raise NegativeNumberError(f"Expected a non-negative integer but got {integer}!")
+    if strict:
+        if validate_integer(integer=integer) <= 0:
+            raise NegativeNumberError(f"Expected a strictly non-negative integer but got {integer}!")
+    else:
+        if validate_integer(integer=integer) < 0:
+            raise NegativeNumberError(f"Expected a non-negative integer but got {integer}!")
     return integer
 
 
@@ -32,4 +36,3 @@ def validate_as_list_input(start: int, stop: int, step: int) -> Tuple[int, int, 
     start = 0 if start is None else start
     step = 1 if step is None else step
     return stop, start, step
-

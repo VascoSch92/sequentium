@@ -9,6 +9,7 @@ class ConstantSequence(Periodic):
     Attributes:
         value (int): the values that the constant sequence is taking
     """
+
     sequence_name = "value sequence"
 
     def __init__(self, value: int) -> None:

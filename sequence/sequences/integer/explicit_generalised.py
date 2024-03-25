@@ -12,6 +12,7 @@ class GeneralisedNexusNumbers(MonotonicIncreasingMixin, Explicit):
     Attributes:
         dimension (int): The dimension parameter for the Generalised Nexus Numbers.
     """
+
     sequence_name = "generalised Nexus numbers"
 
     def __init__(self, dimension: int) -> None:
@@ -24,11 +25,12 @@ class GeneralisedNexusNumbers(MonotonicIncreasingMixin, Explicit):
 
 class PolygonalNumbers(Explicit):
     """
-        Represents a class for generating and working with polygonal numbers.
+    Represents a class for generating and working with polygonal numbers.
 
-        Attributes:
-        - number_of_sides (int): The number of sides for the polygonal numbers.
+    Attributes:
+    - number_of_sides (int): The number of sides for the polygonal numbers.
     """
+
     sequence_name = "polygonal numbers"
 
     def __init__(self, number_of_sides: int) -> None:
@@ -42,12 +44,10 @@ class PolygonalNumbers(Explicit):
             return True
 
         item = (
-            (
-                    8 * (self.number_of_sides - 2) * item + (self.number_of_sides - 4) ** 2
-            ) ** (1/2)
+            (8 * (self.number_of_sides - 2) * item + (self.number_of_sides - 4) ** 2) ** (1 / 2)
             + (self.number_of_sides - 4)
         ) / (2 * (self.number_of_sides - 2))
         return item == int(item)
 
     def formula(self, index: int) -> int:
-        return (self.number_of_sides - 2) * index * (index-1) // 2 + index
+        return (self.number_of_sides - 2) * index * (index - 1) // 2 + index

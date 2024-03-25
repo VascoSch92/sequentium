@@ -4,7 +4,7 @@ from sequence.__version__ import __version__
 
 
 class CliParser:
-    """ A command-line interface parser"""
+    """A command-line interface parser"""
 
     def parse(self) -> argparse.Namespace:
         """Parses command-line arguments and returns the parsed arguments as a namespace."""
@@ -21,7 +21,7 @@ class CliParser:
         return argparse.ArgumentParser(
             prog="Sequentium",
             description="Sequentium is a user-friendly package that implements various well-known sequences, "
-                        "providing a seamless and intuitive experience for the user",
+            "providing a seamless and intuitive experience for the user",
             epilog="For help with a specific command, see: `sequence help <command>`",
         )
 
@@ -103,9 +103,9 @@ class CliParser:
         return parser
 
     def validate_parser(
-            self,
-            namespace: argparse.Namespace,
-            parser: argparse.ArgumentParser,
+        self,
+        namespace: argparse.Namespace,
+        parser: argparse.ArgumentParser,
     ) -> argparse.Namespace:
         """Validate the provided namespace using the given parser."""
         if namespace.list is None and namespace.sequence is None:
@@ -122,9 +122,9 @@ class CliParser:
         return namespace
 
     def validate_sequence_options(
-            self,
-            namespace: argparse.Namespace,
-            parser: argparse.ArgumentParser,
+        self,
+        namespace: argparse.Namespace,
+        parser: argparse.ArgumentParser,
     ) -> argparse.Namespace:
         """Validate the selected options for a sequence in the provided namespace using the given parser."""
         selected_options = {key for key, value in vars(namespace).items() if value is not None}
