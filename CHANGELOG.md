@@ -23,6 +23,10 @@ The version is represented by three digits: a.b.c.
 ---
 ## Unreleased
 
+---
+
+## [0.0.4] - 2024-03-25
+
 ENHANCEMENT:
 - README.md: improve description
 - examples.solving_project_euler_problems: add notebook to present and explain the package functionalities
@@ -36,7 +40,6 @@ MAINTENANCE:
 - pyproject.toml: added with the config of ruff.toml and pytest.ini
 - .github.workflows.linting-and-formatting: renamed and add checks also for the tests directory
 
----
 
 ## [0.0.3] - 2024-02-22
 
@@ -47,6 +50,7 @@ ENHANCEMENT:
 
 FIX:
 - sequentium.sequence.cli: fixed small bugs and unexpected behavior for the cli
+
 
 ## [0.0.2] - 2024-01-07
 
@@ -74,6 +78,7 @@ ENHANCEMENT:
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A051876 (icositetragonal numbers)
 - sequentium.sequence.sequences.integer.explicit.py: added sequence A167149 (myriagonal numbers)
 
+
 ## [0.0.1] - 2024-01-02
 
 ENHANCEMENT:
@@ -87,6 +92,7 @@ ENHANCEMENT:
 
 FIX:
 - sequentium.core.core.py: method __getitem__ return a generator when the stop value in the slice is missing
+
 
 ## [0.0.0] - 2023-12-28
 
